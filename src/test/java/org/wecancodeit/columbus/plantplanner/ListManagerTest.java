@@ -7,6 +7,7 @@ import static org.junit.Assert.assertThat;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hamcrest.collection.IsEmptyCollection;
 import org.junit.Test;
 
 public class ListManagerTest {
@@ -45,6 +46,15 @@ public class ListManagerTest {
 	
 	@Test
 	public void shouldCheckForZone1AndReturnEmptyList() {
-		
+		PlantDouble testPlant3 = new PlantDouble("6a", "Corn");
+		List<PlantDouble> plantDoubles = new ArrayList<>();
+
+		plantDoubles.add(testPlant);
+		plantDoubles.add(testPlant2);
+		plantDoubles.add(testPlant3);
+
+		List<PlantDouble> result = underTest.returnListOfViablePlants(plantDoubles, "1");
+
+		assertThat(result, IsEmptyCollection.empty());		
 	}
 }
