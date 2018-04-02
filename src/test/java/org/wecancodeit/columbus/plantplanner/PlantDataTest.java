@@ -19,10 +19,13 @@ public class PlantDataTest {
 	private PlantRepository plantRepo;
 
 	@Resource
+	private ZoneRepository zoneRepo;
+
+	@Resource
 	private TestEntityManager entityManager;
 
 	@Test
-	public void ShouldCreatePlant() {
+	public void shouldCreatePlant() {
 		Plant plant = new Plant("Beans");
 		plant = plantRepo.save(plant);
 		long plantId = plant.getId();
@@ -33,6 +36,18 @@ public class PlantDataTest {
 		plant = plantRepo.findOne(plantId);
 		assertThat(plant.getName(), is("Beans"));
 
+	}
+
+	@Test
+	public void shouldSaveAndLoadZone() {
+		Zone zone = zoneRepo.save(new Zone("zoneName"));
+		long zoneId = zone.getId();
+
+		entityManager.flush();
+		entityManager.clear();
+
+		zone = zoneRepo.findOne(zoneId);
+		assertThat(zone.getZoneName(), is("zoneName"));
 	}
 
 }
