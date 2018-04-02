@@ -16,5 +16,4 @@ public class PlantDoubleTest {
 
 		assertThat(testPlant4.getZones(), containsInAnyOrder(six, five));
 	}
-
 }

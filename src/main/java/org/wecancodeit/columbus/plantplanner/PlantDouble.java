@@ -8,6 +8,8 @@ import java.util.List;
 public class PlantDouble {
 
 	private String zone;
+	private String name;
+	private List<HardinessZoneDouble> hardinessZones;
 
 	public String getZone() {
 		return zone;
@@ -17,16 +19,8 @@ public class PlantDouble {
 		return name;
 	}
 
-	private String name;
-	private List<HardinessZoneDouble> hardinessZones;
-
-	public PlantDouble(String zone, String name) {
-		this.zone = zone;
+	public PlantDouble(String name, HardinessZoneDouble... hardinessZones) {
 		this.name = name;
-
-	}
-
-	public PlantDouble(String string, HardinessZoneDouble... hardinessZones) {
 		this.hardinessZones = new ArrayList<>(Arrays.asList(hardinessZones));
 	}
 

@@ -5,11 +5,16 @@ import java.util.List;
 
 public class ListManager {
 
-	public boolean checkPlantViability(String checkedZone, PlantDouble checkedPlant) {
-		return checkedZone == checkedPlant.getZone();
+	public boolean checkPlantViability(HardinessZoneDouble checkedZone, PlantDouble checkedPlant) {
+		for (HardinessZoneDouble plantZone : checkedPlant.getZones()) {
+			if (checkedZone == plantZone) {
+				return true;
+			}
+		}
+		return false;
 	}
 
-	public List<PlantDouble> returnListOfViablePlants(List<PlantDouble> plantsToTest, String plantHardinessZone) {
+	public List<PlantDouble> returnListOfViablePlants(List<PlantDouble> plantsToTest, HardinessZoneDouble plantHardinessZone) {
 		List<PlantDouble> selectedPlants = new ArrayList<>();
 		for (PlantDouble plant : plantsToTest) {
 			if (checkPlantViability(plantHardinessZone, plant)) {
