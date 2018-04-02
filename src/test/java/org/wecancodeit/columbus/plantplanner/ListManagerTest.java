@@ -43,7 +43,7 @@ public class ListManagerTest {
 
 		assertThat(result, containsInAnyOrder(testPlant, testPlant3));
 	}
-	
+
 	@Test
 	public void shouldCheckForZone1AndReturnEmptyList() {
 		PlantDouble testPlant3 = new PlantDouble("6a", "Corn");
@@ -55,6 +55,11 @@ public class ListManagerTest {
 
 		List<PlantDouble> result = underTest.returnListOfViablePlants(plantDoubles, "1");
 
-		assertThat(result, IsEmptyCollection.empty());		
+		assertThat(result, IsEmptyCollection.empty());
+	}
+	
+	@Test
+	public void shouldOnlyReturnPlantsWithSpecificHardinessZone() {
+		
 	}
 }
