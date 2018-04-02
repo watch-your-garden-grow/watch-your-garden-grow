@@ -1,5 +1,5 @@
 package org.wecancodeit.columbus.plantplanner;
 
-public class PlantControllerRestTest {
-
+public class PlantsMvcTest {
+	
 }
