@@ -68,15 +68,17 @@ public class ListManagerTest {
 	public void shouldOnlyReturnPlantsWithSpecificHardinessZone() {
 		PlantDouble testPlant4 = new PlantDouble("Tomatoes", sixA, fiveA);
 		PlantDouble testPlant5 = new PlantDouble("Peas", sixA);
-
+		PlantDouble testPlant6 = new PlantDouble("Grapes", sixA, sixB);
+		
 		List<PlantDouble> plantDoubles = new ArrayList<>();
 
 		plantDoubles.add(testPlant3);
 		plantDoubles.add(testPlant4);
 		plantDoubles.add(testPlant5);
+		plantDoubles.add(testPlant6);
 
 		List<PlantDouble> result = underTest.returnListOfViablePlants(plantDoubles, sixB);
 
-		assertThat(result, contains(testPlant3));
+		assertThat(result, containsInAnyOrder(testPlant3, testPlant6));
 	}
 }
