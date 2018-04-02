@@ -1,15 +1,45 @@
 *{
+	outline: 1px solid red;
 	background-color: green;
 }
 
+.container{
+	display: flex;
+	flex-direction: column;
+
+}
+.sectionForAllPlantsForHardinessZone{
+	display: flex;
+	flex-direction: column;
+}
+
+
+.listOfEachPlantForHardinessZone {
+	
+	height: 400px;
+	background-color: blue;
+
+}
+
+ul{
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: left;
+	align-content: center;
+	
+}
+
 li{
+	display: flex;
+	height: 100px;
 	list-style-type: none;
 
 }
 
 li img {
-	width: 10rem;
-	height: 10rem;
+	width: 2rem;
+	height: 2rem;
 	/*display: flex;*/
 }
 
