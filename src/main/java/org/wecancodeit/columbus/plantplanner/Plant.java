@@ -2,13 +2,12 @@ package org.wecancodeit.columbus.plantplanner;
 
 import static java.util.Arrays.asList;
 
-import java.util.Collection;
 import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 
 @Entity
 public class Plant {
@@ -19,10 +18,9 @@ public class Plant {
 
 	private String name;
 
-	@ManyToMany
-	private Collection<Zone> zones;
+	private Set<Zone> zones;
 
-	public Collection<Zone> getZones() {
+	public Set<Zone> getZones() {
 		return zones;
 	}
 
@@ -42,6 +40,22 @@ public class Plant {
 
 	public String getName() {
 		return name;
+	}
+
+	@Override
+	public int hashCode() {
+		return ((Long) id).hashCode();
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null || getClass() != obj.getClass()) {
+			return false;
+		}
+		return id == ((Plant) obj).id;
 	}
 
 }

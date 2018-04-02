@@ -64,4 +64,22 @@ public class PlantDataTest {
 		assertThat(plant.getZones(), containsInAnyOrder(sixA, sixB));
 	}
 
+	@Test
+	public void shouldEstablishAZoneToPlantRelationship() {
+		Zone zone = zoneRepo.save(new Zone("6A"));
+		long zoneId = zone.getId();
+
+		Plant beans = new Plant("beans", zone);
+		beans = plantRepo.save(beans);
+
+		Plant corn = new Plant("corn", zone);
+		corn = plantRepo.save(corn);
+
+		entityManager.flush();
+		entityManager.clear();
+
+		zone = zoneRepo.findOne(zoneId);
+		assertThat(zone.getPlants(), containsInAnyOrder(beans, corn));
+	}
+
 }
