@@ -17,14 +17,13 @@ public class ListManagerTest {
 	private HardinessZoneDouble sixB = new HardinessZoneDouble("6b");
 	private HardinessZoneDouble fiveA = new HardinessZoneDouble("5a");
 	private HardinessZoneDouble tenA = new HardinessZoneDouble("10a");
-	
+
 	private ListManager underTest = new ListManager();
 
 	private PlantDouble testPlant3 = new PlantDouble("Corn", sixA, sixB);
 	private PlantDouble testPlant = new PlantDouble("Tomato", sixA);
 	private PlantDouble testPlant2 = new PlantDouble("Pineapple", tenA);
 
-	
 	@Test
 	public void shouldReturnTrueIfPlantIsInAGivenZone() {
 		boolean result = underTest.checkPlantViability(sixA, testPlant);
@@ -75,9 +74,9 @@ public class ListManagerTest {
 		plantDoubles.add(testPlant3);
 		plantDoubles.add(testPlant4);
 		plantDoubles.add(testPlant5);
-		
+
 		List<PlantDouble> result = underTest.returnListOfViablePlants(plantDoubles, sixB);
-		
+
 		assertThat(result, contains(testPlant3));
 	}
 }

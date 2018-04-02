@@ -14,7 +14,8 @@ public class ListManager {
 		return false;
 	}
 
-	public List<PlantDouble> returnListOfViablePlants(List<PlantDouble> plantsToTest, HardinessZoneDouble plantHardinessZone) {
+	public List<PlantDouble> returnListOfViablePlants(List<PlantDouble> plantsToTest,
+			HardinessZoneDouble plantHardinessZone) {
 		List<PlantDouble> selectedPlants = new ArrayList<>();
 		for (PlantDouble plant : plantsToTest) {
 			if (checkPlantViability(plantHardinessZone, plant)) {
