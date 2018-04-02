@@ -1,5 +1,6 @@
 package org.wecancodeit.columbus.plantplanner;
 
+import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
@@ -48,6 +49,19 @@ public class PlantDataTest {
 
 		zone = zoneRepo.findOne(zoneId);
 		assertThat(zone.getZoneName(), is("zoneName"));
+	}
+
+	@Test
+	public void shouldEstablishAPlantToZoneRelationship() {
+		Zone sixA = zoneRepo.save(new Zone("6A"));
+		Zone sixB = zoneRepo.save(new Zone("6B"));
+
+		Plant plant = new Plant("", sixA, sixB);
+		plant = plantRepo.save(plant);
+		long plantName = plant.getId();
+
+		plant = plantRepo.findOne(plantName);
+		assertThat(plant.getZones(), containsInAnyOrder(sixA, sixB));
 	}
 
 }
