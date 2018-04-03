@@ -5,6 +5,7 @@ import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Zone {
@@ -13,6 +14,7 @@ public class Zone {
 	@GeneratedValue
 	private long id;
 
+	@ManyToMany(mappedBy = "zones")
 	private Collection<Plant> plants;
 
 	private String zone;

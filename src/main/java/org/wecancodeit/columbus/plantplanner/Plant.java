@@ -8,6 +8,7 @@ import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Plant {
@@ -18,6 +19,7 @@ public class Plant {
 
 	private String name;
 
+	@ManyToMany
 	private Set<Zone> zones;
 
 	public Set<Zone> getZones() {
