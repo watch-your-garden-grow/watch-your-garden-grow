@@ -19,6 +19,7 @@ public class Plant {
 
 	private String name;
 	private String image;
+	private String description;
 
 	@ManyToMany
 	private Set<Zone> zones;
@@ -30,8 +31,9 @@ public class Plant {
 	public Plant() {
 	}
 
-	public Plant(String name, String image, Zone... zones) {
+	public Plant(String name, String description, String image, Zone... zones) {
 		this.name = name;
+		this.description = description;
 		this.image = image;
 		this.zones = new HashSet<>(asList(zones));
 	}
@@ -42,6 +44,10 @@ public class Plant {
 
 	public String getName() {
 		return name;
+	}
+
+	public String getDescription() {
+		return description;
 	}
 
 	public String getImage() {

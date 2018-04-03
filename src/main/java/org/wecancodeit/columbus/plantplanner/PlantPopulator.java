@@ -27,36 +27,38 @@ public class PlantPopulator implements CommandLineRunner {
 		Zone zone3 = createZone("Zone 5B");
 		Zone zone4 = createZone("Zone 11A");
 
-		plantRepo.save(new Plant("Beans", "/images/beans.jpg", zone1, zone2, zone3, zone4));
-		plantRepo.save(new Plant("Beets", "/images/beets.jpg", zone1, zone2, zone3, zone4));
-		plantRepo.save(new Plant("Broccoli", "/images/broccoli.jpg", zone1, zone2, zone3, zone4));
-		plantRepo.save(new Plant("Brussel Sprouts", "/images/brussel-sprouts.jpg", zone1, zone2, zone3, zone4));
-		plantRepo.save(new Plant("Cabbage", "/images/cabbage.jpg", zone1, zone2, zone3, zone4));
-		plantRepo.save(new Plant("Carrots", "/images/carrots.jpg", zone1, zone2, zone3));
-		plantRepo.save(new Plant("Cauliflower", "/images/cauliflower.jpg", zone1, zone2, zone3));
-		plantRepo.save(new Plant("Corn", "/images/corn.jpg", zone1, zone2, zone3, zone4));
-		plantRepo.save(new Plant("Cucumber", "/images/cucumber.jpg", zone1, zone2, zone3, zone4));
-		plantRepo.save(new Plant("Kale", "/images/kale.jpg", zone1, zone2, zone3, zone4));
-		plantRepo.save(new Plant("Lettuce", "/images/lettuce.jpg", zone1, zone2, zone3, zone4));
-		plantRepo.save(new Plant("Onions", "/images/onions.jpg", zone1, zone2, zone3, zone4));
-		plantRepo.save(new Plant("Peas", "/images/peas.jpg", zone1, zone2, zone3, zone4));
-		plantRepo.save(new Plant("Peppers", "/images/peppers.jpg", zone1, zone2, zone3, zone4));
-		plantRepo.save(new Plant("Spinach", "/images/spinach.jpg", zone1, zone2, zone3));
-		plantRepo.save(new Plant("Squash", "/images/squash.jpg", zone1, zone2, zone3));
-		plantRepo.save(new Plant("Tomatoes", "/images/tomatoes.jpg", zone1, zone2, zone3, zone4));
-		plantRepo.save(new Plant("Asparagus", "/images/asparagus.jpg", zone1, zone2, zone3));
-		plantRepo.save(new Plant("Cantaloupe", "/images/cantaloupe.jpg", zone1, zone2, zone3));
-		plantRepo.save(new Plant("Eggplant", "/images/eggplant.jpg", zone1, zone2, zone3));
-		plantRepo.save(new Plant("Pumpkins", "/images/pumpkins.jpg", zone1, zone2, zone3, zone4));
-		plantRepo.save(new Plant("Potatoes", "/images/potatoes.jpg", zone1, zone2, zone3));
-		plantRepo.save(new Plant("Watermelon", "/images/watermelon.jpg", zone1, zone2, zone3));
-		plantRepo.save(new Plant("Radishes", "/images/radishes.jpg", zone1, zone2, zone3, zone4));
-		plantRepo.save(new Plant("Strawberries", "/images/strawberry.jpg", zone1, zone2, zone3));
-		plantRepo.save(new Plant("Zucchini", "/images/zucchini.jpg", zone4));
-		plantRepo.save(new Plant("Agave", "/images/agave.jpg", zone4));
-		plantRepo.save(new Plant("Avocado", "/images/avocado.jpg", zone4));
-		plantRepo.save(new Plant("Banana", "/images/banana.jpg", zone4));
-		plantRepo.save(new Plant("Pineapple", "/images/pineapple.jpg", zone4));
+		plantRepo.save(new Plant("Beans", "Plant 1-2 inches deep, in an area with full sun", "/images/beans.jpg", zone1,
+				zone2, zone3, zone4));
+		plantRepo.save(new Plant("Beets", "description", "/images/beets.jpg", zone1, zone2, zone3, zone4));
+		plantRepo.save(new Plant("Broccoli", "description", "/images/broccoli.jpg", zone1, zone2, zone3, zone4));
+		plantRepo.save(
+				new Plant("Brussel Sprouts", "description", "/images/brussel-sprouts.jpg", zone1, zone2, zone3, zone4));
+		plantRepo.save(new Plant("Cabbage", "description", "/images/cabbage.jpg", zone1, zone2, zone3, zone4));
+		plantRepo.save(new Plant("Carrots", "description", "/images/carrots.jpg", zone1, zone2, zone3));
+		plantRepo.save(new Plant("Cauliflower", "description", "/images/cauliflower.jpg", zone1, zone2, zone3));
+		plantRepo.save(new Plant("Corn", "description", "/images/corn.jpg", zone1, zone2, zone3, zone4));
+		plantRepo.save(new Plant("Cucumber", "description", "/images/cucumber.jpg", zone1, zone2, zone3, zone4));
+		plantRepo.save(new Plant("Kale", "description", "/images/kale.jpg", zone1, zone2, zone3, zone4));
+		plantRepo.save(new Plant("Lettuce", "description", "/images/lettuce.jpg", zone1, zone2, zone3, zone4));
+		plantRepo.save(new Plant("Onions", "description", "/images/onions.jpg", zone1, zone2, zone3, zone4));
+		plantRepo.save(new Plant("Peas", "description", "/images/peas.jpg", zone1, zone2, zone3, zone4));
+		plantRepo.save(new Plant("Peppers", "description", "/images/peppers.jpg", zone1, zone2, zone3, zone4));
+		plantRepo.save(new Plant("Spinach", "description", "/images/spinach.jpg", zone1, zone2, zone3));
+		plantRepo.save(new Plant("Squash", "description", "/images/squash.jpg", zone1, zone2, zone3));
+		plantRepo.save(new Plant("Tomatoes", "description", "/images/tomatoes.jpg", zone1, zone2, zone3, zone4));
+		plantRepo.save(new Plant("Asparagus", "description", "/images/asparagus.jpg", zone1, zone2, zone3));
+		plantRepo.save(new Plant("Cantaloupe", "description", "/images/cantaloupe.jpg", zone1, zone2, zone3));
+		plantRepo.save(new Plant("Eggplant", "description", "/images/eggplant.jpg", zone1, zone2, zone3));
+		plantRepo.save(new Plant("Pumpkins", "description", "/images/pumpkins.jpg", zone1, zone2, zone3, zone4));
+		plantRepo.save(new Plant("Potatoes", "description", "/images/potatoes.jpg", zone1, zone2, zone3));
+		plantRepo.save(new Plant("Watermelon", "description", "/images/watermelon.jpg", zone1, zone2, zone3));
+		plantRepo.save(new Plant("Radishes", "description", "/images/radishes.jpg", zone1, zone2, zone3, zone4));
+		plantRepo.save(new Plant("Strawberries", "description", "/images/strawberry.jpg", zone1, zone2, zone3));
+		plantRepo.save(new Plant("Zucchini", "description", "/images/zucchini.jpg", zone4));
+		plantRepo.save(new Plant("Agave", "description", "/images/agave.jpg", zone4));
+		plantRepo.save(new Plant("Avocado", "description", "/images/avocado.jpg", zone4));
+		plantRepo.save(new Plant("Banana", "description", "/images/banana.jpg", zone4));
+		plantRepo.save(new Plant("Pineapple", "description", "/images/pineapple.jpg", zone4));
 	}
 
 }

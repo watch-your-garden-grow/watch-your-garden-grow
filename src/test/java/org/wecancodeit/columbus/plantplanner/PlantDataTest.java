@@ -27,7 +27,7 @@ public class PlantDataTest {
 
 	@Test
 	public void shouldCreatePlant() {
-		Plant plant = new Plant("Beans", "image");
+		Plant plant = new Plant("Beans", "description", "image");
 		plant = plantRepo.save(plant);
 		long plantId = plant.getId();
 
@@ -55,7 +55,7 @@ public class PlantDataTest {
 		Zone sixA = zoneRepo.save(new Zone("6A"));
 		Zone sixB = zoneRepo.save(new Zone("6B"));
 
-		Plant plant = new Plant("", "", sixA, sixB);
+		Plant plant = new Plant("", "description", "", sixA, sixB);
 		plant = plantRepo.save(plant);
 		long plantName = plant.getId();
 
@@ -68,10 +68,10 @@ public class PlantDataTest {
 		Zone zone = zoneRepo.save(new Zone("6A"));
 		long zoneId = zone.getId();
 
-		Plant beans = new Plant("beans", "image", zone);
+		Plant beans = new Plant("beans", "description", "image", zone);
 		beans = plantRepo.save(beans);
 
-		Plant corn = new Plant("corn", "image", zone);
+		Plant corn = new Plant("corn", "description", "image", zone);
 		corn = plantRepo.save(corn);
 
 		entityManager.flush();
