@@ -2,6 +2,7 @@ package org.wecancodeit.columbus.plantplanner;
 
 import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
 import javax.annotation.Resource;
@@ -79,5 +80,19 @@ public class PlantDataTest {
 
 		zone = zoneRepo.findOne(zoneId);
 		assertThat(zone.getPlants(), containsInAnyOrder(beans, corn));
+	}
+
+	@Test
+	public void shouldReturnPlantNameDescriptionAndImage() {
+		Zone zone = zoneRepo.save(new Zone("6A"));
+
+		Plant underTest = new Plant("name", "description", "image", zone);
+		String check = underTest.getName();
+		String check2 = underTest.getDescription();
+		String check3 = underTest.getImage();
+
+		assertEquals(check, "name");
+		assertEquals(check2, "description");
+		assertEquals(check3, "image");
 	}
 }
