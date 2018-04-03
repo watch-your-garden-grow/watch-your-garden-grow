@@ -1,49 +1,105 @@
 *{
-	outline: 1px solid red;
-	background-color: green;
+	/*outline: 1px solid red;*/
+	/*background-color: green;*/
 }
 
 .container{
+	display: grid;
+	grid-template-columns: 3rem, 6rem, 5rem, auto, 2rem;
+	grid-gap: 1rem;
+	background-color: black;
+
+}
+
+body{
+	background-color: green;
+}
+header{
+	background-color: yellow;
 	display: flex;
-	flex-direction: column;
+	justify-content: center;
+}
+
+.enterZipCode{
+	background-color: cyan;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+.enterZipCode input{
+	height: 2rem;
+	width: 6rem;
+	font-size: 1.5rem;
+	margin-left: .25rem;
+	margin-right: .50rem;
+}
+.currentPlanLink{
+	background-color: darkgrey;
+}
+
+.zipAndPlanLink{
+background-color: grey;
+display: grid;
+grid-template-columns: 1fr 1fr;
+		
+}
+
+.hardinessZone{
+	background-color: lightgrey;
+	/*display: flex;
+	justify-content: center;*/
+	align-self: center;
+}
+
+.hardinessZoneResult{
+/*	display: flex;
+	justify-content: center;*/
 
 }
 .sectionForAllPlantsForHardinessZone{
-	display: flex;
-	flex-direction: column;
+/*	display: flex;
+	flex-direction: column;*/
+	background-color: purple;
 }
 
 
-.listOfEachPlantForHardinessZone {
-	
+.listOfEachPlantForHardinessZone {	
 	height: 400px;
 	background-color: blue;
+}
 
+button{
+	height: 2rem;
+	width: 6rem;
 }
 
 ul{
-	display:flex;
+/*	display:flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: left;
-	align-content: center;
+	align-content: center;*/
+	display: flex;
+	flex-direction: row;
+	background-color: pink;
 	
 }
 
 li{
-	display: flex;
+
 	height: 100px;
 	list-style-type: none;
 
 }
 
-li img {
-	width: 2rem;
-	height: 2rem;
+.listOfEachPlantForHardinessZone li img {
+	width: 4rem;
+	height: 4rem;
 	/*display: flex;*/
 }
 
 footer{
-	display: flex;
-	justify-content: space-around;
+	/*display: flex;
+	justify-content: space-around;*/
+	background-color: orange;
 }
