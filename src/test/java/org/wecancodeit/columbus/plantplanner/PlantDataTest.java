@@ -36,7 +36,6 @@ public class PlantDataTest {
 
 		plant = plantRepo.findOne(plantId);
 		assertThat(plant.getName(), is("Beans"));
-
 	}
 
 	@Test
@@ -81,5 +80,4 @@ public class PlantDataTest {
 		zone = zoneRepo.findOne(zoneId);
 		assertThat(zone.getPlants(), containsInAnyOrder(beans, corn));
 	}
-
 }

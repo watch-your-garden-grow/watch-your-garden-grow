@@ -20,7 +20,6 @@ public class Zone {
 	private String zone;
 
 	public Zone() {
-
 	}
 
 	public Zone(String zone) {
@@ -54,5 +53,4 @@ public class Zone {
 		}
 		return id == ((Zone) obj).id;
 	}
-
 }

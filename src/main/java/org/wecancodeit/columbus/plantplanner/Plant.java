@@ -27,13 +27,11 @@ public class Plant {
 	}
 
 	public Plant() {
-
 	}
 
 	public Plant(String name, Zone... zones) {
 		this.name = name;
 		this.zones = new HashSet<>(asList(zones));
-
 	}
 
 	public long getId() {
@@ -59,5 +57,4 @@ public class Plant {
 		}
 		return id == ((Plant) obj).id;
 	}
-
 }
