@@ -29,24 +29,24 @@ public class PlantController {
 		}
 		return plantRepo.findOne(id);
 	}
-	
+
+	@RequestMapping("/zones")
+	public Iterable<Zone> findZones() {
+		return zoneRepo.findAll();
+	}
+
+	public Iterable<Plant> findPlantsByZone(Zone zone) {
+		// Zone retrievedZone = zoneRepo.findOne(zoneId);
+		return zone.getPlants();
+	}
+
+
+	public Zone findZone(long id) {
+		return zoneRepo.findOne(id);
+	}
 	@SuppressWarnings("serial")
 	@ResponseStatus(HttpStatus.NOT_FOUND)
 	public class SomethingNotFoundException extends RuntimeException {
 		
 	}
-
-	public Iterable<Plant> findPlantsByZone(Long zoneId) {
-		Zone retrievedZone = zoneRepo.findOne(zoneId);
-		return retrievedZone.getPlants();
-	}
-
-	public Iterable<Zone> findZones() {
-		return zoneRepo.findAll();
-	}
-
-	public Zone findZone(long id) {
-		return zoneRepo.findOne(id);
-	}
 }
-

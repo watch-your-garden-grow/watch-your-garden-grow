@@ -23,6 +23,9 @@ public class PlantsMvcTest {
 	@MockBean
 	private PlantRepository plantRepo;
 	
+	@MockBean
+	private ZoneRepository zoneRepo;
+	
 	@Test
 	public void shouldRetrievePlants() throws Exception {
 		mvc.perform(get("/plants")).andExpect(status().isOk());
@@ -37,5 +40,10 @@ public class PlantsMvcTest {
 	@Test
 	public void shouldNotFindPlantId() throws Exception {
 		mvc.perform(get("/plants/42")).andExpect(status().isNotFound());
+	}
+	
+	@Test
+	public void shouldRetrieveZones() throws Exception {
+		mvc.perform(get("/zones")).andExpect(status().isOk());
 	}
 }
