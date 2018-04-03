@@ -35,18 +35,23 @@ public class PlantController {
 		return zoneRepo.findAll();
 	}
 
-	public Iterable<Plant> findPlantsByZone(Zone zone) {
-		// Zone retrievedZone = zoneRepo.findOne(zoneId);
-		return zone.getPlants();
-	}
-
-
-	public Zone findZone(long id) {
+	@RequestMapping("/zones/{id}")
+	public Zone findZone(@PathVariable(name = "id") long id) {
+		if (zoneRepo.findOne(id) == null) {
+			throw new SomethingNotFoundException();
+		}
+		
 		return zoneRepo.findOne(id);
 	}
+	
+	@RequestMapping("/zone/{id}")
+	public Iterable<Plant> findPlantsByZone(@PathVariable(name = "id") Long id) {
+		return zoneRepo.findOne(id).getPlants();
+	}
+
 	@SuppressWarnings("serial")
 	@ResponseStatus(HttpStatus.NOT_FOUND)
 	public class SomethingNotFoundException extends RuntimeException {
-		
+
 	}
 }

@@ -19,31 +19,49 @@ public class PlantsMvcTest {
 
 	@Resource
 	MockMvc mvc;
-	
+
 	@MockBean
 	private PlantRepository plantRepo;
-	
+
 	@MockBean
 	private ZoneRepository zoneRepo;
-	
+
 	@Test
 	public void shouldRetrievePlants() throws Exception {
 		mvc.perform(get("/plants")).andExpect(status().isOk());
 	}
-	
+
 	@Test
 	public void shouldRetrieveIndividualPlant() throws Exception {
 		when(plantRepo.findOne(3L)).thenReturn(new Plant("Tomato"));
 		mvc.perform(get("/plants/3")).andExpect(status().isOk());
 	}
-	
+
 	@Test
 	public void shouldNotFindPlantId() throws Exception {
 		mvc.perform(get("/plants/42")).andExpect(status().isNotFound());
 	}
-	
+
 	@Test
 	public void shouldRetrieveZones() throws Exception {
 		mvc.perform(get("/zones")).andExpect(status().isOk());
 	}
+
+	@Test
+	public void shouldRetrieveIndividualZone() throws Exception {
+		when(zoneRepo.findOne(3L)).thenReturn(new Zone("3"));
+		mvc.perform(get("/zones/3")).andExpect(status().isOk());
+	}
+
+	@Test
+	public void shouldNotFindZoneId() throws Exception {
+		mvc.perform(get("/zones/42")).andExpect(status().isNotFound());
+	}
+
+	@Test
+	public void shouldRetrievePlantsFromAZone() throws Exception {
+		when(zoneRepo.findOne(3L)).thenReturn(new Zone("3"));
+		mvc.perform(get("/zone/3")).andExpect(status().isOk());
+	}
+
 }

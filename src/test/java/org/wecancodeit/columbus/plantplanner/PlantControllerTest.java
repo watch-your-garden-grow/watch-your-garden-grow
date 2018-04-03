@@ -88,7 +88,7 @@ public class PlantControllerTest {
 		Long zoneId = 3L;
 		when(zoneRepo.findOne(zoneId)).thenReturn(zone);
 		when(zone.getPlants()).thenReturn(Collections.singleton(plant));
-		Iterable<Plant> result = underTest.findPlantsByZone(zone);
+		Iterable<Plant> result = underTest.findPlantsByZone(zoneId);
 		assertThat(result, contains(plant));
 	}
 
