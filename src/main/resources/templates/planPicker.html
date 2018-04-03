@@ -22,7 +22,7 @@
 					<input type="text"></input>
 				</div>
 				<div class = "submitZipCodeButton">
-					<button action="/add-zipcode">Submit ZipCode</button>
+					<button type="submit" action="/add-zipcode" value="${zipCode.id}">Submit ZipCode</button>
 				</div>
 			</div>	
 			</form>
@@ -43,16 +43,25 @@
 		</div>
 		<div class="listOfEachPlantForHardinessZone">
 			<ul>
+<!-- 					With ThymeLeaf Call To Display Each Product
+				<div class = "listOfEachPlantForHardinessZoneTL" th:each="plant: ${plants}">
+					<ul>
+						<li>
+							<a th:href="@{/plants(id=${plant.id})}" th:text="${plant.name}"></a>
+						</li>
+					</ul>
+				</div> -->
+
 				<li><img src="../static/images/tomato.jpg" alt="tomato"></a><a href= "TomatoLink">*Return from form input</a><button class = "addToPlanButton">Add to Plan</button></li>
-				<li><img src="../static/images/tomato.jpg" alt="beanfactory"></a><a href= "BeanFactory">BeanFactory</a><button class = "addToPlanButton">Add to Plan</button></li>
-				<li><img src="../static/images/tomato.jpg" alt="Carrots"><a href= "Carrots">Carrots</a></a><button class = "addToPlanButton">Add to Plan</button></li>
-				<li><img src="../static/images/strawberries.jpg" alt="Strawberries"><a href= "Strawberries">Strawberries</a></a><button class = "addToPlanButton">Add to Plan</button></li>
-				<li><img src="../static/images/tomato.jpg" alt="Kale"></a><a href= "Kale">Kale</a><button class = "addToPlanButton">Add to Plan</button></li>
-				<li><img src="../static/images/tomato.jpg" alt="Thyme"></a><a href= "Thyme">Thyme</a><button class = "addToPlanButton">Add to Plan</button></li>
-				<li><img src="../static/images/tomato.jpg" alt="Oregano"></a><a href= "Oregano">Oregano</a><button class = "addToPlanButton">Add to Plan</button></li>
-				<li><img src="../static/images/tomato.jpg" alt="Basil"></a><a href= "Basil">Basil</a><button class = "addToPlanButton">Add to Plan</button></li>
-				<li><img src="../static/images/tomato.jpg" alt="Bacon"></a><a href= "Bacon">Bacon</a><button class = "addToPlanButton">Add to Plan</button></li>
-				<li><img src="../static/images/tomato.jpg" alt="FutureVodka"><a href= "FutureVodka">FutureVodka</a></a><button class = "addToPlanButton">Add to Plan</button></li>				
+				<li><img src="../static/images/tomato.jpg" alt="beanfactory"></a><a href= "BeanFactoryPink">BeanFactory</a><button class = "addToPlanButton">Add to Plan</button></li>
+				<li><img src="../static/images/tomato.jpg" alt="Carrots"><a href= "CarrotsLink">Carrots</a></a><button class = "addToPlanButton">Add to Plan</button></li>
+				<li><img src="../static/images/strawberries.jpg" alt="Strawberries"><a href= "StrawberriesLink">Strawberries</a></a><button class = "addToPlanButton">Add to Plan</button></li>
+				<li><img src="../static/images/tomato.jpg" alt="Kale"></a><a href= "KaleLink">Kale</a><button class = "addToPlanButton">Add to Plan</button></li>
+				<li><img src="../static/images/tomato.jpg" alt="Thyme"></a><a href= "ThymeLink">Thyme</a><button class = "addToPlanButton">Add to Plan</button></li>
+				<li><img src="../static/images/tomato.jpg" alt="Oregano"></a><a href= "OreganoLink">Oregano</a><button class = "addToPlanButton">Add to Plan</button></li>
+				<li><img src="../static/images/tomato.jpg" alt="Basil"></a><a href= "BasilLink">Basil</a><button class = "addToPlanButton">Add to Plan</button></li>
+				<li><img src="../static/images/tomato.jpg" alt="Bacon"></a><a href= "BaconLink">Bacon</a><button class = "addToPlanButton">Add to Plan</button></li>
+				<li><img src="../static/images/tomato.jpg" alt="FutureVodka"><a href= "FutureVodkaLink">FutureVodka</a></a><button class = "addToPlanButton">Add to Plan</button></li>				
 			</ul>
 		</div>
 		</div>
