@@ -17,14 +17,15 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class PlantRestTest {
-	
+
 	@Resource
 	private TestRestTemplate restTemplate;
-	
+
 	@Test
 	public void exampleTest() {
 		ResponseEntity<String> response = restTemplate.getForEntity("/plants", String.class);
 		HttpStatus status = response.getStatusCode();
 		assertThat(status, is(HttpStatus.OK));
 	}
+
 }

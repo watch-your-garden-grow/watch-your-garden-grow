@@ -6,6 +6,7 @@ import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.when;
 
+import java.util.Collection;
 import java.util.Collections;
 
 import org.junit.Before;
@@ -25,6 +26,15 @@ public class PlantControllerTest {
 
 	@Mock
 	private PlantRepository plantRepo;
+
+	@Mock
+	private ZoneRepository zoneRepo;
+
+	@Mock
+	private Collection<Plant> plants;
+
+	@Mock
+	private Zone zone;
 
 	@Before
 	public void setup() {
@@ -51,10 +61,42 @@ public class PlantControllerTest {
 		Plant result = underTest.findPlant(3L);
 		assertThat(result, is(plant));
 	}
-	
-	@Test (expected = SomethingNotFoundException.class)
+
+	@Test(expected = SomethingNotFoundException.class)
 	public void shouldReturnNotFoundExceptionForBadProductId() {
 		long invalidProductId = 42L;
 		underTest.findPlant(invalidProductId);
 	}
+
+	@Test
+	public void shouldReturnAListOfZones() {
+		when(zoneRepo.findAll()).thenReturn(Collections.singleton(zone));
+		Iterable<Zone> result = underTest.findZones();
+		assertThat(result, contains(any(Zone.class)));
+
+	}
+
+	@Test
+	public void shouldReturnIndividualZoneFromDatabase() {
+		when(zoneRepo.findOne(3L)).thenReturn(zone);
+		Zone result = underTest.findZone(3L);
+		assertThat(result, is(zone));
+	}
+
+	@Test
+	public void shouldReturnAListOfPlantsForGivenZone() {
+		Zone sixA = new Zone("6a");
+		sixA = zoneRepo.save(sixA);
+		plant = new Plant("Tomato", sixA);
+		plantRepo.save(plant);
+//		Long zoneId = 3L;
+//		when(sixA.getPlants()).thenReturn(Collections.singleton(plant));
+//		when(zone.getPlants()).thenReturn(Collections.singleton(plant));
+		Iterable<Plant> result = underTest.findPlantsByZone(3L);
+		assertThat(result, contains(plant));
+		
+//		Iterable<Plant> result = underTest.findPlantsByZone(sixA);
+//		assertThat(result, is(plants));
+	}
+
 }

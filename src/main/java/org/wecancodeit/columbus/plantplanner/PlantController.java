@@ -14,6 +14,9 @@ public class PlantController {
 	@Resource
 	private PlantRepository plantRepo;
 
+	@Resource
+	private ZoneRepository zoneRepo;
+
 	@RequestMapping("/plants")
 	public Iterable<Plant> findPlants() {
 		return plantRepo.findAll();
@@ -31,6 +34,19 @@ public class PlantController {
 	@ResponseStatus(HttpStatus.NOT_FOUND)
 	public class SomethingNotFoundException extends RuntimeException {
 		
+	}
+
+	public Iterable<Plant> findPlantsByZone(Long zoneId) {
+		Zone retrievedZone = zoneRepo.findOne(zoneId);
+		return retrievedZone.getPlants();
+	}
+
+	public Iterable<Zone> findZones() {
+		return zoneRepo.findAll();
+	}
+
+	public Zone findZone(long id) {
+		return zoneRepo.findOne(id);
 	}
 }
 
