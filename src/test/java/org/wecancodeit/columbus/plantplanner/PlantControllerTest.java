@@ -10,7 +10,7 @@ public class PlantControllerTest {
 	private PlantController underTest;
 	
 	@Mock
-	private PlantDouble plant;
+	private Plant plant;
 	
 	@Test
 	public void shouldRetrievePlants() {
