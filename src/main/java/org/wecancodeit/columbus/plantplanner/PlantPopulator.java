@@ -45,7 +45,7 @@ public class PlantPopulator implements CommandLineRunner {
 		plantRepo.save(new Plant("Squash", zone1, zone2, zone3));
 		plantRepo.save(new Plant("Tomatoes", zone1, zone2, zone3, zone4));
 		plantRepo.save(new Plant("Asparagus", zone1, zone2, zone3));
-		plantRepo.save(new Plant("Cantalope", zone1, zone2, zone3));
+		plantRepo.save(new Plant("Cantaloupe", zone1, zone2, zone3));
 		plantRepo.save(new Plant("Eggplant", zone1, zone2, zone3));
 		plantRepo.save(new Plant("Pumpkins", zone1, zone2, zone3, zone4));
 		plantRepo.save(new Plant("Potatoes", zone1, zone2, zone3));
