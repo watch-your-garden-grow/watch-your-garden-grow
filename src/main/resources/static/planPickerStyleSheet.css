@@ -48,7 +48,7 @@ grid-template-columns: 1fr 1fr;
 	background-color: lightgrey;
 	/*display: flex;
 	justify-content: center;*/
-	align-self: center;
+	align-items: center;
 }
 
 .hardinessZoneResult{
@@ -81,7 +81,7 @@ ul{
 	align-content: center;*/
 	display: flex;
 	flex-direction: row;
-	background-color: pink;
+	/*background-color: pink;*/
 	
 }
 
