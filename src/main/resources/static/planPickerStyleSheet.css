@@ -8,6 +8,18 @@ a:link{
 	color: yellow;
 }
 
+button{
+	height: 2rem;
+	width: 5.5rem;
+	border-radius: .3rem;
+	padding-top: .1rem;
+	padding-bottom: .1rem;
+	font-size: .7rem;
+}
+button:hover{
+	color: teal;
+}
+
 .container{
 	display: grid;
 	grid-template-columns: 3rem, 6rem, 5rem, auto, 2rem;
@@ -31,13 +43,37 @@ header{
 	justify-content: flex-end;
 	align-items: center;
 }
+
+.inputAndSubmitZipCode{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: .25rem;
+	margin-bottom: .25rem;
+	margin-left: .25rem;
+	margin-right: .50rem;
+}
+
 .enterZipCode input{
 	height: 2rem;
 	width: 6rem;
 	font-size: 1.5rem;
-	margin-left: .25rem;
-	margin-right: .50rem;
 }
+
+.submitZipCodeButton{
+	display: flex;
+	justify-content: flex-end;
+	margin-top: .2rem;
+}
+
+.zipCodeEntryAndSubmit{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	justify-content: center;
+	align-items: center;
+}
+
 .currentPlanLink{
 	background-color: darkgrey;
 }
@@ -46,7 +82,6 @@ header{
 	background-color: grey;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-
 }
 
 .hardinessZone{
@@ -77,11 +112,6 @@ header{
 	margin-left: 18rem;
 }
 
-button{
-	height: 2rem;
-	width: 6rem;
-}
-
 
 ul{
 
@@ -101,6 +131,8 @@ li{
 	background-color: purple;
 	margin-top:.45rem;
 	margin-bottom: 1.9rem;
+	height: 2rem;
+	width: 6rem;
 }
 
 .listOfEachPlantForHardinessZone li img {
@@ -108,6 +140,7 @@ li{
 	height: 8rem;
 	/*display: flex;*/
 }
+
 .listOfEachPlantForHardinessZone li a {
 	margin-top: .5rem;
 }
@@ -117,3 +150,5 @@ footer{
 	justify-content: space-around;
 	background-color: orange;
 }
+
+

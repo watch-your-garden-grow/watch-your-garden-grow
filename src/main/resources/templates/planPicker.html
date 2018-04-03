@@ -14,19 +14,30 @@
 </header>
 	<div class = "zipAndPlanLink">
 		<div class = "enterZipCode">
-		<!-- will take input and return result on same page AJAX -->
-		<form>Enter Zip Code</form><input></input>
+			<form class = "zipCodeEntryAndSubmit" method = "POST">
+			<label>Enter Zip Code</label>
+			<div class = "inputAndSubmitZipCode">
+				<div class = "typeZipCodeBox">
+				
+					<input type="text"></input>
+				</div>
+				<div class = "submitZipCodeButton">
+					<button action="/add-zipcode">Submit ZipCode</button>
+				</div>
+			</div>	
+			</form>
 		</div>
-
 		<div class = "currentPlanLink">
-		<h2><a href= "PlanLink">*This will be: Link To Current Plan</a></h2>
+			<h2><a href= "PlanLink">*This will be: Link To Current Plan</a></h2>
 		</div>
 	</div>
-	<div class = "hardinessZone">
-		<h3>Your Hardiness Zone is: </h3>
-		<h2>*This will be result of hardiness zone: B4</h2>
-	</div>
-	<div class = "sectionForAllPlantsForHardinessZone">
+
+	<form method="POST">
+		<div class = "hardinessZone">
+			<h3>Your Hardiness Zone is: </h3>
+			<h2>*This will be result of hardiness zone: B4</h2>
+		</div>
+		<div class = "sectionForAllPlantsForHardinessZone">
 		<div class = "plantResultListTitle">
 			<h2>List Of Plants Per Hardiness Zone: *Populate zone</h2>
 		</div>
@@ -44,7 +55,8 @@
 				<li><img src="../static/images/tomato.jpg" alt="FutureVodka"><a href= "FutureVodka">FutureVodka</a></a><button class = "addToPlanButton">Add to Plan</button></li>				
 			</ul>
 		</div>
-	</div>
+		</div>
+	</form>
 <footer>
 <h3>Copyright 2018</h3>
 <h3>04/02/2018</h3>
