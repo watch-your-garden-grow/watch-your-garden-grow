@@ -85,18 +85,11 @@ public class PlantControllerTest {
 
 	@Test
 	public void shouldReturnAListOfPlantsForGivenZone() {
-//		Zone sixA = new Zone("6a");
-//		sixA = zoneRepo.save(sixA);
-//		plant = new Plant("Tomato", sixA);
-//		plantRepo.save(plant);
-//		Long zoneId = 3L;
-//		when(sixA.getPlants()).thenReturn(Collections.singleton(plant));
+		Long zoneId = 3L;
+		when(zoneRepo.findOne(zoneId)).thenReturn(zone);
 		when(zone.getPlants()).thenReturn(Collections.singleton(plant));
 		Iterable<Plant> result = underTest.findPlantsByZone(zone);
 		assertThat(result, contains(plant));
-		
-//		Iterable<Plant> result = underTest.findPlantsByZone(sixA);
-//		assertThat(result, is(plants));
 	}
 
 }
