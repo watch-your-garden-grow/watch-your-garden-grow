@@ -10,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Plant {
 
@@ -18,7 +20,8 @@ public class Plant {
 	private long id;
 
 	private String name;
-
+	
+	@JsonIgnore
 	@ManyToMany
 	private Set<Zone> zones;
 
