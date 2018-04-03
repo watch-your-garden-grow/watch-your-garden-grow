@@ -25,6 +25,7 @@ public class ZipCodeZoneDataPopulator implements CommandLineRunner {
 			
 			zipCodeZoneData = zipCodeRepo.save(new ZipCodeZoneData("33101", "10b"));
 			log.error(zipCodeZoneData.toString());
-
+			
+			log.error("43202 is zone " +zipCodeRepo.findZoneByZipCode("43202"));
 		}
 }
