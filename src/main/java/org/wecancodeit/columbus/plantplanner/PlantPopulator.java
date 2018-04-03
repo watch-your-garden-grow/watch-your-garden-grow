@@ -27,38 +27,75 @@ public class PlantPopulator implements CommandLineRunner {
 		Zone zone3 = createZone("Zone 5B");
 		Zone zone4 = createZone("Zone 11A");
 
-		plantRepo.save(new Plant("Beans", "Plant 1-2 inches deep, in an area with full sun", "/images/beans.jpg", zone1,
+		plantRepo.save(new Plant("Beans", "Plant 1-2 inches deep in an area with full sun.", "/images/beans.jpg", zone1,
 				zone2, zone3, zone4));
-		plantRepo.save(new Plant("Beets", "description", "/images/beets.jpg", zone1, zone2, zone3, zone4));
-		plantRepo.save(new Plant("Broccoli", "description", "/images/broccoli.jpg", zone1, zone2, zone3, zone4));
+		plantRepo.save(new Plant("Beets", "Plant 1/2 inch deep in area with atleast partial sunlight.",
+				"/images/beets.jpg", zone1, zone2, zone3, zone4));
+		plantRepo.save(new Plant("Broccoli", "Plant 2-4 inches deep in an area with full sunlight.",
+				"/images/broccoli.jpg", zone1, zone2, zone3, zone4));
+		plantRepo.save(new Plant("Brussel Sprouts", "Plant 1/2 inch deep in an area with full sun.",
+				"/images/brussel-sprouts.jpg", zone1, zone2, zone3, zone4));
+		plantRepo.save(new Plant("Cabbage", "Plant in full sun.  12 to 24 inches apart from each other.",
+				"/images/cabbage.jpg", zone1, zone2, zone3, zone4));
+		plantRepo.save(new Plant("Carrots", "Plant 3 to 4 inches apart with full sun view.", "/images/carrots.jpg",
+				zone1, zone2, zone3));
+		plantRepo.save(new Plant("Cauliflower", "Plant 18-24 inches apart.  Needs at least 6 hours of sunlight.",
+				"/images/cauliflower.jpg", zone1, zone2, zone3));
+		plantRepo.save(new Plant("Corn", "Plant 1 inch deep, 4-6 inches apart.  Needs full sun view.",
+				"/images/corn.jpg", zone1, zone2, zone3, zone4));
+		plantRepo.save(new Plant("Cucumber", "Plant 6-8 inches into the soil.  Needs full sun view.",
+				"/images/cucumber.jpg", zone1, zone2, zone3, zone4));
+		plantRepo.save(new Plant("Kale", "Plant 1/2 inch deep, seperate by 8-12 inches.  Needs full sun view.",
+				"/images/kale.jpg", zone1, zone2, zone3, zone4));
+		plantRepo.save(new Plant("Lettuce", "Plant 1/2 inch deep, 12-15 inches apart.  Needs partial sunlight.",
+				"/images/lettuce.jpg", zone1, zone2, zone3, zone4));
+		plantRepo.save(new Plant("Onions", "Plant 1 inch deep, 4-5 inches apart.  Needs full sun view.",
+				"/images/onions.jpg", zone1, zone2, zone3, zone4));
+		plantRepo.save(new Plant("Peas", "Plant 1 inch deep, 2 inches apart.  Needs a partial view of the sun.",
+				"/images/peas.jpg", zone1, zone2, zone3, zone4));
+		plantRepo.save(new Plant("Peppers",
+				" Needs soil temperatures of at least 65F, plant 18-24 inches apart.  Needs full sunlight.",
+				"/images/peppers.jpg", zone1, zone2, zone3, zone4));
+		plantRepo.save(new Plant("Spinach", "Plant to 1/2 inch deep.  Needs full sunlight.", "/images/spinach.jpg",
+				zone1, zone2, zone3));
+		plantRepo.save(new Plant("Squash", "Plant 1 inche deep, 2 to 3 feet apart.  Needs full sunlight. ",
+				"/images/squash.jpg", zone1, zone2, zone3));
+		plantRepo.save(new Plant("Tomatoes",
+				"Start in pots, transplant with stakes to ground tilled to one foot in depth.  Needs at least 6 hours of sunlight.",
+				"/images/tomatoes.jpg", zone1, zone2, zone3, zone4));
+		plantRepo.save(new Plant("Asparagus",
+				"Dig trench 6-12 inches deep, and six inches wide.  Plant crowns 15-18 inches apart.  Needs full sunlight.",
+				"/images/asparagus.jpg", zone1, zone2, zone3));
+		plantRepo
+				.save(new Plant("Cantaloupe", "Plant 1 inch deep, and about 18 inches apart.  Build onto small mounds.",
+						"/images/cantaloupe.jpg", zone1, zone2, zone3));
+		plantRepo.save(new Plant("Eggplant", "Plant 24-30 inches apart.  Need full sunlight.", "/images/eggplant.jpg",
+				zone1, zone2, zone3));
 		plantRepo.save(
-				new Plant("Brussel Sprouts", "description", "/images/brussel-sprouts.jpg", zone1, zone2, zone3, zone4));
-		plantRepo.save(new Plant("Cabbage", "description", "/images/cabbage.jpg", zone1, zone2, zone3, zone4));
-		plantRepo.save(new Plant("Carrots", "description", "/images/carrots.jpg", zone1, zone2, zone3));
-		plantRepo.save(new Plant("Cauliflower", "description", "/images/cauliflower.jpg", zone1, zone2, zone3));
-		plantRepo.save(new Plant("Corn", "description", "/images/corn.jpg", zone1, zone2, zone3, zone4));
-		plantRepo.save(new Plant("Cucumber", "description", "/images/cucumber.jpg", zone1, zone2, zone3, zone4));
-		plantRepo.save(new Plant("Kale", "description", "/images/kale.jpg", zone1, zone2, zone3, zone4));
-		plantRepo.save(new Plant("Lettuce", "description", "/images/lettuce.jpg", zone1, zone2, zone3, zone4));
-		plantRepo.save(new Plant("Onions", "description", "/images/onions.jpg", zone1, zone2, zone3, zone4));
-		plantRepo.save(new Plant("Peas", "description", "/images/peas.jpg", zone1, zone2, zone3, zone4));
-		plantRepo.save(new Plant("Peppers", "description", "/images/peppers.jpg", zone1, zone2, zone3, zone4));
-		plantRepo.save(new Plant("Spinach", "description", "/images/spinach.jpg", zone1, zone2, zone3));
-		plantRepo.save(new Plant("Squash", "description", "/images/squash.jpg", zone1, zone2, zone3));
-		plantRepo.save(new Plant("Tomatoes", "description", "/images/tomatoes.jpg", zone1, zone2, zone3, zone4));
-		plantRepo.save(new Plant("Asparagus", "description", "/images/asparagus.jpg", zone1, zone2, zone3));
-		plantRepo.save(new Plant("Cantaloupe", "description", "/images/cantaloupe.jpg", zone1, zone2, zone3));
-		plantRepo.save(new Plant("Eggplant", "description", "/images/eggplant.jpg", zone1, zone2, zone3));
-		plantRepo.save(new Plant("Pumpkins", "description", "/images/pumpkins.jpg", zone1, zone2, zone3, zone4));
-		plantRepo.save(new Plant("Potatoes", "description", "/images/potatoes.jpg", zone1, zone2, zone3));
-		plantRepo.save(new Plant("Watermelon", "description", "/images/watermelon.jpg", zone1, zone2, zone3));
-		plantRepo.save(new Plant("Radishes", "description", "/images/radishes.jpg", zone1, zone2, zone3, zone4));
+				new Plant("Pumpkins", "Plant 1 inch deep, 6-8 feet apart.  Does really well on a hill facing the sun.",
+						"/images/pumpkins.jpg", zone1, zone2, zone3, zone4));
+		plantRepo.save(new Plant("Potatoes",
+				"Dig trenches 6 inches wide, and 8 inches deep.  Plant the potatoes every 6 inches, then cover with 3-4 inches of soil.  Needs full sunlight.",
+				"/images/potatoes.jpg", zone1, zone2, zone3));
+		plantRepo.save(new Plant("Watermelon",
+				"Grow well on hills facing the sun.  Plant at least 2-6 feet apart from each other.",
+				"/images/watermelon.jpg", zone1, zone2, zone3));
+		plantRepo.save(new Plant("Radishes", "Plant 1/2 inch deep, 12 inches apart.  Need full sunlight.",
+				"/images/radishes.jpg", zone1, zone2, zone3, zone4));
 		plantRepo.save(new Plant("Strawberries", "description", "/images/strawberry.jpg", zone1, zone2, zone3));
-		plantRepo.save(new Plant("Zucchini", "description", "/images/zucchini.jpg", zone4));
-		plantRepo.save(new Plant("Agave", "description", "/images/agave.jpg", zone4));
-		plantRepo.save(new Plant("Avocado", "description", "/images/avocado.jpg", zone4));
-		plantRepo.save(new Plant("Banana", "description", "/images/banana.jpg", zone4));
-		plantRepo.save(new Plant("Pineapple", "description", "/images/pineapple.jpg", zone4));
+		plantRepo.save(new Plant("Zucchini", "Plant 1 inche deep, 2 to 3 feet apart.  Needs full sunlight. ",
+				"/images/zucchini.jpg", zone4));
+		plantRepo.save(new Plant("Agave", "Needs to planted to a depth of 12 inches, needs a full view of the sun.",
+				"/images/agave.jpg", zone4));
+		plantRepo.save(new Plant("Avocado",
+				"Dig hole with a depth of atleast 12 inches.  When the tree starts to sprout stake it to help facilitate growth.",
+				"/images/avocado.jpg", zone4));
+		plantRepo.save(new Plant("Banana",
+				"Plant with a depth of at least 6 inches.  Needs to be blocked from the wind if possible.",
+				"/images/banana.jpg", zone4));
+		plantRepo.save(new Plant("Pineapple",
+				"Start in a pot, let grow for 2-3 months before transplanting outside to allow roots to grow.",
+				"/images/pineapple.jpg", zone4));
 	}
 
 }
