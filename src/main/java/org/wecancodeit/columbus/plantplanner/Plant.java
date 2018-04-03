@@ -26,20 +26,20 @@ public class Plant {
 		return zones;
 	}
 
-	public Plant() {
-	}
-
-	public Plant(String name, Zone... zones) {
-		this.name = name;
-		this.zones = new HashSet<>(asList(zones));
-	}
-
 	public long getId() {
 		return id;
 	}
 
 	public String getName() {
 		return name;
+	}
+
+	public Plant() {
+	}
+
+	public Plant(String name, Zone... zones) {
+		this.name = name;
+		this.zones = new HashSet<>(asList(zones));
 	}
 
 	@Override

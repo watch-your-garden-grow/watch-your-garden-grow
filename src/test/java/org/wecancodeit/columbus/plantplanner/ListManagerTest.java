@@ -1,6 +1,5 @@
 package org.wecancodeit.columbus.plantplanner;
 
-import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
@@ -69,7 +68,7 @@ public class ListManagerTest {
 		PlantDouble testPlant4 = new PlantDouble("Tomatoes", sixA, fiveA);
 		PlantDouble testPlant5 = new PlantDouble("Peas", sixA);
 		PlantDouble testPlant6 = new PlantDouble("Grapes", sixA, sixB);
-		
+
 		List<PlantDouble> plantDoubles = new ArrayList<>();
 
 		plantDoubles.add(testPlant3);
