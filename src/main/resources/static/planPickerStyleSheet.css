@@ -1,0 +1,119 @@
+*{
+	/*outline: 1px solid red;*/
+	/*background-color: green;*/
+	/*font-color: yellow;*/
+	padding: 0px;
+}
+a:link{
+	color: yellow;
+}
+
+.container{
+	display: grid;
+	grid-template-columns: 3rem, 6rem, 5rem, auto, 2rem;
+	grid-gap: 1rem;
+	background-color: black;
+
+}
+
+body{
+	background-color: green;
+}
+header{
+	background-color: yellow;
+	display: flex;
+	justify-content: center;
+}
+
+.enterZipCode{
+	background-color: cyan;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+.enterZipCode input{
+	height: 2rem;
+	width: 6rem;
+	font-size: 1.5rem;
+	margin-left: .25rem;
+	margin-right: .50rem;
+}
+.currentPlanLink{
+	background-color: darkgrey;
+}
+
+.zipAndPlanLink{
+	background-color: grey;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+
+}
+
+.hardinessZone{
+	background-color: lightgrey;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	align-self: center;
+}
+
+.sectionForAllPlantsForHardinessZone{
+	display: grid;
+	grid-template-rows: 4rem auto;
+	background-color: purple;
+	align-self: center;
+	align-items: center;
+
+}
+.plantResultListTitle{
+	display: flex;
+	justify-content: center;
+}
+
+.listOfEachPlantForHardinessZone {	
+	background-color: blue;
+	margin-right: 18rem;
+	margin-left: 18rem;
+}
+
+button{
+	height: 2rem;
+	width: 6rem;
+}
+
+
+ul{
+
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+li{
+	display: flex;
+	flex-direction: column;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	align-items: center;
+}
+
+.addToPlanButton{
+	background-color: purple;
+	margin-top:.45rem;
+	margin-bottom: 1.9rem;
+}
+
+.listOfEachPlantForHardinessZone li img {
+	width: 8rem;
+	height: 8rem;
+	/*display: flex;*/
+}
+.listOfEachPlantForHardinessZone li a {
+	margin-top: .5rem;
+}
+
+footer{
+	display: flex;
+	justify-content: space-around;
+	background-color: orange;
+}
