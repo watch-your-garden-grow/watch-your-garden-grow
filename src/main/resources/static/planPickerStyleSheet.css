@@ -1,6 +1,10 @@
 *{
 	/*outline: 1px solid red;*/
 	/*background-color: green;*/
+	/*font-color: yellow;*/
+}
+a:link{
+	color: yellow;
 }
 
 .container{
@@ -46,26 +50,30 @@ grid-template-columns: 1fr 1fr;
 
 .hardinessZone{
 	background-color: lightgrey;
-	/*display: flex;
-	justify-content: center;*/
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	align-items: center;
+	align-self: center;
 }
 
-.hardinessZoneResult{
-/*	display: flex;
-	justify-content: center;*/
-
-}
 .sectionForAllPlantsForHardinessZone{
-/*	display: flex;
-	flex-direction: column;*/
+display: grid;
+grid-template-rows: 4rem auto;
 	background-color: purple;
-}
+	align-self: center;
+	align-items: center;
 
+}
+.plantResultListTitle{
+	display: flex;
+	justify-content: center;
+}
 
 .listOfEachPlantForHardinessZone {	
-	height: 400px;
 	background-color: blue;
+	margin-right: 18rem;
+	margin-left: 18rem;
 }
 
 button{
@@ -73,28 +81,21 @@ button{
 	width: 6rem;
 }
 
+
 ul{
-/*	display:flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: left;
-	align-content: center;*/
-	display: flex;
-	flex-direction: row;
-	/*background-color: pink;*/
-	
+
+	display: grid;
+	grid-template-columns: 1fr 1fr;
 }
 
 li{
-
-	height: 100px;
-	list-style-type: none;
-
+	margin-top: 1rem;
+	margin-bottom: 1rem;
 }
 
 .listOfEachPlantForHardinessZone li img {
-	width: 4rem;
-	height: 4rem;
+	width: 8rem;
+	height: 8rem;
 	/*display: flex;*/
 }
 
