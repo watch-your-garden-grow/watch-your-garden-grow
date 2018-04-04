@@ -12,21 +12,14 @@ public class Zone {
 
 	@Id
 	@GeneratedValue
-	private long id;
+	private Long id;
+
+	private String zone;
 
 	@ManyToMany(mappedBy = "zones")
 	private Collection<Plant> plants;
 
-	private String zone;
-
-	public Zone() {
-	}
-
-	public Zone(String zone) {
-		this.zone = zone;
-	}
-
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
@@ -36,6 +29,13 @@ public class Zone {
 
 	public Collection<Plant> getPlants() {
 		return plants;
+	}
+
+	public Zone() {
+	}
+
+	public Zone(String zone) {
+		this.zone = zone;
 	}
 
 	@Override
