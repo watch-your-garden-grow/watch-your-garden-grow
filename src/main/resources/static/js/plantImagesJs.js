@@ -51,8 +51,3 @@ zipCodeSubmitButton.addEventListener('click', function(event){
 // 	xhr.open('GET', '/plants', true)
 // 	xhr.send()
 // }
-
-// function postPlants(name){
-// xhr.open('POST', '/plants/' + name, true)
-// xhr.send()
-// }
