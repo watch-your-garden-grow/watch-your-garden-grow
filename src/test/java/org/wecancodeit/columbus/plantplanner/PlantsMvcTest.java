@@ -79,4 +79,9 @@ public class PlantsMvcTest {
 		when(zoneRepo.findOneByZone("42")).thenReturn(new Zone("6a"));
 		mvc.perform(get("/plants/zipcode/43229")).andExpect(status().isOk());
 	}
+	
+	@Test
+	public void shouldNotFindInvalidZipcode() throws Exception {
+		mvc.perform(get("/plants/zipcode/3323111")).andExpect(status().isNotFound());
+	}
 }
