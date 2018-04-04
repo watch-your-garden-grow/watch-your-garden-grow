@@ -5,8 +5,8 @@ import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 
@@ -14,18 +14,17 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class PrismZoneData {
+@IdClass(PrismZoneDataId.class)
+public class PrismZoneData  {
 
-	
-	@Id
-	@GeneratedValue
-	private Long id;
-	
+
 	@Transient 
 	String zipcode;
+	
+	@Id
 	private String zone;
 	
-	
+	@Id
 	private String trange; 
 	private String zonetitle; 
 	
@@ -81,10 +80,6 @@ public class PrismZoneData {
 		this.zonetitle = zonetitle;
 	}
 
-	public Long getId() {
-		return id;
-	}
-	
 	@Override
 	public String toString() {
 		return "PrismZoneData [zone=" + zone + ", trange=" + trange + ", zonetitle=" + zonetitle + "]";
@@ -99,7 +94,7 @@ public class PrismZoneData {
 		this.zipcode = zipcode;
 	}
 
-	
-	
-	
+
+	 
+	 
 }
