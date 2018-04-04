@@ -20,6 +20,8 @@ public class Plant {
 	private long id;
 
 	private String name;
+	private String image;
+	private String description;
 	
 	@JsonIgnore
 	@ManyToMany
@@ -27,6 +29,16 @@ public class Plant {
 
 	public Set<Zone> getZones() {
 		return zones;
+	}
+
+	public Plant() {
+	}
+
+	public Plant(String name, String description, String image, Zone... zones) {
+		this.name = name;
+		this.description = description;
+		this.image = image;
+		this.zones = new HashSet<>(asList(zones));
 	}
 
 	public long getId() {
@@ -37,12 +49,12 @@ public class Plant {
 		return name;
 	}
 
-	public Plant() {
+	public String getDescription() {
+		return description;
 	}
 
-	public Plant(String name, Zone... zones) {
-		this.name = name;
-		this.zones = new HashSet<>(asList(zones));
+	public String getImage() {
+		return image;
 	}
 
 	@Override
