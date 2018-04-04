@@ -36,6 +36,18 @@ public class PlantControllerTest {
 	@Mock
 	private Zone zone;
 
+	@Mock
+	private ZipCodeLocality zipcode;
+	
+	@Mock
+	private PrismZoneData hardinessZone;
+	
+	@Mock
+	private PrismZoneDataRepository hardinessZoneRepo;
+	
+	@Mock
+	private ZipCodeLocalityRepository zipCodeRepo;
+	
 	@Before
 	public void setup() {
 		MockitoAnnotations.initMocks(this);
@@ -88,8 +100,31 @@ public class PlantControllerTest {
 		Long zoneId = 3L;
 		when(zoneRepo.findOne(zoneId)).thenReturn(zone);
 		when(zone.getPlants()).thenReturn(Collections.singleton(plant));
-		Iterable<Plant> result = underTest.findPlantsByZone(zoneId);
+		Iterable<Plant> result = underTest.findPlantsByZoneId(zoneId);
 		assertThat(result, contains(plant));
 	}
 
+	@Test
+	public void shouldReturnAPlantHardinessZoneForAGivenZipcode() {
+		when(zipCodeRepo.findZoneByZipCode("43221")).thenReturn("42");
+		String result = underTest.findPhzByZipcode("43221");
+		assertThat(result, is("42"));
+	}
+	
+	@Test
+	public void shouldReturnAListOfPlantsForAGivenPhzName() {
+		when(zoneRepo.findOneByZone("6a")).thenReturn(zone);
+		when(zone.getPlants()).thenReturn(Collections.singleton(plant));
+		Iterable<Plant> result = underTest.findPlantsByZone("6a");
+		assertThat(result, contains(plant));
+	}
+	
+	@Test
+	public void shouldReturnAListOfPlantsForAGivenZipcode() {
+		when(zipCodeRepo.findZoneByZipCode("43229")).thenReturn("6a");
+		when(zoneRepo.findOneByZone("6a")).thenReturn(zone);
+		when(zone.getPlants()).thenReturn(Collections.singleton(plant));
+		Iterable<Plant> result = underTest.findPlantsByZipcode("43229");
+		assertThat(result, contains(plant));
+	}
 }
