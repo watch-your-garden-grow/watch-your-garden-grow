@@ -68,7 +68,7 @@ public class PlantPopulator implements CommandLineRunner {
 				"/images/celery.jpg", zone5, zone10, zone11, zone12, zone13, zone14, zone15, zone16, zone17, zone18,
 				zone19, zone20, zone21));
 		plantRepo.save(new Plant("Carrots", "Plant 3 to 4 inches apart with full sun view.", "/images/carrots.jpg",
-				zone1, zone2, zone3));
+				zone1, zone2, zone3, zone12, zone13, zone14, zone15, zone16, zone17, zone18, zone19, zone20, zone21));
 		plantRepo.save(new Plant("Cauliflower", "Plant 18-24 inches apart.  Needs at least 6 hours of sunlight.",
 				"/images/cauliflower.jpg", zone1, zone2, zone3, zone22));
 		plantRepo.save(new Plant("Corn", "Plant 1 inch deep, 4-6 inches apart.  Needs full sun view.",
@@ -114,7 +114,8 @@ public class PlantPopulator implements CommandLineRunner {
 				zone12, zone13, zone14, zone15, zone16, zone17, zone18, zone19, zone20, zone21, zone22));
 		plantRepo.save(new Plant("Asparagus",
 				"Dig trench 6-12 inches deep, and six inches wide.  Plant crowns 15-18 inches apart.  Needs full sunlight.",
-				"/images/asparagus.jpg", zone1, zone2, zone3));
+				"/images/asparagus.jpg", zone1, zone2, zone3, zone5, zone12, zone13, zone14, zone15, zone16, zone17,
+				zone18, zone19));
 		plantRepo
 				.save(new Plant("Cantaloupe", "Plant 1 inch deep, and about 18 inches apart.  Build onto small mounds.",
 						"/images/cantaloupe.jpg", zone1, zone2, zone3));
@@ -127,7 +128,8 @@ public class PlantPopulator implements CommandLineRunner {
 				zone12, zone13, zone14, zone15, zone16, zone17, zone18, zone19, zone20, zone21, zone22));
 		plantRepo.save(new Plant("Potatoes",
 				"Dig trenches 6 inches wide, and 8 inches deep.  Plant the potatoes every 6 inches, then cover with 3-4 inches of soil.  Needs full sunlight.",
-				"/images/potatoes.jpg", zone1, zone2, zone3));
+				"/images/potatoes.jpg", zone1, zone2, zone3, zone6, zone7, zone8, zone9, zone10, zone11, zone12, zone13,
+				zone14, zone15, zone16));
 		plantRepo.save(new Plant("Watermelon",
 				"Grow well on hills facing the sun.  Plant at least 2-6 feet apart from each other.",
 				"/images/watermelon.jpg", zone1, zone2, zone3));
