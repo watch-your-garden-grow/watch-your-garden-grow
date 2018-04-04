@@ -43,13 +43,17 @@ public class PlantController {
 		if (zoneRepo.findOne(id) == null) {
 			throw new SomethingNotFoundException();
 		}
-		
+
 		return zoneRepo.findOne(id);
 	}
-	
+
 	@RequestMapping("/zone/{id}")
-	public Iterable<Plant> findPlantsByZone(@PathVariable(name = "id") Long id) {
+	public Iterable<Plant> findPlantsByZoneId(@PathVariable(name = "id") Long id) {
 		return zoneRepo.findOne(id).getPlants();
+	}
+
+	public Iterable<Plant> findPlantsByZone(String zone) {
+		return zoneRepo.findOneByZone(zone).getPlants();
 	}
 
 	@RequestMapping("/zipcode/{zipcode}")
@@ -60,6 +64,7 @@ public class PlantController {
 	@SuppressWarnings("serial")
 	@ResponseStatus(HttpStatus.NOT_FOUND)
 	public class SomethingNotFoundException extends RuntimeException {
-		
+
 	}
+
 }

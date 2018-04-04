@@ -22,10 +22,10 @@ public class PlantPopulator implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		Zone zone1 = createZone("Zone 6A");
-		Zone zone2 = createZone("Zone 6B");
-		Zone zone3 = createZone("Zone 5B");
-		Zone zone4 = createZone("Zone 11A");
+		Zone zone1 = createZone("6a");
+		Zone zone2 = createZone("6b");
+		Zone zone3 = createZone("5b");
+		Zone zone4 = createZone("11a");
 
 		plantRepo.save(new Plant("Beans", zone1, zone2, zone3, zone4));
 		plantRepo.save(new Plant("Beets", zone1, zone2, zone3, zone4));
