@@ -10,6 +10,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class PlantPlannerJpaTest {
 
 	@Test
-	public void shouldInitializeJpa() {}
-	
+	public void shouldInitializeJpa() {
+	}
+
 }

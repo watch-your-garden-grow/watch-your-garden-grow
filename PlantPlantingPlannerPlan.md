@@ -1,0 +1,6 @@
+# How To Plan a Garden
+## Things We Need To Make A Gardeen Grow
+### Data Needed
+- Plant Hardiness Zone(PHZ) - A dataset that helps determine what kind of plants are suitable for a garden based on the historic weather data for the garden's area.  Available as an API or can be captured and imported into the application as a JSON object.  The dataset pairs zipcodes with hardiness zones and returns lat/long coordinates. [PHZMAPI](https://phzmapi.org/43209.json)
+- Historic Last/First Frost Date - A dataset that helps determine when the plants should be planted.  Available as an API from [FarmSense](http://www.farmsense.net/api/frost-date-api/).  This API provides a set of dates that correspond with a given weather stations historical weather data.  This set of dates corrisponds with the probability of the date given being the last frost date for an area.  The API provides a search function to return the closest weather station based on latitude and longitude.
+- Plant Planting Guide - A list of plants and what PHZ they grow in.  The other data we need is a general suggested palnting date, sometimes based off of the last frost date, or the first frost date in the fall.  We will probably have to build this data set out ourselves.

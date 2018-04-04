@@ -10,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Plant {
 
@@ -18,9 +20,14 @@ public class Plant {
 	private long id;
 
 	private String name;
+<<<<<<< HEAD
 	private String image;
 	private String description;
 
+=======
+	
+	@JsonIgnore
+>>>>>>> list-manager
 	@ManyToMany
 	private Set<Zone> zones;
 
@@ -28,6 +35,7 @@ public class Plant {
 		return zones;
 	}
 
+<<<<<<< HEAD
 	public Plant() {
 	}
 
@@ -38,6 +46,8 @@ public class Plant {
 		this.zones = new HashSet<>(asList(zones));
 	}
 
+=======
+>>>>>>> list-manager
 	public long getId() {
 		return id;
 	}
@@ -46,12 +56,21 @@ public class Plant {
 		return name;
 	}
 
+<<<<<<< HEAD
 	public String getDescription() {
 		return description;
 	}
 
 	public String getImage() {
 		return image;
+=======
+	public Plant() {
+	}
+
+	public Plant(String name, Zone... zones) {
+		this.name = name;
+		this.zones = new HashSet<>(asList(zones));
+>>>>>>> list-manager
 	}
 
 	@Override

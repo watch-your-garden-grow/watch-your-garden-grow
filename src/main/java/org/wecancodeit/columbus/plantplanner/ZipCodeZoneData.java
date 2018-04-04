@@ -8,27 +8,18 @@ import javax.persistence.Id;
 public class ZipCodeZoneData {
 
 	private String city;
-	
+
 	@Id
 	@GeneratedValue
 	private Long id;
-	
+
 	private int latitude;
 	private int longitude;
 	private String state;
-	private String tempuratures; 
+	private String tempuratures;
 	private String zipcode;
 	private String zone;
 
-	public ZipCodeZoneData() {
-	}
-
-	public ZipCodeZoneData(String zipcode, String zone) {
-		this.zipcode = zipcode;
-		this.zone = zone;
-	}
-
-	
 	public String getCity() {
 		return city;
 	}
@@ -57,6 +48,14 @@ public class ZipCodeZoneData {
 		return zone;
 	}
 
+	public ZipCodeZoneData() {
+	}
+
+	public ZipCodeZoneData(String zipcode, String zone) {
+		this.zipcode = zipcode;
+		this.zone = zone;
+	}
+
 	public void setCity(String city) {
 		this.city = city;
 	}
@@ -76,12 +75,11 @@ public class ZipCodeZoneData {
 	public void setTempuratures(String tempuratures) {
 		this.tempuratures = tempuratures;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "ZipCodeZoneData [zipcode=" + zipcode + ", zone=" + zone + ", latitude=" + latitude + ", longitude="
 				+ longitude + ", city=" + city + ", state=" + state + ", tempuratures=" + tempuratures + "]";
 	}
 
-	
 }
