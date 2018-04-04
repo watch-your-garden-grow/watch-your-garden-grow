@@ -22,7 +22,7 @@ public class Plant {
 	private String name;
 	private String image;
 	private String description;
-	
+
 	@JsonIgnore
 	@ManyToMany
 	private Set<Zone> zones;

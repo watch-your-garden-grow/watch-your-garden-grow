@@ -32,9 +32,8 @@ public class ZoneDataPopulator implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-	
-		CsvSchema geoNameSchema = CsvSchema.builder().setColumnSeparator('\t')
-				.addColumn("") // country code : iso 2 char
+		CsvSchema geoNameSchema = CsvSchema.builder().setColumnSeparator('\t').addColumn("") // country code : iso 2
+																								// char
 				.addColumn("zipcode") // postal code : varchar(20)
 				.addColumn("city") // place name : varchar(180)
 				.addColumn("stateFull") // admin name1 : 1. order subdivision (state) varchar(100)
@@ -83,6 +82,5 @@ public class ZoneDataPopulator implements CommandLineRunner {
 		}
 
 	}
-
 
 }

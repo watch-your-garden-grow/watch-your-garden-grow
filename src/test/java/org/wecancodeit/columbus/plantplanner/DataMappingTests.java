@@ -23,16 +23,16 @@ public class DataMappingTests {
 
 	ZipCodeLocality localityUnderTest;
 	PrismZoneData prismDataUnderTest;
-	
+
 	@Before
 	public void runOnce() {
-	localityUnderTest = new ZipCodeLocality();
-	localityUnderTest.setZipcode("TESTTEST");
-	localityUnderTest= zipCodeLocalityRepo.save(localityUnderTest);
-	
-	prismDataUnderTest = new PrismZoneData("", "42");
-	localityUnderTest = zipCodeLocalityRepo.save(localityUnderTest.addZoneData(prismDataUnderTest));
-	prismDataUnderTest = prismZoneDataRepo.save(prismDataUnderTest);
+		localityUnderTest = new ZipCodeLocality();
+		localityUnderTest.setZipcode("TESTTEST");
+		localityUnderTest = zipCodeLocalityRepo.save(localityUnderTest);
+
+		prismDataUnderTest = new PrismZoneData("", "42");
+		localityUnderTest = zipCodeLocalityRepo.save(localityUnderTest.addZoneData(prismDataUnderTest));
+		prismDataUnderTest = prismZoneDataRepo.save(prismDataUnderTest);
 
 	}
 
@@ -51,6 +51,5 @@ public class DataMappingTests {
 	public void checkThatfindZoneByZipCodeReturnsZoneData() {
 		assertThat(zipCodeLocalityRepo.findZoneByZipCode("TESTTEST"), is("42"));
 	}
-	
 
 }

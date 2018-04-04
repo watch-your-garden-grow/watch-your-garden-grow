@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class PlantController {
+public class PlantRestController {
 
 	@Resource
 	private PlantRepository plantRepo;
@@ -61,7 +61,7 @@ public class PlantController {
 		return zipCodeRepo.findZoneByZipCode(zipcode);
 	}
 
-	@RequestMapping("/zipcodeplants/{zipcode}")
+	@RequestMapping("/plants/zipcode/{zipcode}")
 	public Iterable<Plant> findPlantsByZipcode(@PathVariable(name = "zipcode") String zipcode) {
 		String zoneName = zipCodeRepo.findZoneByZipCode(zipcode);
 		Zone targetZone = zoneRepo.findOneByZone(zoneName);
