@@ -25,7 +25,7 @@
 					<input type="text"></input>
 				</div>
 				<div class = "submitZipCodeButton">
-					<button type="submit" action="/add-zipcode" value="${zipCode.id}">Submit ZipCode</button>
+					<button type="submit" id = "zipCodeSubmitButton">Submit ZipCode</button>
 				</div>
 			</div>	
 			</form>
@@ -51,7 +51,7 @@
 			<h2>List Of Plants Per Hardiness Zone: *Populate zone </h2>
 		</div>
 		<div class="listOfEachPlantForHardinessZone">
-			<ul>
+			<ul id ="plantImageContainer">
 			<!-- 	With ThymeLeaf Call To Display Each Product -->
 			<!-- 	<div class = "listOfEachPlantForHardinessZoneTL" th:each="zone: ${plants}">
 					<ul>
@@ -61,7 +61,7 @@
 					</ul>
 				</div>  -->
 
-				<li><img src="images/tomato.jpg" alt="tomato"></a><a href= "TomatoLink">*Return from form input</a><button class = "addToPlanButton">Add to Plan</button></li>
+				<li id = "newPlantListItem"><img src="images/tomato.jpg" alt="tomato"></a><a href= "TomatoLink">*Return from form input</a><button class = "addToPlanButton">Add to Plan</button></li>
 				<li><img src="images/tomato.jpg" alt="beanfactory"></a><a href= "BeanFactoryPink">BeanFactory</a><button class = "addToPlanButton">Add to Plan</button></li>
 				<li><img src="images/tomato.jpg" alt="Carrots"><a href= "CarrotsLink">Carrots</a></a><button class = "addToPlanButton">Add to Plan</button></li>
 				<li><img src="images/strawberries.jpg" alt="Strawberries"><a href= "StrawberriesLink">Strawberries</a></a><button class = "addToPlanButton">Add to Plan</button></li>
@@ -80,5 +80,6 @@
 <h3>04/02/2018</h3>
 </footer>
 </div>
+<script src="js/plantImagesJs.js"></script>
 </body>
 </html>
