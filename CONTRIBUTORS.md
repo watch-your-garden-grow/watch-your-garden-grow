@@ -9,5 +9,4 @@ This file lists the contributors to the Grow Your Garden project.
 | [@kaseycolian](https://github.com/kaseycolian) | Kasey Colian |
 | [@notKasey](https://github.com/notKasey) | NotKasey NotColian |
 | [@RyanK1979](https://github.com/RyanK1979) | Ryan Kuhn |
-
-
+| [@WillieT1986](https://github.com/WillieT1986) | William R Thompson Jr |
