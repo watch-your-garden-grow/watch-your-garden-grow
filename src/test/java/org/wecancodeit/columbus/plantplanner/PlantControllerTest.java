@@ -118,4 +118,13 @@ public class PlantControllerTest {
 		Iterable<Plant> result = underTest.findPlantsByZone("6a");
 		assertThat(result, contains(plant));
 	}
+	
+	@Test
+	public void shouldReturnAListOfPlantsForAGivenZipcode() {
+		when(zipCodeRepo.findZoneByZipCode("43229")).thenReturn("6a");
+		when(zoneRepo.findOneByZone("6a")).thenReturn(zone);
+		when(zone.getPlants()).thenReturn(Collections.singleton(plant));
+		Iterable<Plant> result = underTest.findPlantsByZipcode("43229");
+		assertThat(result, contains(plant));
+	}
 }

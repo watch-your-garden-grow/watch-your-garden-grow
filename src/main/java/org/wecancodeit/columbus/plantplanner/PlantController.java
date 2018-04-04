@@ -61,10 +61,16 @@ public class PlantController {
 		return zipCodeRepo.findZoneByZipCode(zipcode);
 	}
 
+	@RequestMapping("/zipcodeplants/{zipcode}")
+	public Iterable<Plant> findPlantsByZipcode(@PathVariable(name = "zipcode") String zipcode) {
+		String zoneName = zipCodeRepo.findZoneByZipCode(zipcode);
+		Zone targetZone = zoneRepo.findOneByZone(zoneName);
+		return targetZone.getPlants();
+	}
+
 	@SuppressWarnings("serial")
 	@ResponseStatus(HttpStatus.NOT_FOUND)
 	public class SomethingNotFoundException extends RuntimeException {
 
 	}
-
 }
