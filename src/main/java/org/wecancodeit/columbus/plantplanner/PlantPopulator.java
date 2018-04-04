@@ -112,6 +112,7 @@ public class PlantPopulator implements CommandLineRunner {
 				"Start in pots, transplant with stakes to ground tilled to one foot in depth.  Needs at least 6 hours of sunlight.",
 				"/images/tomatoes.jpg", zone1, zone2, zone3, zone4, zone5, zone6, zone7, zone8, zone9, zone10, zone11,
 				zone12, zone13, zone14, zone15, zone16, zone17, zone18, zone19, zone20, zone21, zone22));
+
 		plantRepo.save(new Plant("Asparagus",
 				"Dig trench 6-12 inches deep, and six inches wide.  Plant crowns 15-18 inches apart.  Needs full sunlight.",
 				"/images/asparagus.jpg", zone1, zone2, zone3));
@@ -152,7 +153,6 @@ public class PlantPopulator implements CommandLineRunner {
 		plantRepo.save(new Plant("Pineapple",
 				"Start in a pot, let grow for 2-3 months before transplanting outside to allow roots to grow.",
 				"/images/pineapple.jpg", zone4));
-
 	}
 
 }
