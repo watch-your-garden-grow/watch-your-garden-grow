@@ -17,6 +17,9 @@ public class PlantController {
 	@Resource
 	private ZoneRepository zoneRepo;
 
+	@Resource
+	private ZipCodeLocalityRepository zipCodeRepo;
+
 	@RequestMapping("/plants")
 	public Iterable<Plant> findPlants() {
 		return plantRepo.findAll();
@@ -49,9 +52,14 @@ public class PlantController {
 		return zoneRepo.findOne(id).getPlants();
 	}
 
+	@RequestMapping("/zipcode/{zipcode}")
+	public String findPhzByZipcode(@PathVariable(name = "zipcode") String zipcode) {
+		return zipCodeRepo.findZoneByZipCode(zipcode);
+	}
+
 	@SuppressWarnings("serial")
 	@ResponseStatus(HttpStatus.NOT_FOUND)
 	public class SomethingNotFoundException extends RuntimeException {
-
+		
 	}
 }

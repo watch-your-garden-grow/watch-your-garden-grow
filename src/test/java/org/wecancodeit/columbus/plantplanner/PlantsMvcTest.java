@@ -25,6 +25,9 @@ public class PlantsMvcTest {
 
 	@MockBean
 	private ZoneRepository zoneRepo;
+	
+	@MockBean
+	private ZipCodeLocalityRepository zipcodeRepo;
 
 	@Test
 	public void shouldRetrievePlants() throws Exception {
@@ -64,4 +67,9 @@ public class PlantsMvcTest {
 		mvc.perform(get("/zone/3")).andExpect(status().isOk());
 	}
 
+	@Test
+	public void shouldRetrievePhzFromZipcode() throws Exception {
+		when(zipcodeRepo.findZoneByZipCode("43229")).thenReturn("42");
+		mvc.perform(get("/zipcode/43229")).andExpect(status().isOk());
+	}
 }
