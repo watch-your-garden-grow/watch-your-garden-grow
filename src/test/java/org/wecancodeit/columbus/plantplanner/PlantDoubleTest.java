@@ -12,7 +12,7 @@ public class PlantDoubleTest {
 		Zone six = new Zone("6");
 		Zone five = new Zone("5");
 
-		Plant testPlant4 = new Plant("Lettuce", six, five);
+		Plant testPlant4 = new Plant("Lettuce", "", "", six, five);
 
 		assertThat(testPlant4.getZones(), containsInAnyOrder(six, five));
 	}

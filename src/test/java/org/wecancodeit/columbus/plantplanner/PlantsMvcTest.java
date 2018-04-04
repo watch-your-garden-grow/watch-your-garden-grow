@@ -36,7 +36,7 @@ public class PlantsMvcTest {
 
 	@Test
 	public void shouldRetrieveIndividualPlant() throws Exception {
-		when(plantRepo.findOne(3L)).thenReturn(new Plant("Tomato"));
+		when(plantRepo.findOne(3L)).thenReturn(new Plant("Tomato", "", ""));
 		mvc.perform(get("/plants/3")).andExpect(status().isOk());
 	}
 
