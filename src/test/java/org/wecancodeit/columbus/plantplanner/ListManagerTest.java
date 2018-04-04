@@ -19,9 +19,9 @@ public class ListManagerTest {
 
 	private ListManager underTest = new ListManager();
 
-	private Plant testPlant3 = new Plant("Corn", sixA, sixB);
-	private Plant testPlant = new Plant("Tomato", sixA);
-	private Plant testPlant2 = new Plant("Pineapple", tenA);
+	private Plant testPlant3 = new Plant("Corn", "", "", sixA, sixB);
+	private Plant testPlant = new Plant("Tomato", "", "", sixA);
+	private Plant testPlant2 = new Plant("Pineapple", "", "", tenA);
 
 	@Test
 	public void shouldReturnTrueIfPlantIsInAGivenZone() {
@@ -65,9 +65,9 @@ public class ListManagerTest {
 
 	@Test
 	public void shouldOnlyReturnPlantsWithSpecificHardinessZone() {
-		Plant testPlant4 = new Plant("Tomatoes", sixA, fiveA);
-		Plant testPlant5 = new Plant("Peas", sixA);
-		Plant testPlant6 = new Plant("Grapes", sixA, sixB);
+		Plant testPlant4 = new Plant("Tomatoes", "", "", sixA, fiveA);
+		Plant testPlant5 = new Plant("Peas", "", "", sixA);
+		Plant testPlant6 = new Plant("Grapes", "", "", sixA, sixB);
 
 		List<Plant> plantDoubles = new ArrayList<>();
 

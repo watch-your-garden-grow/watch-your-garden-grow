@@ -17,6 +17,9 @@ public class PlantController {
 	@Resource
 	private ZoneRepository zoneRepo;
 
+	@Resource
+	private ZipCodeLocalityRepository zipCodeRepo;
+
 	@RequestMapping("/plants")
 	public Iterable<Plant> findPlants() {
 		return plantRepo.findAll();
@@ -40,13 +43,29 @@ public class PlantController {
 		if (zoneRepo.findOne(id) == null) {
 			throw new SomethingNotFoundException();
 		}
-		
+
 		return zoneRepo.findOne(id);
 	}
-	
+
 	@RequestMapping("/zone/{id}")
-	public Iterable<Plant> findPlantsByZone(@PathVariable(name = "id") Long id) {
+	public Iterable<Plant> findPlantsByZoneId(@PathVariable(name = "id") Long id) {
 		return zoneRepo.findOne(id).getPlants();
+	}
+
+	public Iterable<Plant> findPlantsByZone(String zone) {
+		return zoneRepo.findOneByZone(zone).getPlants();
+	}
+
+	@RequestMapping("/zipcode/{zipcode}")
+	public String findPhzByZipcode(@PathVariable(name = "zipcode") String zipcode) {
+		return zipCodeRepo.findZoneByZipCode(zipcode);
+	}
+
+	@RequestMapping("/zipcodeplants/{zipcode}")
+	public Iterable<Plant> findPlantsByZipcode(@PathVariable(name = "zipcode") String zipcode) {
+		String zoneName = zipCodeRepo.findZoneByZipCode(zipcode);
+		Zone targetZone = zoneRepo.findOneByZone(zoneName);
+		return targetZone.getPlants();
 	}
 
 	@SuppressWarnings("serial")

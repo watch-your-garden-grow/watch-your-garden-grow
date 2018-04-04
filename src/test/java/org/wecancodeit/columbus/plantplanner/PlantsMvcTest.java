@@ -25,6 +25,9 @@ public class PlantsMvcTest {
 
 	@MockBean
 	private ZoneRepository zoneRepo;
+	
+	@MockBean
+	private ZipCodeLocalityRepository zipcodeRepo;
 
 	@Test
 	public void shouldRetrievePlants() throws Exception {
@@ -33,7 +36,7 @@ public class PlantsMvcTest {
 
 	@Test
 	public void shouldRetrieveIndividualPlant() throws Exception {
-		when(plantRepo.findOne(3L)).thenReturn(new Plant("Tomato"));
+		when(plantRepo.findOne(3L)).thenReturn(new Plant("Tomato", "", ""));
 		mvc.perform(get("/plants/3")).andExpect(status().isOk());
 	}
 
@@ -64,4 +67,16 @@ public class PlantsMvcTest {
 		mvc.perform(get("/zone/3")).andExpect(status().isOk());
 	}
 
+	@Test
+	public void shouldRetrievePhzFromZipcode() throws Exception {
+		when(zipcodeRepo.findZoneByZipCode("43229")).thenReturn("42");
+		mvc.perform(get("/zipcode/43229")).andExpect(status().isOk());
+	}
+	
+	@Test
+	public void shouldRetrievePlantsFromZipcode() throws Exception {
+		when(zipcodeRepo.findZoneByZipCode("43229")).thenReturn("42");
+		when(zoneRepo.findOneByZone("42")).thenReturn(new Zone("6a"));
+		mvc.perform(get("/zipcodeplants/43229")).andExpect(status().isOk());
+	}
 }
