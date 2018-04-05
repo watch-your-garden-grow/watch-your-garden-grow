@@ -5,8 +5,8 @@ import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 
@@ -14,20 +14,26 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class PrismZoneData {
+@IdClass(PrismZoneDataId.class)
+public class PrismZoneData  {
 
-	@Id
-	@GeneratedValue
-	private Long id;
+<<<<<<< HEAD
+=======
 
-	@Transient
+>>>>>>> 358909e0cb61cf7a5c180e082395218bf9c0c6c7
+
+	@Transient 
 	String zipcode;
+	
+	@Id
 	private String zone;
+	
+	@Id
+	private String trange; 
+	private String zonetitle; 
+	
+	@OneToMany(mappedBy = "zoneData",cascade = { CascadeType.PERSIST, CascadeType.MERGE })
 
-	private String trange;
-	private String zonetitle;
-
-	@OneToMany(mappedBy = "zoneData", cascade = { CascadeType.PERSIST, CascadeType.MERGE })
 	Set<ZipCodeLocality> locality = new HashSet<>();
 
 	public Set<ZipCodeLocality> getLocality() {
@@ -77,10 +83,10 @@ public class PrismZoneData {
 		this.zonetitle = zonetitle;
 	}
 
-	public Long getId() {
-		return id;
-	}
+<<<<<<< HEAD
+=======
 
+>>>>>>> 358909e0cb61cf7a5c180e082395218bf9c0c6c7
 	@Override
 	public String toString() {
 		return "PrismZoneData [zone=" + zone + ", trange=" + trange + ", zonetitle=" + zonetitle + "]";
@@ -94,4 +100,10 @@ public class PrismZoneData {
 		this.zipcode = zipcode;
 	}
 
+
+<<<<<<< HEAD
+	 
+	 
+=======
+>>>>>>> 358909e0cb61cf7a5c180e082395218bf9c0c6c7
 }
