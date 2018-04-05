@@ -154,7 +154,6 @@ public class PlantPopulator implements CommandLineRunner {
 		plantRepo.save(new Plant("Pineapple",
 				"Start in a pot, let grow for 2-3 months before transplanting outside to allow roots to grow.",
 				"/images/pineapple.jpg", zone4));
-
 	}
 
 }
