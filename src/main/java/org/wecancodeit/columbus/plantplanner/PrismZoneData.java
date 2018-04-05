@@ -17,10 +17,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @IdClass(PrismZoneDataId.class)
 public class PrismZoneData  {
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 358909e0cb61cf7a5c180e082395218bf9c0c6c7
 
 	@Transient 
 	String zipcode;
@@ -83,10 +79,6 @@ public class PrismZoneData  {
 		this.zonetitle = zonetitle;
 	}
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 358909e0cb61cf7a5c180e082395218bf9c0c6c7
 	@Override
 	public String toString() {
 		return "PrismZoneData [zone=" + zone + ", trange=" + trange + ", zonetitle=" + zonetitle + "]";
@@ -100,10 +92,4 @@ public class PrismZoneData  {
 		this.zipcode = zipcode;
 	}
 
-
-<<<<<<< HEAD
-	 
-	 
-=======
->>>>>>> 358909e0cb61cf7a5c180e082395218bf9c0c6c7
 }
