@@ -43,6 +43,10 @@ public class DataMappingTests {
 		localityTwoUnderTest = zipCodeLocalityRepo.save(localityTwoUnderTest.addZoneData(prismDataTwoUnderTest));
 
 		localityTwoUnderTest = zipCodeLocalityRepo.save(localityTwoUnderTest.addZoneData(prismDataThreeUnderTest));
+<<<<<<< HEAD
+=======
+
+>>>>>>> 358909e0cb61cf7a5c180e082395218bf9c0c6c7
 
 	}
 
@@ -67,5 +71,9 @@ public class DataMappingTests {
 
 		assertThat(prismZoneDataRepo.findAll().size(), is(2));
 	}
+<<<<<<< HEAD
+=======
+
+>>>>>>> 358909e0cb61cf7a5c180e082395218bf9c0c6c7
 
 }
