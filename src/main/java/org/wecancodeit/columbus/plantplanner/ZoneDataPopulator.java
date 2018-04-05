@@ -39,7 +39,7 @@ public class ZoneDataPopulator implements CommandLineRunner {
 		insertPrismCsv("/phm_hi_zipcode.csv");
 		insertPrismCsv("/phm_pr_zipcode.csv");
 		insertPrismCsv("/phm_ak_zipcode.csv");
-		insertPrismCsv("/phm_us_zipcode.csv");
+//		insertPrismCsv("/phm_us_zipcode.csv");
 
 	}
 

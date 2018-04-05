@@ -15,6 +15,7 @@ xhr.onreadystatechange = function() {
 
 		function appendPlantLiToPlantContainer(plantObject){
 			const plantLi = createElement('li', plantObject.name)
+			plantLi.className = "plantListItem";
 			appendElement(plantImageContainer, plantLi)
 			appendElement(plantLi, createElement('img', plantObject.image))
 			return plantLi
@@ -24,9 +25,41 @@ xhr.onreadystatechange = function() {
 			newElem.innerText = textValue
 			return newElem
 		}
+		
+		function removeLi(parent, child){			
+			parent.removeChild(child);
+   		}			
+		
 		function appendElement(parent, child){
 			parent.appendChild(child)
 		}
+		
+
+
+		// This is the code that removes ONE hardcoded image: 
+			// const plantListItem = document.getElementById('plantListItem');
+			// removeLi(plantImageContainer, plantListItem);
+
+
+		// const plantListItem = document.getElementById('plantListItem')
+		// const plantListItem = document.querySelectorAll('.plantListItem');
+		
+		// removeLi(plantImageContainer, plantListItem)
+		// if (plantListItem.contains(plant)){
+		// 	console.log(plantListItem)
+		// 	removeLi(plantImageContainer, plantListItem);
+		// }
+
+		
+
+
+		let plantListItem = getElementsByClassName('plantListLi');
+				for(var i=0; i < plantListItem.length; i++) { 
+
+  				removeLi(plantImageContainer, plantListItem);
+		}
+
+
 		for (let plant of res){
 		appendPlantLiToPlantContainer(plant);
 		console.log(plant)
@@ -36,8 +69,6 @@ xhr.onreadystatechange = function() {
 		}
 	}
 }
-// xhr.open('GET', '/plants', true)
-// xhr.send()
 
 const zipCodeSubmitButton = document.querySelector('#zipCodeSubmitButton');
 zipCodeSubmitButton.addEventListener('click', function(event){
