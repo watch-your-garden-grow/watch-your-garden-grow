@@ -21,24 +21,34 @@ public class DataMappingTests {
 	@Resource
 	private PrismZoneDataRepository prismZoneDataRepo;
 
-	ZipCodeLocality localityUnderTest;
-	PrismZoneData prismDataUnderTest;
+	ZipCodeLocality localityOneUnderTest, localityTwoUnderTest;
+	PrismZoneData prismDataOneUnderTest, prismDataTwoUnderTest, prismDataThreeUnderTest;
 
 	@Before
 	public void runOnce() {
-		localityUnderTest = new ZipCodeLocality();
-		localityUnderTest.setZipcode("TESTTEST");
-		localityUnderTest = zipCodeLocalityRepo.save(localityUnderTest);
+		localityOneUnderTest = new ZipCodeLocality();
+		localityOneUnderTest.setZipcode("TESTTEST");
+		localityOneUnderTest = zipCodeLocalityRepo.save(localityOneUnderTest);
 
-		prismDataUnderTest = new PrismZoneData("", "42");
-		localityUnderTest = zipCodeLocalityRepo.save(localityUnderTest.addZoneData(prismDataUnderTest));
-		prismDataUnderTest = prismZoneDataRepo.save(prismDataUnderTest);
+		localityTwoUnderTest = new ZipCodeLocality();
+		localityTwoUnderTest.setZipcode("TESTTWO");
+		localityTwoUnderTest = zipCodeLocalityRepo.save(localityTwoUnderTest);
+
+		prismDataOneUnderTest = new PrismZoneData("", "42", "TRANGEONE", "TITLEONE");
+		prismDataTwoUnderTest = new PrismZoneData("", "43", "TRANGETWO", "TITLETWO");
+		prismDataThreeUnderTest = new PrismZoneData("X", "43", "TRANGETWO", "TITLETWO");
+
+		localityOneUnderTest = zipCodeLocalityRepo.save(localityOneUnderTest.addZoneData(prismDataOneUnderTest));
+
+		localityTwoUnderTest = zipCodeLocalityRepo.save(localityTwoUnderTest.addZoneData(prismDataTwoUnderTest));
+
+		localityTwoUnderTest = zipCodeLocalityRepo.save(localityTwoUnderTest.addZoneData(prismDataThreeUnderTest));
 
 	}
 
 	@Test
 	public void createZipCodeZoneData() {
-		assertThat(prismDataUnderTest.getZone(), is("42"));
+		assertThat(prismDataOneUnderTest.getZone(), is("42"));
 	}
 
 	@Test
@@ -50,6 +60,12 @@ public class DataMappingTests {
 	@Test
 	public void checkThatfindZoneByZipCodeReturnsZoneData() {
 		assertThat(zipCodeLocalityRepo.findZoneByZipCode("TESTTEST"), is("42"));
+	}
+
+	@Test
+	public void checkThatOnlyTwoZonesAreInDataBase() {
+
+		assertThat(prismZoneDataRepo.findAll().size(), is(2));
 	}
 
 }
