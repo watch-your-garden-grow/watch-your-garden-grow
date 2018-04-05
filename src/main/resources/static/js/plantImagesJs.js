@@ -48,7 +48,7 @@ xhr.onreadystatechange = function() {
 		// 	console.log(plantListItem)
 		// 	removeLi(plantImageContainer, plantListItem);
 		// }
-
+cd
 		const plantListItems = Array.from(document.querySelectorAll('.plantListItem'))
 				.forEach(Li=>removeLi(plantImageContainer, Li));
 
