@@ -87,7 +87,7 @@ public class ZipCodeLocality {
 	public String getZone() {
 		return zoneData.getZone();
 	}
-	
+
 	public void setCounty(String county) {
 		this.county = county;
 	}
@@ -126,7 +126,7 @@ public class ZipCodeLocality {
 
 	public ZipCodeLocality() {
 	}
-	
+
 	public ZipCodeLocality addZoneData(PrismZoneData zoneData) {
 		this.zoneData = zoneData;
 		zoneData.locality.add(this);
@@ -137,7 +137,7 @@ public class ZipCodeLocality {
 	public String toString() {
 		return "ZipCodeLocality [zipcode=" + zipcode + ", city=" + city + ", stateFull=" + stateFull + ", stateAbbr="
 				+ stateAbbr + ", county=" + county + ", fipsCode=" + fipsCode + ", latitude=" + latitude
-				+ ", longitude=" + longitude + ", zoneData="+ zoneData+"]";
+				+ ", longitude=" + longitude + ", zoneData=" + zoneData + "]";
 	}
 
 	@Override

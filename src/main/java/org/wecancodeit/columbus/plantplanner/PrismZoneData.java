@@ -18,6 +18,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class PrismZoneData  {
 
 
+
 	@Transient 
 	String zipcode;
 	
@@ -29,6 +30,7 @@ public class PrismZoneData  {
 	private String zonetitle; 
 	
 	@OneToMany(mappedBy = "zoneData",cascade = { CascadeType.PERSIST, CascadeType.MERGE })
+
 	Set<ZipCodeLocality> locality = new HashSet<>();
 
 	public Set<ZipCodeLocality> getLocality() {
@@ -42,13 +44,11 @@ public class PrismZoneData  {
 	public PrismZoneData() {
 	}
 
-	
 	public PrismZoneData(String zipcode, String zone) {
 		this.zipcode = zipcode;
 		this.zone = zone;
 	}
 
-	
 	public PrismZoneData(String zipcode, String zone, String trange, String zonetitle) {
 		this.zipcode = zipcode;
 		this.zone = zone;
@@ -80,21 +80,19 @@ public class PrismZoneData  {
 		this.zonetitle = zonetitle;
 	}
 
+
 	@Override
 	public String toString() {
 		return "PrismZoneData [zone=" + zone + ", trange=" + trange + ", zonetitle=" + zonetitle + "]";
 	}
 
-
-	 String getZipcode() {
+	String getZipcode() {
 		return zipcode;
 	}
 
-	 void setZipcode(String zipcode) {
+	void setZipcode(String zipcode) {
 		this.zipcode = zipcode;
 	}
 
 
-	 
-	 
 }
