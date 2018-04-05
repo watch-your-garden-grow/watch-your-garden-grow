@@ -7,8 +7,7 @@ xhr.onreadystatechange = function() {
 
 
 		const plantImageContainer = document.getElementById('plantImageContainer');
-		// const newPlantListItem = document.getElementById('newPlantListItem');
-		// productContainer.innerText = res.name
+	
 		console.log(xhr);
 		// plantImageContainer.appendChild(newPlantListItem);
 		// newPlantListItem.innerText = res.name;
@@ -42,7 +41,7 @@ xhr.onreadystatechange = function() {
 
 
 		// const plantListItem = document.getElementById('plantListItem')
-		// const plantListItem = document.querySelectorAll('.plantListItem');
+		
 		
 		// removeLi(plantImageContainer, plantListItem)
 		// if (plantListItem.contains(plant)){
@@ -50,14 +49,15 @@ xhr.onreadystatechange = function() {
 		// 	removeLi(plantImageContainer, plantListItem);
 		// }
 
+		const plantListItems = Array.from(document.querySelectorAll('.plantListItem'))
+				.forEach(Li=>removeLi(plantImageContainer, Li));
+
+		// const plantListItem = getElementsByTagName('LI');
 		
+		// 		for(var i=0; i < plantListItems.length; i++) { 
 
-
-		let plantListItem = getElementsByClassName('plantListLi');
-				for(var i=0; i < plantListItem.length; i++) { 
-
-  				removeLi(plantImageContainer, plantListItem);
-		}
+  // 				removeLi(plantImageContainer, plantListItem);
+		// }
 
 
 		for (let plant of res){
