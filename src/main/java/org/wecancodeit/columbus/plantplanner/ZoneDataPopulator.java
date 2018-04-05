@@ -21,7 +21,6 @@ import com.fasterxml.jackson.dataformat.csv.CsvSchema;
 @Component
 public class ZoneDataPopulator implements CommandLineRunner {
 
-	@SuppressWarnings("unused")
 	private Logger log = LoggerFactory.getLogger(ZoneDataPopulator.class);
 
 	@Resource
@@ -33,20 +32,8 @@ public class ZoneDataPopulator implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-
-	
-		insertZipCodeLocalityData("/US.txt");
-		insertPrismCsv("/phm_hi_zipcode.csv");
-		insertPrismCsv("/phm_pr_zipcode.csv");
-		insertPrismCsv("/phm_ak_zipcode.csv");
-		insertPrismCsv("/phm_us_zipcode.csv");
-
-	}
-
-	private void insertZipCodeLocalityData(String csvFileName) throws IOException, JsonProcessingException {
-		CsvSchema geoNameSchema = CsvSchema.builder().setColumnSeparator('\t')
-				.addColumn("") // country code : iso 2 char
-
+		CsvSchema geoNameSchema = CsvSchema.builder().setColumnSeparator('\t').addColumn("") // country code : iso 2
+																								// char
 				.addColumn("zipcode") // postal code : varchar(20)
 				.addColumn("city") // place name : varchar(180)
 				.addColumn("stateFull") // admin name1 : 1. order subdivision (state) varchar(100)
@@ -61,11 +48,17 @@ public class ZoneDataPopulator implements CommandLineRunner {
 				.build();
 
 		ObjectMapper mapper = new CsvMapper();
-		ClassPathResource resource = new ClassPathResource(csvFileName);
+		ClassPathResource resource = new ClassPathResource("/US.txt");
 		File file = resource.getFile();
 		MappingIterator<ZipCodeLocality> it = mapper.readerFor(ZipCodeLocality.class).with(geoNameSchema)
 				.with(Feature.IGNORE_TRAILING_UNMAPPABLE).readValues(file);
 		zipCodeLocalityRepo.save(it.readAll());
+
+		insertPrismCsv("/phm_hi_zipcode.csv");
+		insertPrismCsv("/phm_pr_zipcode.csv");
+		insertPrismCsv("/phm_ak_zipcode.csv");
+		insertPrismCsv("/phm_us_zipcode.csv");
+
 	}
 
 	private void insertPrismCsv(String csvFileName) throws IOException, JsonProcessingException {
@@ -84,6 +77,7 @@ public class ZoneDataPopulator implements CommandLineRunner {
 			data = prismZoneDataRepo.save(data);
 			if (locality != null) {
 				zipCodeLocalityRepo.save(locality.addZoneData(data));
+				prismZoneDataRepo.save(data);
 			}
 		}
 

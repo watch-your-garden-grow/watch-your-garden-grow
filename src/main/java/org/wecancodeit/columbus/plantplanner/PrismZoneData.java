@@ -5,8 +5,8 @@ import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.IdClass;
 import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 
@@ -14,23 +14,20 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @JsonIgnoreProperties(ignoreUnknown = true)
-@IdClass(PrismZoneDataId.class)
-public class PrismZoneData  {
+public class PrismZoneData {
 
+	@Id
+	@GeneratedValue
+	private Long id;
 
-
-	@Transient 
+	@Transient
 	String zipcode;
-	
-	@Id
 	private String zone;
-	
-	@Id
-	private String trange; 
-	private String zonetitle; 
-	
-	@OneToMany(mappedBy = "zoneData",cascade = { CascadeType.PERSIST, CascadeType.MERGE })
 
+	private String trange;
+	private String zonetitle;
+
+	@OneToMany(mappedBy = "zoneData", cascade = { CascadeType.PERSIST, CascadeType.MERGE })
 	Set<ZipCodeLocality> locality = new HashSet<>();
 
 	public Set<ZipCodeLocality> getLocality() {
@@ -80,6 +77,9 @@ public class PrismZoneData  {
 		this.zonetitle = zonetitle;
 	}
 
+	public Long getId() {
+		return id;
+	}
 
 	@Override
 	public String toString() {
@@ -93,6 +93,5 @@ public class PrismZoneData  {
 	void setZipcode(String zipcode) {
 		this.zipcode = zipcode;
 	}
-
 
 }
