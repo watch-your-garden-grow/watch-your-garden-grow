@@ -1,24 +1,17 @@
 package org.wecancodeit.columbus.plantplanner;
 
+import java.time.LocalDate;
+
 public class FrostDate {
+	private LocalDate lastFrostDate;
 
-	private ZipCodeLocality zipCode;
-
-	public FrostDate(ZipCodeLocality testZipCode) {
-		zipCode = testZipCode;
-
+	public FrostDate() {
+		lastFrostDate = LocalDate.of(LocalDate.now().getYear(), 4, 20);
 	}
 
-	public ZipCodeLocality getZipCode() {
-		return zipCode;
-	}
+	public LocalDate reportLastFrostDate() {
 
-	public String findClosestStation() {
-		// double latitude = zipCode.getLatitude();
-		// double longitude = zipCode.getLongitude();
-		// RestTemplate findStationTemplate = new RestTemplate();
-		// JsonNode targetStations = findStationTemplate.;
-		return "502102";
+		return lastFrostDate;
 	}
 
 }
