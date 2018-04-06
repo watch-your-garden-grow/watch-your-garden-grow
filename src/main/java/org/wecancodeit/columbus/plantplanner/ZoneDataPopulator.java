@@ -2,9 +2,13 @@ package org.wecancodeit.columbus.plantplanner;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Spliterator;
+import java.util.List;
+import java.util.Map;
+import java.util.zip.GZIPInputStream;
+import java.util.zip.InflaterInputStream;
 
 import javax.annotation.Resource;
 
@@ -12,7 +16,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.init.ScriptUtils;
 import org.springframework.stereotype.Component;
+import org.springframework.web.servlet.resource.GzipResourceResolver;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.MappingIterator;
@@ -32,10 +40,18 @@ public class ZoneDataPopulator implements CommandLineRunner {
 
 	@Resource
 	private PrismZoneDataRepository prismZoneDataRepo;
+	
+	@Resource
+	private JdbcTemplate jdbcTemplate;
 
 	@Override
 	public void run(String... args) throws Exception {
 
+		
+	    ClassPathResource resource = new ClassPathResource("PRISM_AND_LOCALITY.sql");
+	    ScriptUtils.executeSqlScript(jdbcTemplate.getDataSource().getConnection(), resource);
+	    
+	    /*.
 		insertZipCodeLocalityData("/US.txt");
 		log.error("zipcode done");
 
@@ -50,6 +66,7 @@ public class ZoneDataPopulator implements CommandLineRunner {
 
 		insertPrismCsv("/phm_us_zipcode.csv");
 		log.error("us done");
+		*/
 
 	}
 
