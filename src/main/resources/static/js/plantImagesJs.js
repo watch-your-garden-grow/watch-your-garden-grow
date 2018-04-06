@@ -33,32 +33,8 @@ xhr.onreadystatechange = function() {
 			parent.appendChild(child)
 		}
 		
-
-
-		// This is the code that removes ONE hardcoded image: 
-			// const plantListItem = document.getElementById('plantListItem');
-			// removeLi(plantImageContainer, plantListItem);
-
-
-		// const plantListItem = document.getElementById('plantListItem')
-		
-		
-		// removeLi(plantImageContainer, plantListItem)
-		// if (plantListItem.contains(plant)){
-		// 	console.log(plantListItem)
-		// 	removeLi(plantImageContainer, plantListItem);
-		// }
-cd
 		const plantListItems = Array.from(document.querySelectorAll('.plantListItem'))
 				.forEach(Li=>removeLi(plantImageContainer, Li));
-
-		// const plantListItem = getElementsByTagName('LI');
-		
-		// 		for(var i=0; i < plantListItems.length; i++) { 
-
-  // 				removeLi(plantImageContainer, plantListItem);
-		// }
-
 
 		for (let plant of res){
 		appendPlantLiToPlantContainer(plant);
