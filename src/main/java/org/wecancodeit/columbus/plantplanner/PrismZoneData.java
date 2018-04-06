@@ -5,6 +5,7 @@ import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.OneToMany;
@@ -15,20 +16,19 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Entity
 @JsonIgnoreProperties(ignoreUnknown = true)
 @IdClass(PrismZoneDataId.class)
-public class PrismZoneData  {
+public class PrismZoneData {
 
-
-	@Transient 
+	@Transient
 	String zipcode;
-	
+
 	@Id
 	private String zone;
-	
+
 	@Id
-	private String trange; 
-	private String zonetitle; 
-	
-	@OneToMany(mappedBy = "zoneData",cascade = { CascadeType.PERSIST, CascadeType.MERGE })
+	private String trange;
+	private String zonetitle;
+
+	@OneToMany(mappedBy = "zoneData", cascade = { CascadeType.PERSIST, CascadeType.MERGE }, fetch = FetchType.EAGER)
 
 	Set<ZipCodeLocality> locality = new HashSet<>();
 
