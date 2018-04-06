@@ -1,8 +1,4 @@
-const xhr = new XMLHttpRequest();
-xhr.onreadystatechange = function() {
-
-
-	if (xhr.readyState === 4 && xhr.status === 200) {
+if (xhr.readyState === 4 && xhr.status === 200) {
 		const res = JSON.parse(xhr.responseText);
 
 
@@ -13,14 +9,35 @@ xhr.onreadystatechange = function() {
 		// newPlantListItem.innerText = res.name;
 
 		function appendPlantLiToPlantContainer(plantObject){
-			const plantLi = createElement('li', plantObject.name)
+			const plantLi = createElementNoText('li')
 			plantLi.className = "plantListItem";
 			appendElement(plantImageContainer, plantLi)
 			const plantImage = createElement('img')
 			plantImage.src = plantObject.image;
+			plantImage.alt = plantObject.name;
+			const plantLink = createElement('a')
+			plantLink.href = 'http://www.word.com'
+			plantLink.innerText = plantObject.name;
+
+
+			//trying to turn image into link
+			// const imageLink = createElementNoText('a')
+			// imageLink.href = 'http://watchyourgardengrow.com'
+			// appendElement(imageLink, plantImage)
+
+			appendElement(plantLi, plantLink)
 			appendElement(plantLi, plantImage)
-			// console.log(plantObject.image)
+			const addToPlanButton = createElement("BUTTON")
+			addToPlanButton.className = "addToPlanButton"
+			addToPlanButton.innerText = "Add To Plan";
+			appendElement(plantLi, addToPlanButton)
+
+			
 			return plantLi
+		}
+		function createElementNoText(elem){
+			const newElem = document.createElement(elem)
+			return newElem
 		}
 		function createElement(elem, textValue){
 			const newElem = document.createElement(elem)
