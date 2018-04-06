@@ -2,6 +2,13 @@ package org.wecancodeit.columbus.plantplanner;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+import java.util.zip.GZIPInputStream;
+import java.util.zip.InflaterInputStream;
 
 import javax.annotation.Resource;
 
@@ -9,7 +16,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.init.ScriptUtils;
 import org.springframework.stereotype.Component;
+import org.springframework.web.servlet.resource.GzipResourceResolver;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.MappingIterator;
@@ -29,23 +40,41 @@ public class ZoneDataPopulator implements CommandLineRunner {
 
 	@Resource
 	private PrismZoneDataRepository prismZoneDataRepo;
+	
+	@Resource
+	private JdbcTemplate jdbcTemplate;
 
 	@Override
 	public void run(String... args) throws Exception {
 
-
-	
+		
+	    ClassPathResource resource = new ClassPathResource("PRISM_AND_LOCALITY.sql");
+	    ScriptUtils.executeSqlScript(jdbcTemplate.getDataSource().getConnection(), resource);
+	    
+	    /*.
 		insertZipCodeLocalityData("/US.txt");
+		log.error("zipcode done");
+
 		insertPrismCsv("/phm_hi_zipcode.csv");
+		log.error("hi done");
+
 		insertPrismCsv("/phm_pr_zipcode.csv");
+		log.error("pr done");
+
 		insertPrismCsv("/phm_ak_zipcode.csv");
+
+		log.error("ak done");
+
 		insertPrismCsv("/phm_us_zipcode.csv");
+		log.error("us done");
+		*/
+
 
 	}
 
 	private void insertZipCodeLocalityData(String csvFileName) throws IOException, JsonProcessingException {
-		CsvSchema geoNameSchema = CsvSchema.builder().setColumnSeparator('\t')
-				.addColumn("") // country code : iso 2 char
+		CsvSchema geoNameSchema = CsvSchema.builder().setColumnSeparator('\t').addColumn("") // country code : iso 2
+																								// char
 
 				.addColumn("zipcode") // postal code : varchar(20)
 				.addColumn("city") // place name : varchar(180)
@@ -78,15 +107,26 @@ public class ZoneDataPopulator implements CommandLineRunner {
 
 		MappingIterator<PrismZoneData> prismIt = mapper.readerFor(PrismZoneData.class).with(schema).readValues(file);
 
-		while (prismIt.hasNext()) {
-			PrismZoneData data = prismIt.next();
-			ZipCodeLocality locality = zipCodeLocalityRepo.findOneByZipcode(data.zipcode);
-			data = prismZoneDataRepo.save(data);
-			if (locality != null) {
-				zipCodeLocalityRepo.save(locality.addZoneData(data));
+		Collection<ZipCodeLocality> zipCodeLocalityList = new ArrayList<>();
+		Collection<PrismZoneData> prismZoneDataList = new ArrayList<>();
+
+		prismIt.forEachRemaining((prismData) -> {
+			Boolean saveFlag = true;
+			ZipCodeLocality locality = zipCodeLocalityRepo.findByZipcode(prismData.zipcode);
+			PrismZoneData newPrismData;
+			if ((newPrismData = prismZoneDataRepo.findByZoneAndTrange(prismData.getZone(),
+					prismData.getTrange())) != null) {
+				newPrismData.zipcode = prismData.zipcode;
+				prismData = newPrismData;
+				saveFlag = false;
 			}
-		}
-
+			if (locality != null) {
+				zipCodeLocalityList.add(locality.addZoneData(prismData));
+			} else if (saveFlag) {
+				prismZoneDataList.add(prismData);
+			}
+		});
+		zipCodeLocalityRepo.save(zipCodeLocalityList);
+		prismZoneDataRepo.save(prismZoneDataList);
 	}
-
 }

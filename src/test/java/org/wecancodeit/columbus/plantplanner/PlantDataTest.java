@@ -28,7 +28,7 @@ public class PlantDataTest {
 
 	@Test
 	public void shouldCreatePlant() {
-		Plant plant = new Plant("Beans", "description", "image");
+		Plant plant = new Plant("Beans", "description", "image", 14);
 		plant = plantRepo.save(plant);
 		long plantId = plant.getId();
 
@@ -56,7 +56,7 @@ public class PlantDataTest {
 		Zone sixA = zoneRepo.save(new Zone("6A"));
 		Zone sixB = zoneRepo.save(new Zone("6B"));
 
-		Plant plant = new Plant("", "description", "", sixA, sixB);
+		Plant plant = new Plant("", "description", "", 14, sixA, sixB);
 		plant = plantRepo.save(plant);
 		long plantName = plant.getId();
 
@@ -69,10 +69,10 @@ public class PlantDataTest {
 		Zone zone = zoneRepo.save(new Zone("6A"));
 		long zoneId = zone.getId();
 
-		Plant beans = new Plant("beans", "description", "image", zone);
+		Plant beans = new Plant("beans", "description", "image", 14, zone);
 		beans = plantRepo.save(beans);
 
-		Plant corn = new Plant("corn", "description", "image", zone);
+		Plant corn = new Plant("corn", "description", "image", 14, zone);
 		corn = plantRepo.save(corn);
 
 		entityManager.flush();
@@ -86,7 +86,7 @@ public class PlantDataTest {
 	public void shouldReturnPlantNameDescriptionAndImage() {
 		Zone zone = zoneRepo.save(new Zone("6A"));
 
-		Plant underTest = new Plant("name", "description", "image", zone);
+		Plant underTest = new Plant("name", "description", "image", 14, zone);
 		String check = underTest.getName();
 		String check2 = underTest.getDescription();
 		String check3 = underTest.getImage();
@@ -94,5 +94,16 @@ public class PlantDataTest {
 		assertEquals(check, "name");
 		assertEquals(check2, "description");
 		assertEquals(check3, "image");
+	}
+
+	@Test
+	public void shouldReturnPlantSowDate() {
+		Zone zone = zoneRepo.save(new Zone("6A"));
+
+		Plant underTest = new Plant("name", "description", "image", 14, zone);
+		int check = underTest.daysSinceLastFrost();
+
+		assertEquals(check, 14);
+
 	}
 }
