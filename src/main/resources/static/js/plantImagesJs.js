@@ -16,7 +16,10 @@ xhr.onreadystatechange = function() {
 			const plantLi = createElement('li', plantObject.name)
 			plantLi.className = "plantListItem";
 			appendElement(plantImageContainer, plantLi)
-			appendElement(plantLi, createElement('img', plantObject.image))
+			const plantImage = createElement('img')
+			plantImage.src = plantObject.image;
+			appendElement(plantLi, plantImage)
+			// console.log(plantObject.image)
 			return plantLi
 		}
 		function createElement(elem, textValue){
