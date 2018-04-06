@@ -22,7 +22,8 @@ public class Plant {
 	private String name;
 	private String image;
 	private String description;
-	
+	private int daysSinceLastFrost;
+
 	@JsonIgnore
 	@ManyToMany
 	private Set<Zone> zones;
@@ -34,10 +35,11 @@ public class Plant {
 	public Plant() {
 	}
 
-	public Plant(String name, String description, String image, Zone... zones) {
+	public Plant(String name, String description, String image, int daysSinceLastFrost, Zone... zones) {
 		this.name = name;
 		this.description = description;
 		this.image = image;
+		this.daysSinceLastFrost = daysSinceLastFrost;
 		this.zones = new HashSet<>(asList(zones));
 	}
 
@@ -55,6 +57,10 @@ public class Plant {
 
 	public String getImage() {
 		return image;
+	}
+
+	public int daysSinceLastFrost() {
+		return daysSinceLastFrost;
 	}
 
 	@Override
