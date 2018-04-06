@@ -193,7 +193,7 @@ public class PlantPopulator implements CommandLineRunner {
 				zone12, zone13, zone14, zone15, zone16, zone17, zone18, zone19, zone20, zone21, zone22));
 		plantRepo.save(new Plant("Strawberries",
 				"Plant deep enough, and spaced out enough so that root system can spread out.  Needs at least 6 hours of sunlight daily.",
-				"/images/strawberry.jpg", 30, zone1, zone2, zone3, zone5, zone12, zone13, zone14, zone15, zone16,
+				"/images/strawberries.jpg", 30, zone1, zone2, zone3, zone5, zone12, zone13, zone14, zone15, zone16,
 				zone17, zone18, zone19, zone20, zone21));
 		plantRepo.save(new Plant("Zucchini", "Plant 1 inch deep, 2 to 3 feet apart.  Needs full sunlight. ",
 				"/images/zucchini.jpg", 1, zone4, zone5, zone6, zone7, zone8, zone9, zone10, zone11, zone12, zone13,
