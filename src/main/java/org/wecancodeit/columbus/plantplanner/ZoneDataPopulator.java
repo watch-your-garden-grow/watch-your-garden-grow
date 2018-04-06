@@ -2,6 +2,13 @@ package org.wecancodeit.columbus.plantplanner;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+import java.util.zip.GZIPInputStream;
+import java.util.zip.InflaterInputStream;
 
 import javax.annotation.Resource;
 
@@ -9,7 +16,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.init.ScriptUtils;
 import org.springframework.stereotype.Component;
+import org.springframework.web.servlet.resource.GzipResourceResolver;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.MappingIterator;
@@ -21,6 +32,7 @@ import com.fasterxml.jackson.dataformat.csv.CsvSchema;
 @Component
 public class ZoneDataPopulator implements CommandLineRunner {
 
+	@SuppressWarnings("unused")
 	private Logger log = LoggerFactory.getLogger(ZoneDataPopulator.class);
 
 	@Resource
@@ -28,13 +40,42 @@ public class ZoneDataPopulator implements CommandLineRunner {
 
 	@Resource
 	private PrismZoneDataRepository prismZoneDataRepo;
+	
+	@Resource
+	private JdbcTemplate jdbcTemplate;
 
 	@Override
 	public void run(String... args) throws Exception {
 
-	
-		CsvSchema geoNameSchema = CsvSchema.builder().setColumnSeparator('\t')
-				.addColumn("") // country code : iso 2 char
+		
+	    ClassPathResource resource = new ClassPathResource("PRISM_AND_LOCALITY.sql");
+	    ScriptUtils.executeSqlScript(jdbcTemplate.getDataSource().getConnection(), resource);
+	    
+	    /*.
+		insertZipCodeLocalityData("/US.txt");
+		log.error("zipcode done");
+
+		insertPrismCsv("/phm_hi_zipcode.csv");
+		log.error("hi done");
+
+		insertPrismCsv("/phm_pr_zipcode.csv");
+		log.error("pr done");
+
+		insertPrismCsv("/phm_ak_zipcode.csv");
+
+		log.error("ak done");
+
+		insertPrismCsv("/phm_us_zipcode.csv");
+		log.error("us done");
+		*/
+
+
+	}
+
+	private void insertZipCodeLocalityData(String csvFileName) throws IOException, JsonProcessingException {
+		CsvSchema geoNameSchema = CsvSchema.builder().setColumnSeparator('\t').addColumn("") // country code : iso 2
+																								// char
+
 				.addColumn("zipcode") // postal code : varchar(20)
 				.addColumn("city") // place name : varchar(180)
 				.addColumn("stateFull") // admin name1 : 1. order subdivision (state) varchar(100)
@@ -49,17 +90,11 @@ public class ZoneDataPopulator implements CommandLineRunner {
 				.build();
 
 		ObjectMapper mapper = new CsvMapper();
-		ClassPathResource resource = new ClassPathResource("/US.txt");
+		ClassPathResource resource = new ClassPathResource(csvFileName);
 		File file = resource.getFile();
 		MappingIterator<ZipCodeLocality> it = mapper.readerFor(ZipCodeLocality.class).with(geoNameSchema)
 				.with(Feature.IGNORE_TRAILING_UNMAPPABLE).readValues(file);
 		zipCodeLocalityRepo.save(it.readAll());
-
-		insertPrismCsv("/phm_hi_zipcode.csv");
-		insertPrismCsv("/phm_pr_zipcode.csv");
-		insertPrismCsv("/phm_ak_zipcode.csv");
-		insertPrismCsv("/phm_us_zipcode.csv");
-
 	}
 
 	private void insertPrismCsv(String csvFileName) throws IOException, JsonProcessingException {
@@ -72,17 +107,26 @@ public class ZoneDataPopulator implements CommandLineRunner {
 
 		MappingIterator<PrismZoneData> prismIt = mapper.readerFor(PrismZoneData.class).with(schema).readValues(file);
 
-		while (prismIt.hasNext()) {
-			PrismZoneData data = prismIt.next();
-			ZipCodeLocality locality = zipCodeLocalityRepo.findOneByZipcode(data.zipcode);
-			data = prismZoneDataRepo.save(data);
-			if (locality != null) {
-				zipCodeLocalityRepo.save(locality.addZoneData(data));
-				prismZoneDataRepo.save(data);
+		Collection<ZipCodeLocality> zipCodeLocalityList = new ArrayList<>();
+		Collection<PrismZoneData> prismZoneDataList = new ArrayList<>();
+
+		prismIt.forEachRemaining((prismData) -> {
+			Boolean saveFlag = true;
+			ZipCodeLocality locality = zipCodeLocalityRepo.findByZipcode(prismData.zipcode);
+			PrismZoneData newPrismData;
+			if ((newPrismData = prismZoneDataRepo.findByZoneAndTrange(prismData.getZone(),
+					prismData.getTrange())) != null) {
+				newPrismData.zipcode = prismData.zipcode;
+				prismData = newPrismData;
+				saveFlag = false;
 			}
-		}
-
+			if (locality != null) {
+				zipCodeLocalityList.add(locality.addZoneData(prismData));
+			} else if (saveFlag) {
+				prismZoneDataList.add(prismData);
+			}
+		});
+		zipCodeLocalityRepo.save(zipCodeLocalityList);
+		prismZoneDataRepo.save(prismZoneDataList);
 	}
-
-
 }

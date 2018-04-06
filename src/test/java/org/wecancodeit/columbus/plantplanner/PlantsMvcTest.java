@@ -14,7 +14,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(PlantController.class)
+@WebMvcTest(PlantRestController.class)
 public class PlantsMvcTest {
 
 	@Resource
@@ -25,7 +25,7 @@ public class PlantsMvcTest {
 
 	@MockBean
 	private ZoneRepository zoneRepo;
-	
+
 	@MockBean
 	private ZipCodeLocalityRepository zipcodeRepo;
 
@@ -36,7 +36,7 @@ public class PlantsMvcTest {
 
 	@Test
 	public void shouldRetrieveIndividualPlant() throws Exception {
-		when(plantRepo.findOne(3L)).thenReturn(new Plant("Tomato"));
+		when(plantRepo.findOne(3L)).thenReturn(new Plant("Tomato", "", ""));
 		mvc.perform(get("/plants/3")).andExpect(status().isOk());
 	}
 
@@ -72,11 +72,16 @@ public class PlantsMvcTest {
 		when(zipcodeRepo.findZoneByZipCode("43229")).thenReturn("42");
 		mvc.perform(get("/zipcode/43229")).andExpect(status().isOk());
 	}
-	
+
 	@Test
 	public void shouldRetrievePlantsFromZipcode() throws Exception {
 		when(zipcodeRepo.findZoneByZipCode("43229")).thenReturn("42");
 		when(zoneRepo.findOneByZone("42")).thenReturn(new Zone("6a"));
-		mvc.perform(get("/zipcodeplants/43229")).andExpect(status().isOk());
+		mvc.perform(get("/plants/zipcode/43229")).andExpect(status().isOk());
+	}
+	
+	@Test
+	public void shouldNotFindInvalidZipcode() throws Exception {
+		mvc.perform(get("/plants/zipcode/3323111")).andExpect(status().isNotFound());
 	}
 }

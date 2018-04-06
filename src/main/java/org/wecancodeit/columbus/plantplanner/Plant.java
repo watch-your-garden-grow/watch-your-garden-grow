@@ -22,7 +22,9 @@ public class Plant {
 	private String name;
 	private String image;
 	private String description;
+
 	private int daysSinceLastFrost;
+
 
 	@JsonIgnore
 	@ManyToMany
