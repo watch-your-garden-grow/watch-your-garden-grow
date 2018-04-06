@@ -150,7 +150,7 @@ public class PlantPopulator implements CommandLineRunner {
 		plantRepo.save(new Plant("Spinach", "Plant to 1/2 inch deep.  Needs full sunlight.", "/images/spinach.jpg", 1,
 				zone1, zone2, zone3, zone5, zone6, zone7, zone8, zone9, zone10, zone11, zone12, zone13, zone14, zone15,
 				zone16, zone17, zone18, zone19, zone22));
-		plantRepo.save(new Plant("Squash", "Plant 1 inche deep, 2 to 3 feet apart.  Needs full sunlight. ",
+		plantRepo.save(new Plant("Squash", "Plant 1 inch deep, 2 to 3 feet apart.  Needs full sunlight. ",
 				"/images/squash.jpg", 1, zone1, zone2, zone3, zone5, zone6, zone7, zone8, zone9, zone10, zone11, zone12,
 				zone13, zone14, zone15, zone16, zone17, zone18, zone19, zone20, zone21, zone22));
 		plantRepo
@@ -186,7 +186,7 @@ public class PlantPopulator implements CommandLineRunner {
 				"Grow well on hills facing the sun.  Plant at least 2-6 feet apart from each other.",
 				"/images/watermelon.jpg", 30, zone1, zone2, zone3));
 		plantRepo.save(new Plant("White Spruce",
-				"The White Spruce is exactly the tree you think of when you think of cold of Zone1A",
+				"The White Spruce is exactly the tree you think of when you think of cold of Zone 1A",
 				"/images/white-spruce.jpg", 1, zone6));
 		plantRepo.save(new Plant("Radishes", "Plant 1/2 inch deep, 12 inches apart.  Need full sunlight.",
 				"/images/radishes.jpg", 1, zone1, zone2, zone3, zone4, zone6, zone7, zone8, zone9, zone10, zone11,
@@ -195,7 +195,7 @@ public class PlantPopulator implements CommandLineRunner {
 				"Plant deep enough, and spaced out enough so that root system can spread out.  Needs at least 6 hours of sunlight daily.",
 				"/images/strawberry.jpg", 30, zone1, zone2, zone3, zone5, zone12, zone13, zone14, zone15, zone16,
 				zone17, zone18, zone19, zone20, zone21));
-		plantRepo.save(new Plant("Zucchini", "Plant 1 inche deep, 2 to 3 feet apart.  Needs full sunlight. ",
+		plantRepo.save(new Plant("Zucchini", "Plant 1 inch deep, 2 to 3 feet apart.  Needs full sunlight. ",
 				"/images/zucchini.jpg", 1, zone4, zone5, zone6, zone7, zone8, zone9, zone10, zone11, zone12, zone13,
 				zone14, zone15, zone16, zone17, zone18, zone19, zone20, zone21, zone22));
 		plantRepo.save(new Plant("Agave", "Needs to planted to a depth of 12 inches, needs a full view of the sun.",
