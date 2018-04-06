@@ -7,16 +7,19 @@ xhr.onreadystatechange = function() {
 
 
 		const plantImageContainer = document.getElementById('plantImageContainer');
-		// const newPlantListItem = document.getElementById('newPlantListItem');
-		// productContainer.innerText = res.name
+	
 		console.log(xhr);
 		// plantImageContainer.appendChild(newPlantListItem);
 		// newPlantListItem.innerText = res.name;
 
 		function appendPlantLiToPlantContainer(plantObject){
 			const plantLi = createElement('li', plantObject.name)
+			plantLi.className = "plantListItem";
 			appendElement(plantImageContainer, plantLi)
-			appendElement(plantLi, createElement('img', plantObject.image))
+			const plantImage = createElement('img')
+			plantImage.src = plantObject.image;
+			appendElement(plantLi, plantImage)
+			// console.log(plantObject.image)
 			return plantLi
 		}
 		function createElement(elem, textValue){
@@ -24,9 +27,18 @@ xhr.onreadystatechange = function() {
 			newElem.innerText = textValue
 			return newElem
 		}
+		
+		function removeLi(parent, child){			
+			parent.removeChild(child);
+   		}			
+		
 		function appendElement(parent, child){
 			parent.appendChild(child)
 		}
+		
+		const plantListItems = Array.from(document.querySelectorAll('.plantListItem'))
+				.forEach(Li=>removeLi(plantImageContainer, Li));
+
 		for (let plant of res){
 		appendPlantLiToPlantContainer(plant);
 		console.log(plant)
@@ -36,8 +48,6 @@ xhr.onreadystatechange = function() {
 		}
 	}
 }
-// xhr.open('GET', '/plants', true)
-// xhr.send()
 
 const zipCodeSubmitButton = document.querySelector('#zipCodeSubmitButton');
 zipCodeSubmitButton.addEventListener('click', function(event){

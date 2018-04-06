@@ -62,11 +62,13 @@ public class ZoneDataPopulator implements CommandLineRunner {
 		log.error("pr done");
 
 		insertPrismCsv("/phm_ak_zipcode.csv");
+
 		log.error("ak done");
 
 		insertPrismCsv("/phm_us_zipcode.csv");
 		log.error("us done");
 		*/
+
 
 	}
 

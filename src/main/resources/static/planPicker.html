@@ -14,15 +14,13 @@
 </header>
 	<div class = "zipAndPlanLink">
 		<div class = "enterZipCode">
-<!-- 		Enter in a zipcode. 
-		Return the PHZ for inputted zip referenced to zip database.  
-		Return Plants for that PHZ. -->
+
 			<form class = "zipCodeEntryAndSubmit" method = "GET">
 			<label>Enter Zip Code</label>
 			<div class = "inputAndSubmitZipCode">
 				<div class = "typeZipCodeBox">
 				
-					<input type="text" class = "zipCodeEntry" value = "43209" name="zipcode"></input>
+					<input type="text" class = "zipCodeEntry" value = "99501" name="zipcode"></input>
 				</div>
 				<div class = "submitZipCodeButton">
 					<button type="submit" id = "zipCodeSubmitButton">Submit ZipCode</button>
@@ -50,7 +48,7 @@
 		<div class = "plantResultListTitle">
 			<h2>List Of Plants Per Hardiness Zone: *Populate zone </h2>
 		</div>
-		<div class="listOfEachPlantForHardinessZone">
+		<div class="listOfEachPlantForHardinessZone" id = "plantListSection">
 			<ul id ="plantImageContainer">
 			<!-- 	With ThymeLeaf Call To Display Each Product -->
 			<!-- 	<div class = "listOfEachPlantForHardinessZoneTL" th:each="zone: ${plants}">
@@ -61,9 +59,9 @@
 					</ul>
 				</div>  -->
 
-				<li id = "newPlantListItem"><img src="images/tomato.jpg" alt="tomato"></a><a href= "TomatoLink">*Return from form input</a><button class = "addToPlanButton">Add to Plan</button></li>
-	<!-- 			<li><img src="images/tomato.jpg" alt="beanfactory"></a><a href= "BeanFactoryPink">BeanFactory</a><button class = "addToPlanButton">Add to Plan</button></li>
-				<li><img src="images/tomato.jpg" alt="Carrots"><a href= "CarrotsLink">Carrots</a></a><button class = "addToPlanButton">Add to Plan</button></li>
+				<li id = "welcomeToPageImage" class = "plantListItem"><img src="images/welcomeGardenImage.jpeg" alt="tomato"></a><a href= "TomatoLink">*Return from form input</a><button class = "addToPlanButton">Add to Plan</button></li>
+				<!-- <li class = "plantListLi"><img src="images/tomato.jpg" alt="beanfactory"></a><a href= "BeanFactoryPink">BeanFactory</a><button class = "addToPlanButton">Add to Plan</button></li> -->
+				<!-- <li><img src="images/tomato.jpg" alt="Carrots"><a href= "CarrotsLink">Carrots</a></a><button class = "addToPlanButton">Add to Plan</button></li>
 				<li><img src="images/strawberries.jpg" alt="Strawberries"><a href= "StrawberriesLink">Strawberries</a></a><button class = "addToPlanButton">Add to Plan</button></li>
 				<li><img src="images/tomato.jpg" alt="Kale"></a><a href= "KaleLink">Kale</a><button class = "addToPlanButton">Add to Plan</button></li>
 				<li><img src="images/tomato.jpg" alt="Thyme"></a><a href= "ThymeLink">Thyme</a><button class = "addToPlanButton">Add to Plan</button></li>
