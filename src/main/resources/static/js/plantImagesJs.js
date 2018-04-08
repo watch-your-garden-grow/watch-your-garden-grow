@@ -7,7 +7,7 @@ xhr.onreadystatechange = function() {
 
 
 		const plantImageContainer = document.getElementById('plantImageContainer');
-	
+
 		console.log(xhr);
 		// plantImageContainer.appendChild(newPlantListItem);
 		// newPlantListItem.innerText = res.name;
@@ -22,15 +22,9 @@ xhr.onreadystatechange = function() {
 			const plantLink = createElement('a')
 			plantLink.href = 'http://www.word.com'
 			plantLink.innerText = plantObject.name;
-
-
-			//trying to turn image into link
-			// const imageLink = createElementNoText('a')
-			// imageLink.href = 'http://watchyourgardengrow.com'
-			// appendElement(imageLink, plantImage)
-
+			plantLink.className = 'plantLinks'
 			appendElement(plantLi, plantLink)
-			appendElement(plantLi, plantImage)
+			appendElement(plantLink, plantImage)
 			const addToPlanButton = createElement("BUTTON")
 			addToPlanButton.className = "addToPlanButton"
 			addToPlanButton.innerText = "Add To Plan";
@@ -51,21 +45,21 @@ xhr.onreadystatechange = function() {
 		
 		function removeLi(parent, child){			
 			parent.removeChild(child);
-   		}			
+		}			
 		
 		function appendElement(parent, child){
 			parent.appendChild(child)
 		}
 		
 		const plantListItems = Array.from(document.querySelectorAll('.plantListItem'))
-				.forEach(Li=>removeLi(plantImageContainer, Li));
+		.forEach(Li=>removeLi(plantImageContainer, Li));
 
 		for (let plant of res){
-		appendPlantLiToPlantContainer(plant);
-		console.log(plant)
-		console.log(plant.img)
-		console.log(plant.name)
-		console.log(plantImageContainer)
+			appendPlantLiToPlantContainer(plant);
+			console.log(plant)
+			console.log(plant.img)
+			console.log(plant.name)
+			console.log(plantImageContainer)
 		}
 	}
 }
