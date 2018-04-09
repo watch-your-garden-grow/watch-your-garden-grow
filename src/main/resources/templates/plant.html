@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html xmlns:th="http://www.thymeleaf.org">
 <mvc:resources mapping="/resources/**" location="/resources/" />
 <head>
@@ -11,6 +12,9 @@
 
 <h2 th:text = "'Description of plant: '${plant.description}"/>
 <img th:src="${plant.image}" alt="${plant.name}"/>
+
+<html>
+
 
 </body>
 </html>
