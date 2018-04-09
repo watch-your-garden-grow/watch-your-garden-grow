@@ -36,7 +36,7 @@ public class PlantsMvcTest {
 
 	@Test
 	public void shouldRetrieveIndividualPlant() throws Exception {
-		when(plantRepo.findOne(3L)).thenReturn(new Plant("Tomato", "", ""));
+		when(plantRepo.findOne(3L)).thenReturn(new Plant("Tomato", "", "", 0));
 		mvc.perform(get("/plants/3")).andExpect(status().isOk());
 	}
 
@@ -79,7 +79,7 @@ public class PlantsMvcTest {
 		when(zoneRepo.findOneByZone("42")).thenReturn(new Zone("6a"));
 		mvc.perform(get("/plants/zipcode/43229")).andExpect(status().isOk());
 	}
-	
+
 	@Test
 	public void shouldNotFindInvalidZipcode() throws Exception {
 		mvc.perform(get("/plants/zipcode/3323111")).andExpect(status().isNotFound());
