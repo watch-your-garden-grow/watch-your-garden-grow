@@ -8,7 +8,7 @@ xhr.onreadystatechange = function() {
 
 		const plantImageContainer = document.getElementById('plantImageContainer');
 
-		console.log(xhr);
+		// console.log(xhr);
 		// plantImageContainer.appendChild(newPlantListItem);
 		// newPlantListItem.innerText = res.name;
 
@@ -21,9 +21,13 @@ xhr.onreadystatechange = function() {
 			plantImage.alt = plantObject.name;
 			const plantLink = createElement('a')
 
-			plantLink.href = 'plant/'+plantObject.id;
+			// plantLink.href = 'plant/'+plantObject.id;
 			plantLink.innerText = plantObject.name;
 			plantLink.className = 'plantLinks'
+			plantImage.addEventListener('click', function(event){
+				event.preventDefault();
+				modal.style.display = "block";
+			});
 			appendElement(plantLi, plantLink)
 			appendElement(plantLink, plantImage)
 			const addToPlanButton = createElement("BUTTON")
@@ -57,13 +61,17 @@ xhr.onreadystatechange = function() {
 
 		for (let plant of res){
 			appendPlantLiToPlantContainer(plant);
-			console.log(plant)
-			console.log(plant.img)
-			console.log(plant.name)
-			console.log(plantImageContainer)
+
 		}
 	}
 }
+
+// const modalPlantLink = document.querySelectorAll('.plantLinks')
+// modalPlantLink.addEventListener('click', function(event){
+// 		event.preventDefault();
+// 		modal.style.display = "block";
+
+// })
 
 const zipCodeSubmitButton = document.querySelector('#zipCodeSubmitButton');
 zipCodeSubmitButton.addEventListener('click', function(event){
