@@ -84,4 +84,12 @@ public class PlantsMvcTest {
 	public void shouldNotFindInvalidZipcode() throws Exception {
 		mvc.perform(get("/plants/zipcode/3323111")).andExpect(status().isNotFound());
 	}
+
+	@Test
+	public void shouldRetrieveIndividualPlantTemplate() throws Exception {
+
+		when(plantRepo.findOne(3L)).thenReturn(new Plant("Tomato", "", "", 0));
+		mvc.perform(get("/plant?id=3")).andExpect(status().isOk());
+
+	}
 }
