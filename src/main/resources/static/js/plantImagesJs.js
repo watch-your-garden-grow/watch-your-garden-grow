@@ -20,7 +20,8 @@ xhr.onreadystatechange = function() {
 			plantImage.src = plantObject.image;
 			plantImage.alt = plantObject.name;
 			const plantLink = createElement('a')
-			plantLink.href = 'http://www.word.com'
+
+			plantLink.href = 'plant/'+plantObject.id;
 			plantLink.innerText = plantObject.name;
 			plantLink.className = 'plantLinks'
 			appendElement(plantLi, plantLink)
@@ -29,10 +30,10 @@ xhr.onreadystatechange = function() {
 			addToPlanButton.className = "addToPlanButton"
 			addToPlanButton.innerText = "Add To Plan";
 			appendElement(plantLi, addToPlanButton)
-
 			
 			return plantLi
 		}
+
 		function createElementNoText(elem){
 			const newElem = document.createElement(elem)
 			return newElem

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<mvc:resources mapping="/resources/**" location="/resources/" />
+<head>
+<meta charset="ISO-8859-1">
+<title th:text = "${plant.name}"/>
+</head>
+<body>
+<header><h1 th:text="${plant.name}" />
+</header>
+
+<h2 th:text = "'Description of plant: '${plant.description}"/>
+<img th:src="${plant.image}" alt="${plant.name}"/>
+
+</body>
+</html>
