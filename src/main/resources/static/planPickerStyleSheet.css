@@ -157,4 +157,14 @@ footer{
 	background-color: orange;
 }
 
+.plantListItem img{
+	display: flex;
+	justify-content: center;
+}
+
+.plantLinks{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
 

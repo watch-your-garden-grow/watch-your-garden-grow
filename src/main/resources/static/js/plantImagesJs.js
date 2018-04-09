@@ -7,20 +7,35 @@ xhr.onreadystatechange = function() {
 
 
 		const plantImageContainer = document.getElementById('plantImageContainer');
-	
+
 		console.log(xhr);
 		// plantImageContainer.appendChild(newPlantListItem);
 		// newPlantListItem.innerText = res.name;
 
 		function appendPlantLiToPlantContainer(plantObject){
-			const plantLi = createElement('li', plantObject.name)
+			const plantLi = createElementNoText('li')
 			plantLi.className = "plantListItem";
 			appendElement(plantImageContainer, plantLi)
 			const plantImage = createElement('img')
 			plantImage.src = plantObject.image;
-			appendElement(plantLi, plantImage)
-			// console.log(plantObject.image)
+			plantImage.alt = plantObject.name;
+			const plantLink = createElement('a')
+			plantLink.href = 'http://www.word.com'
+			plantLink.innerText = plantObject.name;
+			plantLink.className = 'plantLinks'
+			appendElement(plantLi, plantLink)
+			appendElement(plantLink, plantImage)
+			const addToPlanButton = createElement("BUTTON")
+			addToPlanButton.className = "addToPlanButton"
+			addToPlanButton.innerText = "Add To Plan";
+			appendElement(plantLi, addToPlanButton)
+
+			
 			return plantLi
+		}
+		function createElementNoText(elem){
+			const newElem = document.createElement(elem)
+			return newElem
 		}
 		function createElement(elem, textValue){
 			const newElem = document.createElement(elem)
@@ -30,21 +45,21 @@ xhr.onreadystatechange = function() {
 		
 		function removeLi(parent, child){			
 			parent.removeChild(child);
-   		}			
+		}			
 		
 		function appendElement(parent, child){
 			parent.appendChild(child)
 		}
 		
 		const plantListItems = Array.from(document.querySelectorAll('.plantListItem'))
-				.forEach(Li=>removeLi(plantImageContainer, Li));
+		.forEach(Li=>removeLi(plantImageContainer, Li));
 
 		for (let plant of res){
-		appendPlantLiToPlantContainer(plant);
-		console.log(plant)
-		console.log(plant.img)
-		console.log(plant.name)
-		console.log(plantImageContainer)
+			appendPlantLiToPlantContainer(plant);
+			console.log(plant)
+			console.log(plant.img)
+			console.log(plant.name)
+			console.log(plantImageContainer)
 		}
 	}
 }
