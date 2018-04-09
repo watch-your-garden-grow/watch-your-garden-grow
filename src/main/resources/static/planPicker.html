@@ -72,8 +72,10 @@
 </div>
 <div id="modalBox" class="modal">
 	<div class="md-modal md-effect-5" id="modal-1">
-		<div class="modal-content">
+		<div class="modal-content" id = "modalBoxContent">
 			<span class="close">&times</span>
+			<h2  th:text = "'Description of plant: '${plant.description}"/>
+			<img th:src="${plant.image}" alt="${plant.name}"/>
 			This is a modal box for individual plants.
 		</div>
 	</div>
