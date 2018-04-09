@@ -3,6 +3,7 @@ package org.wecancodeit.columbus.plantplanner;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
 import javax.annotation.Resource;
 
@@ -85,11 +86,4 @@ public class PlantsMvcTest {
 		mvc.perform(get("/plants/zipcode/3323111")).andExpect(status().isNotFound());
 	}
 
-	@Test
-	public void shouldRetrieveIndividualPlantTemplate() throws Exception {
-
-		when(plantRepo.findOne(3L)).thenReturn(new Plant("Tomato", "", "", 0));
-		mvc.perform(get("/plant?id=3")).andExpect(status().isOk());
-
-	}
 }
