@@ -33,11 +33,17 @@ xhr.onreadystatechange = function() {
 				modal.style.display = "block";
 				// const modalBox = document.getElementById('modalBoxContent')
 				// took out of add event listener function:
-			const modalBoxContent = document.querySelector('.modal-content')
-			appendElement(plantLi, plantObject.name)
+				const modalBoxContent = document.querySelector('.modal-content')
+				const plantDescription = document.querySelector('.plantDescription')
+				const modalImage = document.querySelector('.modalImage')
+				plantDescription.innerText = plantObject.description
+				const modalImageContainer = createElement('img')
+				appendElement(modalBoxContent, modalImageContainer)
+				modalImageContainer.src = plantObject.image
+				modalImageContainer.alt = plantObject.name 
+				// appendElement(plantLi, plantObject.name)
 				
 				});
-	
 
 			appendElement(plantLi, plantLink)
 			appendElement(plantLink, plantImage)
@@ -50,8 +56,6 @@ xhr.onreadystatechange = function() {
 			
 			return plantLi
 		}
-
-
 
 		function createElementNoText(elem){
 			const newElem = document.createElement(elem)
@@ -80,6 +84,11 @@ xhr.onreadystatechange = function() {
 		}
 	}
 }
+
+// function getPlants() {
+// 	xhr.open('GET', '/plants', true)
+// 	xhr.send()
+// }
 
 const zipCodeSubmitButton = document.querySelector('#zipCodeSubmitButton');
 zipCodeSubmitButton.addEventListener('click', function(event){
