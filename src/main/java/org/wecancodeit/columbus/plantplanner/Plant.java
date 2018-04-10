@@ -2,6 +2,7 @@ package org.wecancodeit.columbus.plantplanner;
 
 import static java.util.Arrays.asList;
 
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -9,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -18,13 +20,13 @@ public class Plant {
 	@Id
 	@GeneratedValue
 	private long id;
-
+	@OneToMany
+	private Collection<ReportItem> reportItems;
 	private String name;
 	private String image;
 	private String description;
 
 	private int daysSinceLastFrost;
-
 
 	@JsonIgnore
 	@ManyToMany
