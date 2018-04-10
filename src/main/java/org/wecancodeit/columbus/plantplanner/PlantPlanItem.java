@@ -35,6 +35,10 @@ public class PlantPlanItem {
 	public Plant getPlant() {
 		return plant;
 	}
+	
+	public String getPlantName() {
+		return plant.getName();
+	}
 
 	public PlantPlan getPlantPlan() {
 		return plantPlan;
