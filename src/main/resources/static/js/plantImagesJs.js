@@ -27,23 +27,31 @@ xhr.onreadystatechange = function() {
 
 			// const allImagesForModal = querySelectorAll('modal')
 			plantImage.addEventListener('click', function(event){
+				
 				event.preventDefault();
 				let modal = document.querySelector('.modal');
 				modal.style.display = "block";
 				// const modalBox = document.getElementById('modalBoxContent')
-				appendElement(modal, plantObject.name)
+				// took out of add event listener function:
+			const modalBoxContent = document.querySelector('.modal-content')
+			appendElement(plantLi, plantObject.name)
+				
 				});
+	
 
 			appendElement(plantLi, plantLink)
 			appendElement(plantLink, plantImage)
 			const addToPlanButton = createElement("BUTTON")
 			addToPlanButton.className = "addToPlanButton"
 			addToPlanButton.innerText = "Add To Plan";
-			addToPlanButton.id = plantObject.id
+			//try to make a dataSet Id for each button for David.
+			// addToPlanButton.dataSet-plantId = plantObject.id
 			appendElement(plantLi, addToPlanButton)
 			
 			return plantLi
-			}
+		}
+
+
 
 		function createElementNoText(elem){
 			const newElem = document.createElement(elem)
