@@ -85,10 +85,4 @@ public class PlantsMvcTest {
 	public void shouldNotFindInvalidZipcode() throws Exception {
 		mvc.perform(get("/plants/zipcode/3323111")).andExpect(status().isNotFound());
 	}
-
-<<<<<<< HEAD
-
-	
-=======
->>>>>>> origin/BuddhaBellyController
 }
