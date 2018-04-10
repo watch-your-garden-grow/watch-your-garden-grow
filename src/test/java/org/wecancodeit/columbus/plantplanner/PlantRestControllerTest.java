@@ -16,7 +16,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.wecancodeit.columbus.plantplanner.PlantRestController.SomethingNotFoundException;
 
-public class PlantControllerTest {
+public class PlantRestControllerTest {
 
 	@InjectMocks
 	private PlantRestController underTest;

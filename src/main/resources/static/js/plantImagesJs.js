@@ -8,9 +8,9 @@ xhr.onreadystatechange = function() {
 
 		const plantImageContainer = document.getElementById('plantImageContainer');
 
-		console.log(xhr);
-		// plantImageContainer.appendChild(newPlantListItem);
-		// newPlantListItem.innerText = res.name;
+		// function appendToModalBox(plantObject){
+			
+		// }
 
 		function appendPlantLiToPlantContainer(plantObject){
 			const plantLi = createElementNoText('li')
@@ -20,18 +20,35 @@ xhr.onreadystatechange = function() {
 			plantImage.src = plantObject.image;
 			plantImage.alt = plantObject.name;
 			const plantLink = createElement('a')
-			plantLink.href = 'http://www.word.com'
+
+			// plantLink.href = 'plant/'+plantObject.id;
 			plantLink.innerText = plantObject.name;
 			plantLink.className = 'plantLinks'
+
+			// const allImagesForModal = querySelectorAll('modal')
+			plantImage.addEventListener('click', function(event){
+				event.preventDefault();
+				let modal = document.querySelector('.modal');
+				modal.style.display = "block";
+				// const modalBox = document.getElementById('modalBoxContent')
+				appendElement(modal, plantObject.name)
+				});
+
 			appendElement(plantLi, plantLink)
 			appendElement(plantLink, plantImage)
 			const addToPlanButton = createElement("BUTTON")
 			addToPlanButton.className = "addToPlanButton"
 			addToPlanButton.innerText = "Add To Plan";
+			addToPlanButton.id = plantObject.id
 			appendElement(plantLi, addToPlanButton)
+			addToPlanButton.addEventListener('click', event => addPlantToPlan(plantObject.id))
 
-			
 			return plantLi
+			}
+
+		function createElementNoText(elem){
+			const newElem = document.createElement(elem)
+			return newElem
 		}
 		function createElementNoText(elem){
 			const newElem = document.createElement(elem)
@@ -56,10 +73,6 @@ xhr.onreadystatechange = function() {
 
 		for (let plant of res){
 			appendPlantLiToPlantContainer(plant);
-			console.log(plant)
-			console.log(plant.img)
-			console.log(plant.name)
-			console.log(plantImageContainer)
 		}
 	}
 }
@@ -71,8 +84,3 @@ zipCodeSubmitButton.addEventListener('click', function(event){
 	xhr.open('GET', '/plants/zipcode/'+ passedZipCode, true);
 	xhr.send();
 });
-
-// function getPlants() {
-// 	xhr.open('GET', '/plants', true)
-// 	xhr.send()
-// }
