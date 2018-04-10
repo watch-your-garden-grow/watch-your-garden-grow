@@ -42,9 +42,14 @@ xhr.onreadystatechange = function() {
 			addToPlanButton.id = plantObject.id
 			appendElement(plantLi, addToPlanButton)
 			addToPlanButton.addEventListener('click', event => addPlantToPlan(plantObject.id))
+
 			return plantLi
 			}
 
+		function createElementNoText(elem){
+			const newElem = document.createElement(elem)
+			return newElem
+		}
 		function createElementNoText(elem){
 			const newElem = document.createElement(elem)
 			return newElem
@@ -68,7 +73,6 @@ xhr.onreadystatechange = function() {
 
 		for (let plant of res){
 			appendPlantLiToPlantContainer(plant);
-
 		}
 	}
 }

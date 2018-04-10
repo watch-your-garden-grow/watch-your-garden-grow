@@ -20,7 +20,7 @@ public class ReportItemTest {
 
 	@Test
 	public void shouldHaveASowDate() {
-		LocalDate sowDate = underTest.reportSowDate();
+		LocalDate sowDate = underTest.getSowDate();
 		assertThat(sowDate, is(LocalDate.of(LocalDate.now().getYear(), 4, 20)));
 	}
 
@@ -28,7 +28,7 @@ public class ReportItemTest {
 	public void tomatoShouldHave504asASowDate() {
 		Plant dummyTomato = new Plant("Tomato", "", "", 14);
 		ReportItem test2 = new ReportItem(dummyTomato);
-		LocalDate sowDate = test2.reportSowDate();
+		LocalDate sowDate = test2.getSowDate();
 		assertThat(sowDate, is(LocalDate.of(LocalDate.now().getYear(), 5, 4)));
 	}
 
@@ -36,7 +36,7 @@ public class ReportItemTest {
 	public void cantelopeShouldHave510AsASowDate() {
 		Plant dummyCantelope = new Plant("Tomato", "", "", 20);
 		ReportItem test2 = new ReportItem(dummyCantelope);
-		LocalDate sowDate = test2.reportSowDate();
+		LocalDate sowDate = test2.getSowDate();
 		assertThat(sowDate, is(LocalDate.of(LocalDate.now().getYear(), 5, 10)));
 	}
 }
