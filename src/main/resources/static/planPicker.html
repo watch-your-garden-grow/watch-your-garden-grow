@@ -33,14 +33,8 @@
 		</div>
 	</div>
 
-	<form>
 		<div class = "hardinessZone">
 			<h3>Your Hardiness Zone is:  </h3>
-
-				<!-- <div th:each="course: ${courses}">
-				<h2 th:text="${course.name}"></h2>
-				<h2 th:text="${course.description}"></h2> -->
-
 				
 			<h2>*This will be result of hardiness zone: B4</h2>
 		</div>
@@ -50,34 +44,30 @@
 		</div>
 		<div class="listOfEachPlantForHardinessZone" id = "plantListSection">
 			<ul id ="plantImageContainer">
-			<!-- 	With ThymeLeaf Call To Display Each Product -->
-			<!-- 	<div class = "listOfEachPlantForHardinessZoneTL" th:each="zone: ${plants}">
-					<ul>
-						<li>
-							<a th:href="@{/plants(id=${plant.id})}" th:text="${plant.name}"></a>
-						</li>
-					</ul>
-				</div>  -->
 
 				<li id = "welcomeToPageImage" class = "plantListItem"><img src="images/welcomeGardenImage.jpeg" alt="tomato"></a><a href= "TomatoLink">*Return from form input</a><button class = "addToPlanButton">Add to Plan</button></li>
-			<!-- 	<li class = "plantListLi"><a href= "BeanFactoryPink"><img src="images/tomato.jpg" alt="beanfactory"></a><a href= "BeanFactoryPink">BeanFactory</a><button class = "addToPlanButton">Add to Plan</button></li> -->
-				<!-- <li><img src="images/tomato.jpg" alt="Carrots"><a href= "CarrotsLink">Carrots</a></a><button class = "addToPlanButton">Add to Plan</button></li>
-				<li><img src="images/strawberries.jpg" alt="Strawberries"><a href= "StrawberriesLink">Strawberries</a></a><button class = "addToPlanButton">Add to Plan</button></li>
-				<li><img src="images/tomato.jpg" alt="Kale"></a><a href= "KaleLink">Kale</a><button class = "addToPlanButton">Add to Plan</button></li>
-				<li><img src="images/tomato.jpg" alt="Thyme"></a><a href= "ThymeLink">Thyme</a><button class = "addToPlanButton">Add to Plan</button></li>
-				<li><img src="images/tomato.jpg" alt="Oregano"></a><a href= "OreganoLink">Oregano</a><button class = "addToPlanButton">Add to Plan</button></li>
-				<li><img src="images/tomato.jpg"alt="Basil"></a><a href= "BasilLink">Basil</a><button class = "addToPlanButton">Add to Plan</button></li>
-				<li><img src="images/tomato.jpg" alt="Bacon"></a><a href= "BaconLink">Bacon</a><button class = "addToPlanButton">Add to Plan</button></li>
-				<li><img src="images/tomato.jpg" alt="FutureVodka"><a href= "FutureVodkaLink">FutureVodka</a></a><button class = "addToPlanButton">Add to Plan</button></li>	 -->			
+
 			</ul>
 		</div>
 		</div>
-	</form>
 <footer>
 <h3>Copyright 2018</h3>
 <h3>04/02/2018</h3>
 </footer>
 </div>
+<div id="modalBox" class="modal">
+	<div class="md-modal md-effect-5" id="modal-1">
+		<div class="modal-content" id = "modalBoxContent">
+			<span class="close">&times</span>
+			<!-- <h2  th:text = "'Description of plant: '${plant.description}"/> -->
+			<!-- <img th:src="${plant.image}" alt="${plant.name}"/> -->
+			This is a modal box for individual plants.
+		</div>
+	</div>
+</div>			
+</body>
 <script src="js/plantImagesJs.js"></script>
+<script src="js/plantPlanApiFunctions.js"></script>
+
 </body>
 </html>

@@ -1,10 +1,20 @@
 <!DOCTYPE html>
-<html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-	<title></title>
+<meta charset="ISO-8859-1">
+<title th:text = "${plant.name}"/>
 </head>
 <body>
-<p>Stuff</p>
+<header><h1 th:text="${plant.name}" />
+</header>
+
+<h2 th:text = "'Description of plant: '${plant.description}"/>
+<img th:src="${plant.image}" alt="${plant.name}"/>
+
+<html>
+
 
 </body>
 </html>
