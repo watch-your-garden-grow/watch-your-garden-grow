@@ -15,22 +15,19 @@ public class PlantTemplateController {
 
 	@RequestMapping("/plant")
 	public String showPlant(@RequestParam("id") Long plantId, Model model) {
-		Plant selectedPlant = plantRepo.findOne(plantId);
-		if (selectedPlant == null) {
+		if (plantRepo.findOne(plantId) == null) {
 			return "notFound";
 		}
-		model.addAttribute("plant", selectedPlant);
+		model.addAttribute("plant", plantRepo.findOne(plantId));
 		return "plant";
-
 	}
 
 	@RequestMapping("/plant/{id}")
 	public String showAnotherPlant(@PathVariable("id") Long plantId, Model model) {
-		Plant selectedPlant = plantRepo.findOne(plantId);
-		if (selectedPlant == null) {
+		if (plantRepo.findOne(plantId) == null) {
 			return "notFound";
 		}
-		model.addAttribute("plant", selectedPlant);
+		model.addAttribute("plant", plantRepo.findOne(plantId));
 		return "plant";
 	}
 }
