@@ -41,7 +41,7 @@ xhr.onreadystatechange = function() {
 			addToPlanButton.innerText = "Add To Plan";
 			addToPlanButton.id = plantObject.id
 			appendElement(plantLi, addToPlanButton)
-			
+			addToPlanButton.addEventListener('click', event => addPlantToPlan(plantObject.id))
 			return plantLi
 			}
 
