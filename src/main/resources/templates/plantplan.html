@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Insert title here</title>
+</head>
+<body>
+
+	<section>
+		<div style="overflow:auto;" th:each="plantPlanItem: ${#lists.sort(plantPlanItems, plantNameComp)}">
+
+			<figure	style="width:150px; height: 150px; float: left; margin: 1rem;">
+				<img style="max-height:100%; max-width:100%" th:src="${plantPlanItem.plant.image}"/>
+			</figure>
+
+			<header>
+				<h2 th:text="${plantPlanItem.plant.name}">Plant Name</h2>
+			</header>
+
+			<p th:text="${plantPlanItem.plant.description}">Plant Description</p>
+		</div>
+	</section>
+
+</body>
+</html>
