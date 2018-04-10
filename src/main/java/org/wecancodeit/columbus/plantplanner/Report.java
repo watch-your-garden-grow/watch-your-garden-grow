@@ -18,7 +18,7 @@ public class Report {
 	}
 
 	public Report(ZipCodeLocality zipCodeLocality) {
-		this(zipCodeLocality.getZone(), zipCodeLocality.getZone());
+		this(zipCodeLocality.getZipcode(), zipCodeLocality.getZone());
 	}
 
 	public LocalDate getLastFrost() {
