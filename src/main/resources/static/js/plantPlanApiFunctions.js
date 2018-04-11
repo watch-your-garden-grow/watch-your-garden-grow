@@ -3,7 +3,7 @@ var planIdent;
 const addPlantToPlan = async (plantId) => {
     if (!planIdent) await getNewPlan()
     console.log("Adding Plant "+plantId+" to Plan Id: " +planIdent)
-    await putFetch("/api/plantplan/" + planIdent + "/" + plantId)
+    await putFetch("/api/plantplan/" + planIdent + "/plant/" + plantId)
 }
 
 const putFetch = (url) => fetch(url, {method: 'PUT'})
