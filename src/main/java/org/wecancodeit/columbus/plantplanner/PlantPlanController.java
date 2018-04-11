@@ -49,7 +49,7 @@ public class PlantPlanController {
 	}
 
 	@ResponseBody
-	@PutMapping(value = "/api/plantplan/{plantPlanId}/{plantId}")
+	@PutMapping(value = "/api/plantplan/{plantPlanId}/plant/{plantId}")
 	public HttpEntity<String> addPlantToPlan(@PathVariable(value = "plantPlanId") Long plantPlanId,
 			@PathVariable(value = "plantId") Long plantId) {
 		Plant plant = plantRepository.findOne(plantId);
@@ -65,7 +65,7 @@ public class PlantPlanController {
 	}
 	
 	@ResponseBody
-	@DeleteMapping(value = "/api/plantplan/{plantPlanId}/{plantId}")
+	@DeleteMapping(value = "/api/plantplan/{plantPlanId}/plant/{plantId}")
 	public HttpEntity<String> deletePlantFromPlan(@PathVariable(value = "plantPlanId") Long plantPlanId,
 			@PathVariable(value = "plantId") Long plantId) {
 		PlantPlan plantPlan = plantPlanRepository.findOne(plantPlanId);
