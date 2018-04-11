@@ -30,21 +30,28 @@ button:hover{
 	display: grid;
 	grid-template-columns: 3rem, 6rem, 5rem, auto, 2rem;
 	grid-gap: 1rem;
-	background-color: black;
-
+	position: relative;
+	/*overflow: hidden;*/
+	/*background-color: black;*/
 }
 
-body{
-	background-color: green;
+body {
+	margin: 0rem;
+	background-image: url(../../images/hero-image.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: top left;
+	background-attachment: fixed;
 }
+
 header{
-	background-color: yellow;
+	/*background-color: yellow;*/
 	display: flex;
 	justify-content: center;
 }
 
 .enterZipCode{
-	background-color: cyan;
+	/*background-color: cyan;*/
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
@@ -81,17 +88,17 @@ header{
 }
 
 .currentPlanLink{
-	background-color: darkgrey;
+	/*background-color: darkgrey;*/
 }
 
 .zipAndPlanLink{
-	background-color: grey;
+	/*background-color: grey;*/
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 }
 
 .hardinessZone{
-	background-color: lightgrey;
+	/*background-color: lightgrey;*/
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -102,7 +109,7 @@ header{
 .sectionForAllPlantsForHardinessZone{
 	display: grid;
 	grid-template-rows: 4rem auto;
-	background-color: purple;
+	/*background-color: purple;*/
 	align-self: center;
 	align-items: center;
 
@@ -113,18 +120,21 @@ header{
 }
 
 .listOfEachPlantForHardinessZone {	
-	background-color: blue;
+	/*background-color: blue;*/
 	margin-right: 18rem;
 	margin-left: 18rem;
 }
 
 
-ul{
-
+ul {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
+/*#plantImageContainer {
+	overflow: scroll;
+}
+*/
 li{
 	display: flex;
 	flex-direction: column;
@@ -134,7 +144,7 @@ li{
 }
 
 .addToPlanButton{
-	background-color: purple;
+	/*background-color: purple;*/
 	margin-top:.45rem;
 	margin-bottom: 1.9rem;
 	height: 2rem;
@@ -155,7 +165,7 @@ li{
 footer{
 	display: flex;
 	justify-content: space-around;
-	background-color: orange;
+	/*background-color: orange;*/
 }
 
 .plantListItem img{
