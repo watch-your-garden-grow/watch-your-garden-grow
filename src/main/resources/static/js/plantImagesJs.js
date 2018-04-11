@@ -8,6 +8,8 @@ xhr.onreadystatechange = function() {
 
 		const plantImageContainer = document.getElementById('plantImageContainer');
 
+		let modal = document.querySelector('.modal');
+			
 		function appendPlantLiToPlantContainer(plantObject){
 			const plantLi = createElementNoText('li')
 			plantLi.className = "plantListItem";
@@ -19,8 +21,6 @@ xhr.onreadystatechange = function() {
 			plantLink.innerText = plantObject.name;
 			plantLink.className = 'plantLinks'
 
-			let modal = document.querySelector('.modal');
-			
 			plantImage.addEventListener('click', function(event){
 				
 				event.preventDefault();
@@ -33,12 +33,6 @@ xhr.onreadystatechange = function() {
 				modalImageContainer.src = plantObject.image
 			});
 
-			const modalClose = document.querySelector('.close')
-			modalClose.addEventListener('click', function() {
-				modal.style.display = 'none';
-				removeLi()
-			})
-
 			appendElement(plantLi, plantLink)
 			appendElement(plantLink, plantImage)
 			const addToPlanButton = createElement("BUTTON")
@@ -48,6 +42,13 @@ xhr.onreadystatechange = function() {
 		
 			return plantLi
 		}
+
+			const modalClose = document.querySelector('.close')
+			modalClose.addEventListener('click', function() {
+				modal.style.display = 'none';
+				// removeLi(plantLi)
+			})
+
 
 		function createElementNoText(elem){
 			const newElem = document.createElement(elem)
