@@ -34,11 +34,11 @@ public class Report {
 			createReportItemFromPlant(plant);
 		}
 	}
-	
+
 	public void createReportItemsFromPlant(Collection<Plant> plants) {
 		plants.forEach(plant -> createReportItemFromPlant(plant));
 	}
-	
+
 	public void createReportItemsFromPlantPlan(PlantPlan plantPlan) {
 		plantPlan.getPlantPlanItems().forEach(planItem -> createReportItemsFromPlant(planItem.getPlant()));
 	}
