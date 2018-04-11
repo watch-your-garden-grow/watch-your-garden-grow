@@ -121,15 +121,19 @@ header{
 
 .listOfEachPlantForHardinessZone {	
 	/*background-color: blue;*/
-	margin-right: 18rem;
-	margin-left: 18rem;
+	margin-right: 9rem;
+	margin-left: 9rem;
 }
 
 
 ul {
-	display: grid;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+/*	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-}
+	grid-gap: 5rem;
+*/}
 
 /*#plantImageContainer {
 	overflow: scroll;
