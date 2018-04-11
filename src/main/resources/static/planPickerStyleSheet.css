@@ -121,19 +121,21 @@ header{
 
 .listOfEachPlantForHardinessZone {	
 	/*background-color: blue;*/
-	margin-right: 9rem;
-	margin-left: 9rem;
+	margin-right: 18rem;
+	margin-left: 18rem;
 }
 
 
 ul {
-	display: flex;
-	justify-content: space-around;
+/*	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
 	flex-wrap: wrap;
-/*	display: grid;
+*/	
+	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-	grid-gap: 5rem;
-*/}
+	/*grid-gap: 5rem;*/
+}
 
 /*#plantImageContainer {
 	overflow: scroll;
@@ -148,7 +150,7 @@ li{
 }
 
 .addToPlanButton{
-	/*background-color: purple;*/
+	background-color: purple;
 	margin-top:.45rem;
 	margin-bottom: 1.9rem;
 	height: 2rem;
@@ -158,7 +160,7 @@ li{
 .listOfEachPlantForHardinessZone li img {
 	width: 8rem;
 	height: 8rem;
-	/*display: flex;*/
+	display: flex;
 }
 
 .listOfEachPlantForHardinessZone li a {
@@ -168,7 +170,7 @@ li{
 footer{
 	display: flex;
 	justify-content: space-around;
-	/*background-color: orange;*/
+	/*/*background-color: orange;*/
 }
 
 .plantListItem img{
@@ -180,6 +182,7 @@ footer{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	cursor: pointer;
 }
 
 .modal {
