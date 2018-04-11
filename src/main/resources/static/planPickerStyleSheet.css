@@ -139,6 +139,7 @@ li{
 	margin-bottom: 1.9rem;
 	height: 2rem;
 	width: 6rem;
+	cursor: pointer;
 }
 
 .listOfEachPlantForHardinessZone li img {
@@ -166,6 +167,7 @@ footer{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	cursor: pointer;
 }
 
 .modal {
