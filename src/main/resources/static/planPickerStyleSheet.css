@@ -179,8 +179,6 @@ footer{
 	height:100%;
 	overflow: auto;
 	background-color: rgba(0,0,0,0.4);
-	transition: all 5s;
-	transform: translateX(0%) translateY(0%);
 }
 
 .modal-content {
@@ -202,4 +200,9 @@ footer{
 	position: relative;
 	top: -2.6rem;
 	right: -1rem;
+}
+
+.modal img {
+	height: 10rem;
+	width: 10rem;
 }

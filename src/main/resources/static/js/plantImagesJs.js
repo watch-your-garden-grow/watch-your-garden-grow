@@ -8,10 +8,6 @@ xhr.onreadystatechange = function() {
 
 		const plantImageContainer = document.getElementById('plantImageContainer');
 
-		// function appendToModalBox(plantObject){
-			
-		// }
-
 		function appendPlantLiToPlantContainer(plantObject){
 			const plantLi = createElementNoText('li')
 			plantLi.className = "plantListItem";
@@ -20,40 +16,36 @@ xhr.onreadystatechange = function() {
 			plantImage.src = plantObject.image;
 			plantImage.alt = plantObject.name;
 			const plantLink = createElement('a')
-
-			// plantLink.href = 'plant/'+plantObject.id;
 			plantLink.innerText = plantObject.name;
 			plantLink.className = 'plantLinks'
 
-			// const allImagesForModal = querySelectorAll('modal')
+			let modal = document.querySelector('.modal');
+			
 			plantImage.addEventListener('click', function(event){
 				
 				event.preventDefault();
-				let modal = document.querySelector('.modal');
 				modal.style.display = "block";
-				// const modalBox = document.getElementById('modalBoxContent')
-				// took out of add event listener function:
 				const modalBoxContent = document.querySelector('.modal-content')
 				const plantDescription = document.querySelector('.plantDescription')
-				const modalImage = document.querySelector('.modalImage')
 				plantDescription.innerText = plantObject.description
-				const modalImageContainer = createElement('img')
-				appendElement(modalBoxContent, modalImageContainer)
+				const modalImageContainer = document.querySelector('.modalImage')
+				modalImageContainer.alt = plantObject.name
 				modalImageContainer.src = plantObject.image
-				modalImageContainer.alt = plantObject.name 
-				// appendElement(plantLi, plantObject.name)
-				
-				});
+			});
+
+			const modalClose = document.querySelector('.close')
+			modalClose.addEventListener('click', function() {
+				modal.style.display = 'none';
+				removeLi()
+			})
 
 			appendElement(plantLi, plantLink)
 			appendElement(plantLink, plantImage)
 			const addToPlanButton = createElement("BUTTON")
 			addToPlanButton.className = "addToPlanButton"
 			addToPlanButton.innerText = "Add To Plan";
-			//try to make a dataSet Id for each button for David.
-			// addToPlanButton.dataSet-plantId = plantObject.id
 			appendElement(plantLi, addToPlanButton)
-			
+		
 			return plantLi
 		}
 
@@ -67,7 +59,7 @@ xhr.onreadystatechange = function() {
 			return newElem
 		}
 		
-		function removeLi(parent, child){			
+		function removeLi(parent, child){
 			parent.removeChild(child);
 		}			
 		
@@ -80,15 +72,9 @@ xhr.onreadystatechange = function() {
 
 		for (let plant of res){
 			appendPlantLiToPlantContainer(plant);
-
 		}
 	}
 }
-
-// function getPlants() {
-// 	xhr.open('GET', '/plants', true)
-// 	xhr.send()
-// }
 
 const zipCodeSubmitButton = document.querySelector('#zipCodeSubmitButton');
 zipCodeSubmitButton.addEventListener('click', function(event){
