@@ -6,8 +6,7 @@
 <body>
 
 	<section>
-	<!-- 	<div style="overflow:auto;" th:each="reportItem: ${#lists.sort(reportItems, reportItemSowDateComp"> --> 
-		<div style="overflow:auto;" th:each="reportItem: ${report.reportItems}"> 
+	 	<div style="overflow:auto;" th:each="reportItem: ${#lists.sort(report.reportItems, reportItemSowDateComp)}"> 
 
 			<figure	style="width:150px; height: 150px; float: left; margin: 1rem;">
 				<img style="max-height:100%; max-width:100%" th:src="${reportItem.plant.image}"/>

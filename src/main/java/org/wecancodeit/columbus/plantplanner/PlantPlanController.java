@@ -67,7 +67,7 @@ public class PlantPlanController {
 		report.createReportItemsFromPlantPlan(plantPlan);
 		
 		model.addAttribute("report" , report);
-		//model.addAttribute("reportItemSowDateComp", Comparator.comparing(ReportItem::getRequestedSowDate));
+		model.addAttribute("reportItemSowDateComp", Comparator.comparing(ReportItem::getRequestedSowDate));
 		return new ResponseEntity<>(report, HttpStatus.OK);
 	}
 	//
@@ -87,7 +87,7 @@ public class PlantPlanController {
 		report.createReportItemsFromPlantPlan(plantPlan);
 		
 		model.addAttribute("report" , report);
-		//model.addAttribute("reportItemSowDateComp", Comparator.comparing(ReportItem::getRequestedSowDate));
+		model.addAttribute("reportItemSowDateComp", Comparator.comparing(ReportItem::getRequestedSowDate));
 		return "reporttest";
 	}
 	
