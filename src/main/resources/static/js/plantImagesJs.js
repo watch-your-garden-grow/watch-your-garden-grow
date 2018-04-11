@@ -27,10 +27,13 @@ xhr.onreadystatechange = function() {
 				modal.style.display = "block";
 				const modalBoxContent = document.querySelector('.modal-content')
 				const plantDescription = document.querySelector('.plantDescription')
+				const plantName = document.querySelector('.plantName')
 				plantDescription.innerText = plantObject.description
 				const modalImageContainer = document.querySelector('.modalImage')
 				modalImageContainer.alt = plantObject.name
 				modalImageContainer.src = plantObject.image
+				plantName.innerText = plantObject.name
+
 			});
 
 			appendElement(plantLi, plantLink)

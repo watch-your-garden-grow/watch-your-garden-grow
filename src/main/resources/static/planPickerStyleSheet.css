@@ -205,20 +205,8 @@ footer{
 	height:100vh;
 	/*overflow: auto;*/
 	background-color: rgba(0,0,0,0.4);
-	
-}
 
-.modal-content {
-	background-color: rgba(264, 264, 264, .90);
-	margin: 15% auto;
-	padding: 2.6rem;
-	border: 1px solid green;
-	border-radius: .2rem;
-	width: 80%;
-	font-size: 1.3rem;
-	color: black;
 }
-
 .close {
 	float:right;
 	cursor: pointer;
@@ -227,6 +215,21 @@ footer{
 	position: relative;
 	top: -2.6rem;
 	right: -1rem;
+}
+
+.modal-content {
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+	background-color: rgba(264, 264, 264, .90);
+	width: 20rem;
+	margin: 15% auto;
+	padding: 2.6rem;
+	border: 1px solid green;
+	border-radius: .2rem;
+	/*width: 80%;*/
+	font-size: 1.3rem;
+	color: black;
 }
 
 .modal img {
