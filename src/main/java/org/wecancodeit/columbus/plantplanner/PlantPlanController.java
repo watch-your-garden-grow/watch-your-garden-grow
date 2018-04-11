@@ -4,11 +4,14 @@ import java.util.Comparator;
 
 import javax.annotation.Resource;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -17,6 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class PlantPlanController {
 
+	private Logger log = LoggerFactory.getLogger(PlantPlanController.class);
 
 	@Resource
 	private PlantRepository plantRepository;
@@ -59,6 +63,17 @@ public class PlantPlanController {
 
 		return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
 	}
+	
+	@ResponseBody
+	@DeleteMapping(value = "/api/plantplan/{plantPlanId}/{plantId}")
+	public HttpEntity<String> deletePlantFromPlan(@PathVariable(value = "plantPlanId") Long plantPlanId,
+			@PathVariable(value = "plantId") Long plantId) {
+		PlantPlan plantPlan = plantPlanRepository.findOne(plantPlanId);
+		PlantPlanItem plantPlanItem = plantPlanItemRepository.findByPlantPlanIdAndPlantId(plantPlanId,plantId).get();
+		plantPlanRepository.save(plantPlan.removePlantPlanItem(plantPlanItem));
+		return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+	}
+	
 	@ResponseBody
 	@GetMapping(value = "/api/report/plantplan/{plantPlanId}/zipcode/{zipcode}")
 	public HttpEntity<Report> presetPlantPlanReportAPi(@PathVariable("plantPlanId") Long plantPlanId, @PathVariable("zipcode") String zipcode, Model model) {

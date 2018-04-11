@@ -31,7 +31,7 @@ public class PlantPlan {
 		return this;
 	}
 
-	public PlantPlan removePlantItem(PlantPlanItem plantPlanItem) {
+	public PlantPlan removePlantPlanItem(PlantPlanItem plantPlanItem) {
 		plantPlanItems.remove(plantPlanItem);
 		plantPlanItem.plantPlan = null;
 		return this;
@@ -44,5 +44,4 @@ public class PlantPlan {
 	public Set<PlantPlanItem> getPlantPlanItems() {
 		return plantPlanItems;
 	}
-
 }
