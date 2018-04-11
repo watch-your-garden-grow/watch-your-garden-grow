@@ -59,7 +59,19 @@ public class PlantPlanController {
 
 		return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
 	}
-
+	@ResponseBody
+	@GetMapping(value = "/api/report/plantplan/{plantPlanId}/zipcode/{zipcode}")
+	public HttpEntity<Report> presetPlantPlanReportAPi(@PathVariable("plantPlanId") Long plantPlanId, @PathVariable("zipcode") String zipcode, Model model) {
+		PlantPlan plantPlan = plantPlanRepository.findOne(plantPlanId);
+		Report report = new Report(zipCodeRepo.findOneByZipcode(zipcode));
+		report.createReportItemsFromPlantPlan(plantPlan);
+		
+		model.addAttribute("report" , report);
+		//model.addAttribute("reportItemSowDateComp", Comparator.comparing(ReportItem::getRequestedSowDate));
+		return new ResponseEntity<>(report, HttpStatus.OK);
+	}
+	//
+	
 	@GetMapping(value = "/plantplan/{plantPlanId}")
 	public String presetPlantPlan(@PathVariable("plantPlanId") Long plantPlanId, Model model) {
 		PlantPlan plantPlan = plantPlanRepository.findOne(plantPlanId);
@@ -67,4 +79,17 @@ public class PlantPlanController {
 		model.addAttribute("plantNameComp", Comparator.comparing(PlantPlanItem::getPlantName).reversed());
 		return "plantplan";
 	}
+	
+	@GetMapping(value = "/report/plantplan/{plantPlanId}/zipcode/{zipcode}")
+	public String presetPlantPlanReport(@PathVariable("plantPlanId") Long plantPlanId, @PathVariable("zipcode") String zipcode, Model model) {
+		PlantPlan plantPlan = plantPlanRepository.findOne(plantPlanId);
+		Report report = new Report(zipCodeRepo.findOneByZipcode(zipcode));
+		report.createReportItemsFromPlantPlan(plantPlan);
+		
+		model.addAttribute("report" , report);
+		//model.addAttribute("reportItemSowDateComp", Comparator.comparing(ReportItem::getRequestedSowDate));
+		return "reporttest";
+	}
+	
+	
 }
