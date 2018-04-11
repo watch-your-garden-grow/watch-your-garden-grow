@@ -208,28 +208,39 @@ footer{
 
 }
 .close {
+	display: flex;
+    justify-content: flex-end;
 	float:right;
 	cursor: pointer;
 	font-size: 2.5rem;
 	font-weight: bold;
-	position: relative;
+	/*position: relative;
 	top: -2.6rem;
-	right: -1rem;
+	right: -1rem;*/
 }
 
 .modal-content {
 	display: flex;
+	flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
 	background-color: rgba(264, 264, 264, .90);
 	width: 20rem;
 	margin: 15% auto;
-	padding: 2.6rem;
+	padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
 	border: 1px solid green;
 	border-radius: .2rem;
 	/*width: 80%;*/
 	font-size: 1.3rem;
 	color: black;
+}
+.modalImageAndName{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 .modal img {
