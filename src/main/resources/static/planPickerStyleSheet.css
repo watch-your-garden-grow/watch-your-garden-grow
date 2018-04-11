@@ -225,7 +225,7 @@ footer{
     flex-wrap: wrap;
     justify-content: space-between;
 	background-color: rgba(264, 264, 264, .90);
-	width: 20rem;
+	width: 30rem;
 	margin: 15% auto;
 	padding-left: 1rem;
     padding-right: 1rem;
@@ -238,9 +238,16 @@ footer{
 	color: black;
 }
 .modalImageAndName{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+   display: grid;
+    grid-template-columns: .4fr .6fr;
+    /*justify-content: space-around;*/
+}
+.plantDescription{
+	align-self: center;
+}
+
+.plantName{
+	align-self: flex-start;
 }
 
 .modal img {
