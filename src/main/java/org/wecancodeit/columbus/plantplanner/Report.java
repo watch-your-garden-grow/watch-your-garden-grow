@@ -1,5 +1,6 @@
 package org.wecancodeit.columbus.plantplanner;
 
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -10,7 +11,9 @@ public class Report {
 	private final String zone;
 	private final LocalDate lastFrost;
 	private final Collection<ReportItem> reportItems = new ArrayList<>();
-
+	private final DayOfWeek defaultWorkDay = DayOfWeek.SATURDAY;
+	private DayOfWeek requestedWorkDay = defaultWorkDay;
+	
 	public Report(String zipcode, String zone) {
 		this.zipcode = zipcode;
 		this.zone = zone;
@@ -26,7 +29,7 @@ public class Report {
 	}
 
 	public void createReportItemFromPlant(Plant plant) {
-		reportItems.add(new ReportItem(plant, lastFrost));
+		reportItems.add(new ReportItem(plant, lastFrost, requestedWorkDay));
 	}
 
 	public void createReportItemsFromPlant(Plant... plants) {
@@ -53,6 +56,14 @@ public class Report {
 
 	public String getZone() {
 		return zone;
+	}
+
+	public DayOfWeek getWorkDay() {
+		return requestedWorkDay;
+	}
+
+	public void setWorkDay(DayOfWeek workDay) {
+		this.requestedWorkDay = workDay;
 	}
 
 }

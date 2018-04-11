@@ -8,17 +8,19 @@ public class ReportItem {
 	private final Plant plant;
 	private LocalDate lastFrost = LocalDate.of(LocalDate.now().getYear(), 4, 20);
 	private LocalDate earliestSowDate;
-	private final DayOfWeek defaultWorkDay = DayOfWeek.SATURDAY;
+	private LocalDate requestedSowDate;
 
-	public ReportItem(Plant plant, LocalDate lastFrost) {
+	public ReportItem(Plant plant, LocalDate lastFrost, DayOfWeek workDay) {
 		this.plant = plant;
 		this.lastFrost = lastFrost;
 		this.earliestSowDate = calculateEarliestSowDateSowDate();
+		this.requestedSowDate = calculateUserSowDate(workDay);
 	}
 
-	public ReportItem(Plant plant) {
+	public ReportItem(Plant plant, DayOfWeek workDay) {
 		this.plant = plant;
 		this.earliestSowDate = calculateEarliestSowDateSowDate();
+		this.requestedSowDate = calculateUserSowDate(workDay);
 	}
 
 	public Plant getPlant() {
@@ -28,10 +30,6 @@ public class ReportItem {
 	private LocalDate calculateEarliestSowDateSowDate() {
 		int daysAfterFrostToPlant = plant.daysSinceLastFrost();
 		return lastFrost.plusDays(daysAfterFrostToPlant);
-	}
-
-	public LocalDate calculateUserSowDate() {
-		return calculateUserSowDate(this.defaultWorkDay);
 	}
 
 	public LocalDate calculateUserSowDate(DayOfWeek requestedWorkDay) {
@@ -52,4 +50,9 @@ public class ReportItem {
 	public LocalDate getEarliestSowDate() {
 		return earliestSowDate;
 	}
+
+	public LocalDate getRequestedSowDate() {
+		return requestedSowDate;
+	}
+
 }
