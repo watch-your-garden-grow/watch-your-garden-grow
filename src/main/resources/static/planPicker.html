@@ -8,11 +8,11 @@
 </head>
 
 <body>
-<div class = "container">
-<header>
-<h1> Watch Your Garden Grow</h1>
-</header>
-	<div class = "zipAndPlanLink">
+	<div class = "container">
+		<header>
+			<h1> Watch Your Garden Grow</h1>
+		</header>
+		<div class = "zipAndPlanLink">
 		<div class = "enterZipCode">
 
 			<form class = "zipCodeEntryAndSubmit" method = "GET">
@@ -31,40 +31,40 @@
 		<div class = "currentPlanLink">
 			<h2><a href= "PlanLink">*This will be: Link To Current Plan</a></h2>
 		</div>
-	</div>
+		</div>
 
-	<form>
-		<div class = "hardinessZone">
-			<h3>Your Hardiness Zone is:  </h3>
-				
-			<h2>*This will be result of hardiness zone: B4</h2>
-		</div>
-		<div class = "sectionForAllPlantsForHardinessZone">
-		<div class = "plantResultListTitle">
-			<h2>List Of Plants Per Hardiness Zone: *Populate zone </h2>
-		</div>
-		<div class="listOfEachPlantForHardinessZone" id = "plantListSection">
-			<ul id ="plantImageContainer">
+		<form>
+			<div class = "hardinessZone">
+				<h3>Your Hardiness Zone is:  </h3>
+					
+				<h2>*This will be result of hardiness zone: B4</h2>
+			</div>
+			<div class = "sectionForAllPlantsForHardinessZone">
+			<div class = "plantResultListTitle">
+				<h2>List Of Plants Per Hardiness Zone: *Populate zone </h2>
+			</div>
+			<div class="listOfEachPlantForHardinessZone" id = "plantListSection">
+				<ul id ="plantImageContainer">
 
-				<li id = "welcomeToPageImage" class = "plantListItem"><img src="images/welcomeGardenImage.jpeg" alt="tomato"></a><a href= "TomatoLink">*Return from form input</a><button class = "addToPlanButton">Add to Plan</button></li>
+					<li id = "welcomeToPageImage" class = "plantListItem"><img src="images/welcomeGardenImage.jpeg" alt="tomato"></a><a href= "TomatoLink">*Return from form input</a><button class = "addToPlanButton">Add to Plan</button></li>
 
-			</ul>
+				</ul>
+			</div>
+			</div>
+		</form>
+		<footer>
+			<h3>Copyright 2018</h3>
+			<h3>04/02/2018</h3>
+		</footer>
+		
+		<div id="modalBox" class="modal">
+			<div class="modal-content" id = "modalBoxContent">
+				<span class="close">&times</span>
+				<h2 class="plantDescription"></h2>
+				<img class="modalImage"/>
+			</div>
+		</div>			
 		</div>
-		</div>
-	</form>
-<footer>
-<h3>Copyright 2018</h3>
-<h3>04/02/2018</h3>
-</footer>
-</div>
-<div id="modalBox" class="modal">
-	<div class="modal-content" id = "modalBoxContent">
-		<span class="close">&times</span>
-		<h2 class="plantDescription"></h2>
-		<img class="modalImage"/>
-	</div>
-</div>			
-</body>
-<script src="js/plantImagesJs.js"></script>
+	<script src="js/plantImagesJs.js"></script>
 </body>
 </html>
