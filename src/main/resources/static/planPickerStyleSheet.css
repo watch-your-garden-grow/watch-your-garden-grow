@@ -1,7 +1,4 @@
 *{
-	/*outline: 1px solid red;*/
-	/*background-color: green;*/
-	/*font-color: yellow;*/
 	padding: 0px;
 
 }
@@ -125,27 +122,14 @@ header{
 }
 
 ul {
-/*	display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    width: 90vw;*/
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-	/*grid-template-rows: repeat(auto-fit, 150px);*/
 	grid-gap: 5rem;
 }
 
 #plantImageContainer {
-	/*overflow: scroll;*/
 	grid-gap: 16px;
 }
-
-/*ul:after {
-    display: none;
-    width: 140px;
-    content: "";
-    flex: auto;
-}*/
 
 li{
 	display: flex;
@@ -154,8 +138,6 @@ li{
 	flex-wrap: wrap;
 	margin-top: 1rem;
 	margin-bottom: 1rem;
-/*	margin-right: auto;
-	margin-left: auto;*/
 	align-items: center;
 	max-width: 175px;
 	min-width: 140px;
@@ -225,27 +207,23 @@ footer {
 	top:0;
 	width:100%;
 	height:100vh;
-	/*overflow: auto;*/
 	background-color: rgba(0,0,0,0.4);
 
 }
 .close {
-	display: flex;
-    justify-content: flex-end;
 	float:right;
 	cursor: pointer;
 	font-size: 2.5rem;
 	font-weight: bold;
-	/*position: relative;
-	top: -2.6rem;
-	right: -1rem;*/
+}
+
+.close:hover{
+	transform: scale(1.1);
 }
 
 .modal-content {
-	display: flex;
 	flex-direction: column;
     flex-wrap: wrap;
-    justify-content: space-between;
 	background-color: rgba(264, 264, 264, .90);
 	width: 30rem;
 	margin: 15% auto;
@@ -255,14 +233,12 @@ footer {
     padding-bottom: .5rem;
 	border: 1px solid green;
 	border-radius: .2rem;
-	/*width: 80%;*/
 	font-size: 1.3rem;
 	color: black;
 }
 .modalImageAndName{
    display: grid;
     grid-template-columns: .4fr .6fr;
-    /*justify-content: space-around;*/
 }
 .plantDescription{
 	align-self: center;
