@@ -139,11 +139,11 @@ li{
 	margin-top: 1rem;
 	margin-bottom: 1rem;
 	align-items: center;
-	max-width: 175px;
+	max-width: 145px;
 	min-width: 140px;
-	flex-basis: 140px;
+	/*flex-basis: 140px;
     flex-grow: 1;
-    flex-shrink: .5;
+    flex-shrink: .5;*/
 }
 
 .addToPlanButton{
