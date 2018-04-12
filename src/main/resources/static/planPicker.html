@@ -6,13 +6,13 @@
 <meta charset="ISO-8859-1">
 <title>Garden Planner</title>
 </head>
-
+<div class = "layer">
 <body>
-<div class = "container">
-<header>
-<h1> Watch Your Garden Grow</h1>
-</header>
-	<div class = "zipAndPlanLink">
+	<div class = "container">
+		<header>
+			<h1> Watch Your Garden Grow</h1>
+		</header>
+		<div class = "zipAndPlanLink">
 		<div class = "enterZipCode">
 
 			<form class = "zipCodeEntryAndSubmit" method = "GET">
@@ -31,53 +31,57 @@
 		<div class = "currentPlanLink">
 			<h2><a href= "PlanLink">*This will be: Link To Current Plan</a></h2>
 		</div>
-	</div>
-
-	<form>
-		<div class = "hardinessZone">
-			<h3>Your Hardiness Zone is:  </h3>
-
-				<!-- <div th:each="course: ${courses}">
-				<h2 th:text="${course.name}"></h2>
-				<h2 th:text="${course.description}"></h2> -->
-
-				
-			<h2>*This will be result of hardiness zone: B4</h2>
 		</div>
-		<div class = "sectionForAllPlantsForHardinessZone">
-		<div class = "plantResultListTitle">
-			<h2>List Of Plants Per Hardiness Zone: *Populate zone </h2>
-		</div>
-		<div class="listOfEachPlantForHardinessZone" id = "plantListSection">
-			<ul id ="plantImageContainer">
-			<!-- 	With ThymeLeaf Call To Display Each Product -->
-			<!-- 	<div class = "listOfEachPlantForHardinessZoneTL" th:each="zone: ${plants}">
-					<ul>
-						<li>
-							<a th:href="@{/plants(id=${plant.id})}" th:text="${plant.name}"></a>
-						</li>
-					</ul>
-				</div>  -->
 
-				<li id = "welcomeToPageImage" class = "plantListItem"><img src="images/welcomeGardenImage.jpeg" alt="tomato"></a><a href= "TomatoLink">*Return from form input</a><button class = "addToPlanButton">Add to Plan</button></li>
-			<!-- 	<li class = "plantListLi"><a href= "BeanFactoryPink"><img src="images/tomato.jpg" alt="beanfactory"></a><a href= "BeanFactoryPink">BeanFactory</a><button class = "addToPlanButton">Add to Plan</button></li> -->
-				<!-- <li><img src="images/tomato.jpg" alt="Carrots"><a href= "CarrotsLink">Carrots</a></a><button class = "addToPlanButton">Add to Plan</button></li>
-				<li><img src="images/strawberries.jpg" alt="Strawberries"><a href= "StrawberriesLink">Strawberries</a></a><button class = "addToPlanButton">Add to Plan</button></li>
-				<li><img src="images/tomato.jpg" alt="Kale"></a><a href= "KaleLink">Kale</a><button class = "addToPlanButton">Add to Plan</button></li>
-				<li><img src="images/tomato.jpg" alt="Thyme"></a><a href= "ThymeLink">Thyme</a><button class = "addToPlanButton">Add to Plan</button></li>
-				<li><img src="images/tomato.jpg" alt="Oregano"></a><a href= "OreganoLink">Oregano</a><button class = "addToPlanButton">Add to Plan</button></li>
-				<li><img src="images/tomato.jpg"alt="Basil"></a><a href= "BasilLink">Basil</a><button class = "addToPlanButton">Add to Plan</button></li>
-				<li><img src="images/tomato.jpg" alt="Bacon"></a><a href= "BaconLink">Bacon</a><button class = "addToPlanButton">Add to Plan</button></li>
-				<li><img src="images/tomato.jpg" alt="FutureVodka"><a href= "FutureVodkaLink">FutureVodka</a></a><button class = "addToPlanButton">Add to Plan</button></li>	 -->			
-			</ul>
+		<form>
+			<div class = "hardinessZone">
+				<h3>The Garden Planner is here to assist you in the development of your very own personal garden. With this site you will be able to enter in your zip code that will list the various plants that is plantable within your zone and will be added to a plant report based off what you choose to add. The Garden Planner understands that having a garden can be difficult to plan. Especially, if you do not have the time for research and planning. No worries, with my help you will be able to easily pick what you would like to plant and be able to craft a schedule. Easy Peasy.</h3>
+			<h4>Site Tutorial:
+			Enter your zip code
+			Click the “Submit ZipCode” button to view your plant hardiness zone, as well as the different types of plants that you are able to plant for your zone. 
+			Your zone loads and you will be provided with a list of plants to choose from that shows:
+			Plant name 
+			Clicking the name will ...
+			Image of the plant
+			Clicking the image will all you to see
+			The plant name
+			A description of the plant
+			A picture of the plant
+			A button called “Add to Plan”
+			This allows you to add plant to the Plant Planner</h4>
+			</div>
+			<div class = "sectionForAllPlantsForHardinessZone">
+			<div class = "plantResultListTitle">
+				<!-- <h2>List Of Plants Per Hardiness Zone: *Populate zone </h2> -->
+			</div>
+			<div class="listOfEachPlantForHardinessZone" id = "plantListSection">
+				<ul id ="plantImageContainer">
+
+					<li id = "welcomeToPageImage"><img src="images/welcomeGardenImage.jpeg" alt="tomato"></li>
+
+				</ul>
+			</div>
+			</div>
+		</form>
+		<footer>
+			<h3>Copyright 2018</h3>
+			<h3>04/02/2018</h3>
+		</footer>
+		
 		</div>
-		</div>
-	</form>
-<footer>
-<h3>Copyright 2018</h3>
-<h3>04/02/2018</h3>
-</footer>
-</div>
-<script src="js/plantImagesJs.js"></script>
+	<script src="js/plantImagesJs.js"></script>
+	<script src="js/openingViewStyle.js"></script>
 </body>
+		<div id="modalBox" class="modal">
+			<div class="modal-content" id = "modalBoxContent">
+				<div class="close">&times</div>
+				<div class = "modalImageAndName">
+					<img class="modalImage"/>
+					<h2 class = "plantName"></h2>
+				</div>
+				<h3 class="plantDescription"></h3>
+				
+			</div>
+		</div>			
+</div>
 </html>
