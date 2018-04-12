@@ -86,6 +86,8 @@ zipCodeSubmitButton.addEventListener('click', function(event){
 	const passedZipCode = zipCodeSubmitButton.parentElement.parentElement.querySelector('input').value;
 	const instructions = document.querySelector('.hardinessZone')
 	instructions.style.display = 'none'
+	const openingImage = document.querySelector('#welcomeToPageImage')
+	openingImage.style.display = 'none'
 	xhr.open('GET', '/plants/zipcode/'+ passedZipCode, true);
 	xhr.send();
 });
