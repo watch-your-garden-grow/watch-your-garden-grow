@@ -3,6 +3,7 @@
 	/*background-color: green;*/
 	/*font-color: yellow;*/
 	padding: 0px;
+
 }
 a:link{
 	color: yellow;
@@ -20,10 +21,9 @@ button:hover{
 	color: teal;
 }
 #welcomeToPageImage img{
-	width: 25rem;
-	height: 20rem;
+	width: 15rem;
+	height: 10rem;
 	grid-template-columns: 1fr;
-
 }
 
 .container{
@@ -42,6 +42,8 @@ body {
 	background-repeat: no-repeat;
 	background-position: top left;
 	background-attachment: fixed;
+	/*overflow: hidden;*/
+	/*height: 100vh;*/
 }
 
 .layer{
@@ -50,6 +52,9 @@ body {
 	background-repeat: no-repeat;
 	background-position: top left;
 	background-attachment: fixed;
+	min-height: 100vh;
+	/*height: cover;*/
+
 }
 
 header{
@@ -185,6 +190,10 @@ footer{
 .plantListItem img{
 	display: flex;
 	justify-content: center;
+}
+
+.plantListItem:hover{
+	transform: scale(1.2);
 }
 
 .plantLinks{
