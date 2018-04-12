@@ -132,19 +132,25 @@ header{
 
 
 ul {
-/*	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
-	flex-wrap: wrap;
-*/	
-	display: grid;
-	grid-template-columns: repeat(9, 1fr)
+	display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 90vw;
+/*	display: grid;
+	grid-template-columns: repeat(9, 1fr)*/
 	/*grid-gap: 5rem;*/
 }
 
 #plantImageContainer {
 	/*overflow: scroll;*/
 	grid-gap: 16px;
+}
+
+ul:after {
+    display: none;
+    width: 140px;
+    content: "";
+    flex: auto;
 }
 
 li{
@@ -154,9 +160,14 @@ li{
 	flex-wrap: wrap;
 	margin-top: 1rem;
 	margin-bottom: 1rem;
+	margin-right: auto;
+	margin-left: auto;
 	align-items: center;
-	max-width: 175px;
-	min-width: 140px;
+	max-width: 140px;
+	/*min-width: 140px;*/
+	flex-basis: 140px;
+    flex-grow: 1;
+    flex-shrink: .5;
 }
 
 .addToPlanButton{
