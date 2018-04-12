@@ -124,21 +124,15 @@ header{
 	justify-content: center;
 }
 
-.listOfEachPlantForHardinessZone {
-	/*background-color: blue;*/
-/*	margin-right: 18rem;
-	margin-left: 18rem;
-*/}
-
-
 ul {
-	display: flex;
+/*	display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    width: 90vw;
-/*	display: grid;
-	grid-template-columns: repeat(9, 1fr)*/
-	/*grid-gap: 5rem;*/
+    width: 90vw;*/
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+	/*grid-template-rows: repeat(auto-fit, 150px);*/
+	grid-gap: 5rem;
 }
 
 #plantImageContainer {
@@ -146,12 +140,12 @@ ul {
 	grid-gap: 16px;
 }
 
-ul:after {
+/*ul:after {
     display: none;
     width: 140px;
     content: "";
     flex: auto;
-}
+}*/
 
 li{
 	display: flex;
@@ -160,11 +154,11 @@ li{
 	flex-wrap: wrap;
 	margin-top: 1rem;
 	margin-bottom: 1rem;
-	margin-right: auto;
-	margin-left: auto;
+/*	margin-right: auto;
+	margin-left: auto;*/
 	align-items: center;
-	max-width: 140px;
-	/*min-width: 140px;*/
+	max-width: 175px;
+	min-width: 140px;
 	flex-basis: 140px;
     flex-grow: 1;
     flex-shrink: .5;
@@ -191,8 +185,8 @@ li{
 }
 
 .listOfEachPlantForHardinessZone {
-	display: flex;
-	justify-content: center;
+	margin-right: 2rem;
+	margin-left: 2rem;
 }
 
 footer {
