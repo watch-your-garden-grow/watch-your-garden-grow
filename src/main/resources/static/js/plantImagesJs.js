@@ -84,6 +84,8 @@ const zipCodeSubmitButton = document.querySelector('#zipCodeSubmitButton');
 zipCodeSubmitButton.addEventListener('click', function(event){
 	event.preventDefault();
 	const passedZipCode = zipCodeSubmitButton.parentElement.parentElement.querySelector('input').value;
+	const instructions = document.querySelector('.hardinessZone')
+	instructions.style.display = 'none'
 	xhr.open('GET', '/plants/zipcode/'+ passedZipCode, true);
 	xhr.send();
 });

@@ -31,8 +31,6 @@ button:hover{
 	grid-template-columns: 3rem, 6rem, 5rem, auto, 2rem;
 	grid-gap: 1rem;
 	position: relative;
-	/*overflow: hidden;*/
-	/*background-color: black;*/
 }
 
 body {
@@ -42,8 +40,6 @@ body {
 	background-repeat: no-repeat;
 	background-position: top left;
 	background-attachment: fixed;
-	/*overflow: hidden;*/
-	/*height: 100vh;*/
 }
 
 .layer{
@@ -53,18 +49,14 @@ body {
 	background-position: top left;
 	background-attachment: fixed;
 	min-height: 100vh;
-	/*height: cover;*/
-
 }
 
 header{
-	/*background-color: yellow;*/
 	display: flex;
 	justify-content: center;
 }
 
 .enterZipCode{
-	/*background-color: cyan;*/
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
@@ -132,11 +124,11 @@ header{
 	justify-content: center;
 }
 
-.listOfEachPlantForHardinessZone {	
+.listOfEachPlantForHardinessZone {
 	/*background-color: blue;*/
-	margin-right: 18rem;
+/*	margin-right: 18rem;
 	margin-left: 18rem;
-}
+*/}
 
 
 ul {
@@ -146,26 +138,30 @@ ul {
 	flex-wrap: wrap;
 */	
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 	/*grid-gap: 5rem;*/
 }
 
-/*#plantImageContainer {
-	overflow: scroll;
+#plantImageContainer {
+	/*overflow: scroll;*/
+	grid-gap: 16px;
 }
-*/
+
 li{
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
 	margin-top: 1rem;
 	margin-bottom: 1rem;
 	align-items: center;
+	max-width: 175px;
+	min-width: 140px;
 }
 
 .addToPlanButton{
-	background-color: purple;
-	margin-top:.45rem;
-	margin-bottom: 1.9rem;
+	background-color: darkred;
+	margin-top: .35rem;
+    margin-bottom: .35rem;
 	height: 2rem;
 	width: 6rem;
 	cursor: pointer;
@@ -178,13 +174,23 @@ li{
 }
 
 .listOfEachPlantForHardinessZone li a {
-	margin-top: .5rem;
+	margin-top: .25rem;	
+	grid-gap: 200px;
 }
 
-footer{
+.listOfEachPlantForHardinessZone {
+	display: flex;
+	justify-content: center;
+}
+
+footer {
 	display: flex;
 	justify-content: space-around;
-	/*/*background-color: orange;*/
+}
+
+.plantListItem {
+	background-color: slategray;
+	border-radius: 5px;
 }
 
 .plantListItem img{
@@ -194,6 +200,7 @@ footer{
 
 .plantListItem:hover{
 	transform: scale(1.2);
+	transition-duration: .4s;
 }
 
 .plantLinks{
