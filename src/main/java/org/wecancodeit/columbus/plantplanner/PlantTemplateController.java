@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -15,22 +16,19 @@ public class PlantTemplateController {
 
 	@RequestMapping("/plant")
 	public String showPlant(@RequestParam("id") Long plantId, Model model) {
-		Plant selectedPlant = plantRepo.findOne(plantId);
-		if (selectedPlant == null) {
+		if (plantRepo.findOne(plantId) == null) {
 			return "notFound";
 		}
-		model.addAttribute("plant", selectedPlant);
-		return "plant";
-
-	}
-
-	@RequestMapping("/plant/{id}")
-	public String showAnotherPlant(@PathVariable("id") Long plantId, Model model) {
-		Plant selectedPlant = plantRepo.findOne(plantId);
-		if (selectedPlant == null) {
-			return "notFound";
-		}
-		model.addAttribute("plant", selectedPlant);
+		model.addAttribute("plant", plantRepo.findOne(plantId));
 		return "plant";
 	}
+
+//	@RequestMapping(path = "/plant/{id}", method = RequestMethod.GET)
+//	public String showAnotherPlant(@PathVariable("id") Long plantId, Model model) {
+//		if (plantRepo.findOne(plantId) == null) {
+//			return "notFound";
+//		}
+//		model.addAttribute("plant", plantRepo.findOne(plantId));
+//		return "partials/singlePlantViewPartial";
+//	}
 }

@@ -1,8 +1,6 @@
 *{
-	/*outline: 1px solid red;*/
-	/*background-color: green;*/
-	/*font-color: yellow;*/
 	padding: 0px;
+
 }
 a:link{
 	color: yellow;
@@ -20,31 +18,42 @@ button:hover{
 	color: teal;
 }
 #welcomeToPageImage img{
-	width: 25rem;
-	height: 20rem;
+	width: 15rem;
+	height: 10rem;
 	grid-template-columns: 1fr;
-
 }
 
 .container{
 	display: grid;
 	grid-template-columns: 3rem, 6rem, 5rem, auto, 2rem;
 	grid-gap: 1rem;
-	background-color: black;
-
+	position: relative;
 }
 
-body{
-	background-color: green;
+body {
+	margin: 0rem;
+	background-image: url(../../images/hero-image.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: top left;
+	background-attachment: fixed;
 }
+
+.layer{
+	background-color: rgba(264, 264, 264, .45);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: top left;
+	background-attachment: fixed;
+	min-height: 100vh;
+}
+
 header{
-	background-color: yellow;
 	display: flex;
 	justify-content: center;
 }
 
 .enterZipCode{
-	background-color: cyan;
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
@@ -81,17 +90,17 @@ header{
 }
 
 .currentPlanLink{
-	background-color: darkgrey;
+	/*background-color: darkgrey;*/
 }
 
 .zipAndPlanLink{
-	background-color: grey;
+	/*background-color: grey;*/
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 }
 
 .hardinessZone{
-	background-color: lightgrey;
+	/*background-color: lightgrey;*/
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -102,7 +111,7 @@ header{
 .sectionForAllPlantsForHardinessZone{
 	display: grid;
 	grid-template-rows: 4rem auto;
-	background-color: purple;
+	/*background-color: purple;*/
 	align-self: center;
 	align-items: center;
 
@@ -112,49 +121,64 @@ header{
 	justify-content: center;
 }
 
-.listOfEachPlantForHardinessZone {	
-	background-color: blue;
-	margin-right: 18rem;
-	margin-left: 18rem;
+ul {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+	grid-gap: 5rem;
 }
 
-
-ul{
-
-	display: grid;
-	grid-template-columns: 1fr 1fr;
+#plantImageContainer {
+	grid-gap: 16px;
 }
 
 li{
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	flex-wrap: wrap;
 	margin-top: 1rem;
 	margin-bottom: 1rem;
 	align-items: center;
+	max-width: 145px;
+	min-width: 140px;
+	/*flex-basis: 140px;
+    flex-grow: 1;
+    flex-shrink: .5;*/
 }
 
 .addToPlanButton{
-	background-color: purple;
-	margin-top:.45rem;
-	margin-bottom: 1.9rem;
+	background-color: darkred;
+	margin-top: .35rem;
+    margin-bottom: .35rem;
 	height: 2rem;
 	width: 6rem;
+	cursor: pointer;
 }
 
 .listOfEachPlantForHardinessZone li img {
 	width: 8rem;
 	height: 8rem;
-	/*display: flex;*/
+	display: flex;
 }
 
 .listOfEachPlantForHardinessZone li a {
-	margin-top: .5rem;
+	margin-top: .25rem;	
+	grid-gap: 200px;
 }
 
-footer{
+.listOfEachPlantForHardinessZone {
+	margin-right: 2rem;
+	margin-left: 2rem;
+}
+
+footer {
 	display: flex;
 	justify-content: space-around;
-	background-color: orange;
+}
+
+.plantListItem {
+	background-color: slategray;
+	border-radius: 5px;
 }
 
 .plantListItem img{
@@ -162,10 +186,16 @@ footer{
 	justify-content: center;
 }
 
+.plantListItem:hover{
+	transform: scale(1.2);
+	transition-duration: .4s;
+}
+
 .plantLinks{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	cursor: pointer;
 }
 
 .modal {
@@ -176,30 +206,49 @@ footer{
 	left:0;
 	top:0;
 	width:100%;
-	height:100%;
-	overflow: auto;
+	height:100vh;
 	background-color: rgba(0,0,0,0.4);
-	transition: all 5s;
-	transform: translateX(0%) translateY(0%);
-}
 
-.modal-content {
-	background-color: rgba(264, 264, 264, .90);
-	margin: 15% auto;
-	padding: 2.6rem;
-	border: 1px solid #FE80FE;
-	border-radius: .2rem;
-	width: 80%;
-	font-size: 1.3rem;
-	color: black;
 }
-
 .close {
 	float:right;
 	cursor: pointer;
 	font-size: 2.5rem;
 	font-weight: bold;
-	position: relative;
-	top: -2.6rem;
-	right: -1rem;
+}
+
+.close:hover{
+	transform: scale(1.1);
+}
+
+.modal-content {
+	flex-direction: column;
+    flex-wrap: wrap;
+	background-color: rgba(264, 264, 264, .90);
+	width: 30rem;
+	margin: 15% auto;
+	padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+	border: 1px solid green;
+	border-radius: .2rem;
+	font-size: 1.3rem;
+	color: black;
+}
+.modalImageAndName{
+   display: grid;
+    grid-template-columns: .4fr .6fr;
+}
+.plantDescription{
+	align-self: center;
+}
+
+.plantName{
+	align-self: flex-start;
+}
+
+.modal img {
+	height: 10rem;
+	width: 10rem;
 }

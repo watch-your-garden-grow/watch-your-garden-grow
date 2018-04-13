@@ -8,10 +8,8 @@ xhr.onreadystatechange = function() {
 
 		const plantImageContainer = document.getElementById('plantImageContainer');
 
-		// function appendToModalBox(plantObject){
+		let modal = document.querySelector('.modal');
 			
-		// }
-
 		function appendPlantLiToPlantContainer(plantObject){
 			const plantLi = createElementNoText('li')
 			plantLi.className = "plantListItem";
@@ -20,31 +18,44 @@ xhr.onreadystatechange = function() {
 			plantImage.src = plantObject.image;
 			plantImage.alt = plantObject.name;
 			const plantLink = createElement('a')
-
-			// plantLink.href = 'plant/'+plantObject.id;
 			plantLink.innerText = plantObject.name;
 			plantLink.className = 'plantLinks'
 
-			// const allImagesForModal = querySelectorAll('modal')
 			plantImage.addEventListener('click', function(event){
+				
 				event.preventDefault();
-				let modal = document.querySelector('.modal');
 				modal.style.display = "block";
-				// const modalBox = document.getElementById('modalBoxContent')
-				appendElement(modal, plantObject.name)
-				});
+				const modalBoxContent = document.querySelector('.modal-content')
+				const plantDescription = document.querySelector('.plantDescription')
+				const plantName = document.querySelector('.plantName')
+				plantDescription.innerText = plantObject.description
+				const modalImageContainer = document.querySelector('.modalImage')
+				modalImageContainer.alt = plantObject.name
+				modalImageContainer.src = plantObject.image
+				plantName.innerText = plantObject.name
+
+			});
 
 			appendElement(plantLi, plantLink)
 			appendElement(plantLink, plantImage)
 			const addToPlanButton = createElement("BUTTON")
 			addToPlanButton.className = "addToPlanButton"
 			addToPlanButton.innerText = "Add To Plan";
-			addToPlanButton.id = plantObject.id
 			appendElement(plantLi, addToPlanButton)
+
+//=======
 			addToPlanButton.addEventListener('click', event => addPlantToPlan(plantObject.id))
 
+//>>>>>>> iteration3
 			return plantLi
-			}
+		}
+
+			const modalClose = document.querySelector('.close')
+			modalClose.addEventListener('click', function() {
+				modal.style.display = 'none';
+				// removeLi(plantLi)
+			})
+
 
 		function createElementNoText(elem){
 			const newElem = document.createElement(elem)
@@ -60,7 +71,7 @@ xhr.onreadystatechange = function() {
 			return newElem
 		}
 		
-		function removeLi(parent, child){			
+		function removeLi(parent, child){
 			parent.removeChild(child);
 		}			
 		
@@ -81,6 +92,10 @@ const zipCodeSubmitButton = document.querySelector('#zipCodeSubmitButton');
 zipCodeSubmitButton.addEventListener('click', function(event){
 	event.preventDefault();
 	const passedZipCode = zipCodeSubmitButton.parentElement.parentElement.querySelector('input').value;
+	const instructions = document.querySelector('.hardinessZone')
+	instructions.style.display = 'none'
+	const openingImage = document.querySelector('#welcomeToPageImage')
+	openingImage.style.display = 'none'
 	xhr.open('GET', '/plants/zipcode/'+ passedZipCode, true);
 	xhr.send();
 });
