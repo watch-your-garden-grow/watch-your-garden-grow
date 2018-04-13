@@ -39,6 +39,9 @@ xhr.onreadystatechange = function() {
 				modalImageContainer.src = plantObject.image
 				plantName.innerText = plantObject.name
 
+				const modalBoxAddToPlantButton = document.getElementById('modalBoxAddToPlantButton')
+				modalBoxAddToPlantButton.onclick = () => addPlantToPlan(plantObject.id)
+
 			});
 
 			appendElement(plantLi, plantLink)
@@ -48,12 +51,14 @@ xhr.onreadystatechange = function() {
 			addToPlanButton.innerText = "Add To Plan";
 			appendElement(plantLi, addToPlanButton)
 
-//=======
 			addToPlanButton.addEventListener('click', event => addPlantToPlan(plantObject.id))
 
-//>>>>>>> iteration3
+
+
 			return plantLi
 		}
+
+
 
 			const modalClose = document.querySelector('.close')
 			modalClose.addEventListener('click', function() {
