@@ -10,6 +10,9 @@ xhr.onreadystatechange = function() {
 	if (xhr.readyState === 4 && xhr.status === 200) {
 		const res = JSON.parse(xhr.responseText);
 
+		
+			
+
 
 		const plantImageContainer = document.getElementById('plantImageContainer');
 
@@ -55,16 +58,34 @@ xhr.onreadystatechange = function() {
 
 
 
+			
+
 			return plantLi
 		}
 
 
+			
 
 			const modalClose = document.querySelector('.close')
 			modalClose.addEventListener('click', function() {
 				modal.style.display = 'none';
-				// removeLi(plantLi)
+			const escapeModal = document.querySelector('.modal')
+	
+		});
+
+		document.addEventListener('keydown', event=>{
+				if (event.key === 'Escape' || event.keyCode === 27){
+					modal.style.display = 'none';
+				}
+		});
+		//z-index matters!!! add a listener to the same z-index as the modal.
+		if (modal.style.display === 'block'){
+				const bodyOfHtml = document.querySelector('.modal');
+				bodyOfHtml.addEventListener('click', function(){
+					modal.style.display = 'none';
 			})
+		}
+
 
 
 		function createElementNoText(elem){
