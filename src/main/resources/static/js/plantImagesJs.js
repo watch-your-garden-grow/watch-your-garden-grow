@@ -42,7 +42,11 @@ xhr.onreadystatechange = function() {
 			addToPlanButton.className = "addToPlanButton"
 			addToPlanButton.innerText = "Add To Plan";
 			appendElement(plantLi, addToPlanButton)
-		
+
+//=======
+			addToPlanButton.addEventListener('click', event => addPlantToPlan(plantObject.id))
+
+//>>>>>>> iteration3
 			return plantLi
 		}
 
@@ -53,6 +57,10 @@ xhr.onreadystatechange = function() {
 			})
 
 
+		function createElementNoText(elem){
+			const newElem = document.createElement(elem)
+			return newElem
+		}
 		function createElementNoText(elem){
 			const newElem = document.createElement(elem)
 			return newElem
