@@ -1,7 +1,12 @@
 const xhr = new XMLHttpRequest();
 xhr.onreadystatechange = function() {
 
-	
+	if(xhr.readyState === 4 && xhr.status === 404){
+		const notFoundRes = JSON.parse(xhr.responseText);
+		console.log(notFoundRes);
+		window.location ="http://localhost:8080"+notFoundRes.path;
+
+	}
 	if (xhr.readyState === 4 && xhr.status === 200) {
 		const res = JSON.parse(xhr.responseText);
 
