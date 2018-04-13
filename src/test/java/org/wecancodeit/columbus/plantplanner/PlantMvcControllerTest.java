@@ -33,16 +33,11 @@ public class PlantMvcControllerTest {
 		mvc.perform(get("/plant?id=3")).andExpect(status().isOk()).andExpect(view().name("plant"))
 				.andExpect(model().attribute("plant", is(plantTest)));
 	}
-	
+
 	@Test
 	public void shouldNotRetrieveIndividualPlantTemplate() throws Exception {
 		when(plantRepo.findOne(13L)).thenReturn(null);
 		mvc.perform(get("/plant?id=13")).andExpect(status().isOk()).andExpect(view().name("notFound"));
 	}
 
-	@Test
-	public void shouldNotRetrieveAnotherIndividualPlantTemplate() throws Exception {
-		when(plantRepo.findOne(13L)).thenReturn(null);
-		mvc.perform(get("/plant/13")).andExpect(status().isOk()).andExpect(view().name("notFound"));
-	}
 }
