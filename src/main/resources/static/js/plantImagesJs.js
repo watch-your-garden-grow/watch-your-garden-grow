@@ -59,22 +59,16 @@ xhr.onreadystatechange = function() {
 			return plantLi
 		}
 
-
-			
-
-			const modalClose = document.querySelector('.close')
-			modalClose.addEventListener('click', function() {
-				modal.style.display = 'none';
-			const escapeModal = document.querySelector('.modal')
-	
+		const modalClose = document.querySelector('.close')
+		modalClose.addEventListener('click', function() {
+			modal.style.display = 'none';
 		});
 
 		document.addEventListener('keydown', event=>{
-				if (event.key === 'Escape' || event.keyCode === 27){
-					modal.style.display = 'none';
-				}
+			if (event.key === 'Escape' || event.keyCode === 27){
+				modal.style.display = 'none';
+			}
 		});
-
 
 		const ignore = document.querySelector('.modal-content')
 		modal.addEventListener('click', function(){
@@ -83,7 +77,6 @@ xhr.onreadystatechange = function() {
 					modal.style.display = 'none';
 			}
 		});
-		
 
 		function createElementNoText(elem){
 			const newElem = document.createElement(elem)
