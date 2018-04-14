@@ -78,15 +78,37 @@ xhr.onreadystatechange = function() {
 					modal.style.display = 'none';
 				}
 		});
-		//z-index matters!!! add a listener to the same z-index as the modal.
-		if (modal.style.display === 'block'){
-				const bodyOfHtml = document.querySelector('.modal');
-				bodyOfHtml.addEventListener('click', function(){
+
+		
+		//adds eventListener will work, but also works on modal box clicks.
+		//modal width is commented out in CSS so the modal window to only appear on side.
+				// const bodyOfHtml = document.querySelector('body');
+				const ignore = document.querySelector('.modal-content')
+
+				modal.addEventListener('click', function(){
+					const target = event.target;
+					if(!(target===ignore || ignore.contains(target))){
 					modal.style.display = 'none';
+				}
 			})
-		}
+		
 
-
+		// const ignore = document.querySelector('.modal-content')
+		// function closeModalByClick(event) {
+  //  			 var target = event.target;
+  //  			 modal.addEventListener('click', function(){
+  //   			if (!(target === ignore || ignore.contains(target))) {
+  //     				  modal.style.display = 'none';
+  //  				 }
+  //  			});
+		// }
+		//won't register click on container
+		// 	if (modal.style.display === 'block'){
+		// 		const bodyOfHtml = document.querySelector('.container');
+		// 		bodyOfHtml.addEventListener('click', function(){
+		// 			modal.style.display = 'none';
+		// 	})
+		// }
 
 		function createElementNoText(elem){
 			const newElem = document.createElement(elem)
