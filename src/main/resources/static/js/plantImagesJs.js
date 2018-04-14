@@ -10,10 +10,6 @@ xhr.onreadystatechange = function() {
 	if (xhr.readyState === 4 && xhr.status === 200) {
 		const res = JSON.parse(xhr.responseText);
 
-		
-			
-
-
 		const plantImageContainer = document.getElementById('plantImageContainer');
 
 		let modal = document.querySelector('.modal');
@@ -79,36 +75,15 @@ xhr.onreadystatechange = function() {
 				}
 		});
 
-		
-		//adds eventListener will work, but also works on modal box clicks.
-		//modal width is commented out in CSS so the modal window to only appear on side.
-				// const bodyOfHtml = document.querySelector('body');
-				const ignore = document.querySelector('.modal-content')
 
-				modal.addEventListener('click', function(){
-					const target = event.target;
-					if(!(target===ignore || ignore.contains(target))){
+		const ignore = document.querySelector('.modal-content')
+		modal.addEventListener('click', function(){
+			const target = event.target;
+			if(!(target===ignore || ignore.contains(target))){
 					modal.style.display = 'none';
-				}
-			})
+			}
+		});
 		
-
-		// const ignore = document.querySelector('.modal-content')
-		// function closeModalByClick(event) {
-  //  			 var target = event.target;
-  //  			 modal.addEventListener('click', function(){
-  //   			if (!(target === ignore || ignore.contains(target))) {
-  //     				  modal.style.display = 'none';
-  //  				 }
-  //  			});
-		// }
-		//won't register click on container
-		// 	if (modal.style.display === 'block'){
-		// 		const bodyOfHtml = document.querySelector('.container');
-		// 		bodyOfHtml.addEventListener('click', function(){
-		// 			modal.style.display = 'none';
-		// 	})
-		// }
 
 		function createElementNoText(elem){
 			const newElem = document.createElement(elem)
