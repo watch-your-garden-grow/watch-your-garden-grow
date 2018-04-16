@@ -50,9 +50,25 @@ xhr.onreadystatechange = function() {
 			addToPlanButton.innerText = "Add To Plan";
 			appendElement(plantLi, addToPlanButton)
 
-			addToPlanButton.addEventListener('click', event => addPlantToPlan(plantObject.id))
+			const removeFromPlanButton = createElement("BUTTON")
+			removeFromPlanButton.className = "toggleButtonClass removeFromPlanButton"
+			removeFromPlanButton.innerText = "Remove From Plan";
+			appendElement(plantLi, removeFromPlanButton)
 
 
+			addToPlanButton.addEventListener('click', event => {
+				addPlantToPlan(plantObject.id)
+				toggleClass(addToPlanButton, "toggleButtonClass")
+				toggleClass(removeFromPlanButton, "toggleButtonClass")
+				})
+
+			removeFromPlanButton.addEventListener('click', event => {
+				removePlantFromPlan(plantObject.id)
+				toggleClass(removeFromPlanButton, "toggleButtonClass")
+				toggleClass(addToPlanButton, "toggleButtonClass")
+				})
+
+			// console.log("after appending" + plantObject.name)
 
 			
 
@@ -98,6 +114,10 @@ xhr.onreadystatechange = function() {
 		
 		function appendElement(parent, child){
 			parent.appendChild(child)
+		}
+
+		function toggleClass(element, className) {
+			element.classList.toggle(className)
 		}
 		
 		const plantListItems = Array.from(document.querySelectorAll('.plantListItem'))

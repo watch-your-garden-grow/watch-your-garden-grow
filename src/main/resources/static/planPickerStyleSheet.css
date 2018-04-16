@@ -40,7 +40,7 @@ body {
 }
 
 .layer{
-	background-color: rgba(264, 264, 264, .45);
+	background-color: rgba(0, 0, 0, .25);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: top left;
@@ -146,13 +146,22 @@ li{
     flex-shrink: .5;*/
 }
 
-.addToPlanButton{
-	background-color: darkred;
+.addToPlanButton, .removeFromPlanButton {
+	background-color: darkgreen;
 	margin-top: .35rem;
     margin-bottom: .35rem;
 	height: 2rem;
 	width: 6rem;
 	cursor: pointer;
+}
+
+.removeFromPlanButton {
+	background-color: darkred;
+	color: white;
+}
+
+.toggleButtonClass {
+	display: none;
 }
 
 .listOfEachPlantForHardinessZone li img {
@@ -187,8 +196,9 @@ footer {
 }
 
 .plantListItem:hover{
-	transform: scale(1.2);
+	transform: scale(1.05);
 	transition-duration: .4s;
+	box-shadow: .25rem .25rem .75rem black;
 }
 
 .plantLinks{
@@ -211,6 +221,7 @@ footer {
 	background-color: rgba(0,0,0,0.4);
 
 }
+
 .close {
 	float:right;
 	cursor: pointer;
