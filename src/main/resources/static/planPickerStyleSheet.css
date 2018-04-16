@@ -37,6 +37,7 @@ body {
 	background-repeat: no-repeat;
 	background-position: top left;
 	background-attachment: fixed;
+	color: lightgray;
 }
 
 .layer{
