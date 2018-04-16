@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head>
+<link rel="stylesheet" type="text/css" href = "../errorStyle.css"></link>
     <style>
 table td{
 vertical-align:top;
@@ -10,18 +11,27 @@ padding:10px;
 }
 
     </style>
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet"></link>
 </head>
 <body>
-<h1>My Garden Error Page</h1>
+<div class="layer">
+<header>
+	<h1>My Garden Error Page</h1>
+</header>
+<h2>Hello!  This is the server, we need to talk...
+Bob the server guy says:
+	<em><span th:text="${message}">Error Message</span></em>
+</h2>
+<p>You tried to find a resource at 
+	<span th:text="${path}">path url</span>
+, it doesn't exist.  Try again with a different input.
+</p>
 <table>
     <tr>
         <td>Date</td>
         <td th:text="${timestamp}"/>
     </tr>
-    <tr>
-        <td>Path</td>
-        <td th:text="${path}"/>
-    </tr>
+   
     <tr>
         <td>Error</td>
         <td th:text="${error}"/>
@@ -30,10 +40,7 @@ padding:10px;
         <td>Status</td>
         <td th:text="${status}"/>
     </tr>
-    <tr>
-        <td>Message</td>
-        <td th:text="${message}"/>
-    </tr>
+   
     <tr>
         <td>Exception</td>
         <td th:text="${exception}"/>
@@ -45,5 +52,6 @@ padding:10px;
         </td>
     </tr>
 </table>
+</div>
 </body>
 </html>
