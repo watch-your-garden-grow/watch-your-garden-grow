@@ -7,7 +7,7 @@ body{
 
 }
 article{
-  background-image:url(../images/error-background2.jpg);
+  background-image: url(../images/styleImages/radishesInHand.jpg);
   background-size: cover;
   min-height:80vh; 
 }
