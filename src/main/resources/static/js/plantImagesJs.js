@@ -145,6 +145,13 @@ const planRedirect = document.querySelector('#planReportLink');
 planRedirect.addEventListener('click', function(event){
 // event.preventDefault();
 const passedZipCode = zipCodeSubmitButton.parentElement.parentElement.querySelector('input').value;
-window.location.href = "http://localhost:8080/report/plantplan/1/zipcode/" + passedZipCode;
+window.open("http://localhost:8080/report/plantplan/1/zipcode/" + passedZipCode, '_blank');
+});
 
+const redoPlanLink = document.querySelector('#redoPlanLink');
+redoPlanLink.addEventListener('click', function(event){
+	// event.preventDefault();
+	
+	xhr.open('DELETE', 'http://localhost:8080/plantplan/1', true);
+	xhr.send();
 });
