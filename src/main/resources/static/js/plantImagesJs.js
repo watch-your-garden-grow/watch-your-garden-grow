@@ -13,7 +13,7 @@ xhr.onreadystatechange = function() {
 		const plantImageContainer = document.getElementById('plantImageContainer');
 
 		let modal = document.querySelector('.modal');
-			
+		
 		function appendPlantLiToPlantContainer(plantObject){
 			const plantLi = createElementNoText('li')
 			plantLi.className = "plantListItem";
@@ -60,13 +60,13 @@ xhr.onreadystatechange = function() {
 				addPlantToPlan(plantObject.id)
 				toggleClass(addToPlanButton, "toggleButtonClass")
 				toggleClass(removeFromPlanButton, "toggleButtonClass")
-				})
+			})
 
 			removeFromPlanButton.addEventListener('click', event => {
 				removePlantFromPlan(plantObject.id)
 				toggleClass(removeFromPlanButton, "toggleButtonClass")
 				toggleClass(addToPlanButton, "toggleButtonClass")
-				})
+			})
 
 			// console.log("after appending" + plantObject.name)
 
@@ -90,7 +90,7 @@ xhr.onreadystatechange = function() {
 		modal.addEventListener('click', function(){
 			const target = event.target;
 			if(!(target===ignore || ignore.contains(target))){
-					modal.style.display = 'none';
+				modal.style.display = 'none';
 			}
 		});
 

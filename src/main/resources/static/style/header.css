@@ -17,7 +17,7 @@ article{
 }*/
 header{
   display:grid;
-  grid-template-rows: auto auto;
+  grid-template-rows: 7rem auto;
   color:#a10b16;
 
 }
@@ -52,6 +52,7 @@ nav{
   display:flex;
   justify-content:space-around;
   color: white;
+  white-space: nowrap;
 }
 footer{
   display: flex;
