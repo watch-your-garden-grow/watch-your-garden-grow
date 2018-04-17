@@ -15,6 +15,10 @@ a:hover{
   color: yellow;
 }
 
+header img {
+  margin-top: 1rem;
+}
+
 article{
   background-image: url(../images/styleImages/radishesInHand.jpg);
   background-size: cover;
