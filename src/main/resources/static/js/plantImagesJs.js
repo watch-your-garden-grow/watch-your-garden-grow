@@ -13,7 +13,7 @@ xhr.onreadystatechange = function() {
 		const plantImageContainer = document.getElementById('plantImageContainer');
 
 		let modal = document.querySelector('.modal');
-		
+
 		function appendPlantLiToPlantContainer(plantObject){
 			const plantLi = createElementNoText('li')
 			plantLi.className = "plantListItem";
@@ -139,4 +139,12 @@ zipCodeSubmitButton.addEventListener('click', function(event){
 	openingImage.style.display = 'none'
 	xhr.open('GET', '/plants/zipcode/'+ passedZipCode, true);
 	xhr.send();
+});
+
+const planRedirect = document.querySelector('#planReportLink');
+planRedirect.addEventListener('click', function(event){
+// event.preventDefault();
+const passedZipCode = zipCodeSubmitButton.parentElement.parentElement.querySelector('input').value;
+window.location.href = "http://localhost:8080/report/plantplan/1/zipcode/" + passedZipCode;
+
 });
