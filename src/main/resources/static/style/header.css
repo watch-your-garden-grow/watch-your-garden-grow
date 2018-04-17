@@ -1,0 +1,50 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Lalezar', cursive;
+}
+article{
+  background-image:url(../images/error-background2.jpg);
+  background-size: cover;
+  min-height:100vh; 
+}
+/*.layer{
+  background-color: rgba(256,256,256,.8);
+  min-height:100vh; 
+}*/
+header{
+  display:grid;
+  grid-template-rows: 100px auto;
+  color:#a10b16;
+
+}
+.header-title{
+  display:flex;
+  min-height: 100px;
+  justify-content:center;
+  align-content:center;
+}
+h1{
+  /*font-family: 'Rakkas', cursive;
+  */
+  font-size: 72pt;
+}
+
+.header-title{
+  display:flex;
+  justify-content:center;
+  align-content:center;
+}
+nav{
+  display:flex;
+  justify-content:center;
+  font-size: 24pt;
+}
+.nav-links{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  min-width:800px;
+  display:flex;
+  justify-content:space-around;
+}
