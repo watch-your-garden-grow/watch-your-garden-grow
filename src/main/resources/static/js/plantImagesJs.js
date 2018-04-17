@@ -57,6 +57,11 @@ xhr.onreadystatechange = function() {
 
 
 			addToPlanButton.addEventListener('click', event => {
+				// for (var key in plantObject){
+				// 	if (plantObject.hasOwnProperty(key)){
+				// 		console.log(key + ' : ' + plantObject[key]);
+				// 	}
+				// }
 				addPlantToPlan(plantObject.id)
 				toggleClass(addToPlanButton, "toggleButtonClass")
 				toggleClass(removeFromPlanButton, "toggleButtonClass")
