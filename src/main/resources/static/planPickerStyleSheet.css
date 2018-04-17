@@ -59,6 +59,10 @@ header{
 	align-items: center;
 }
 
+.zipCodeEntry{
+	border-radius: .2rem;
+}
+
 .inputAndSubmitZipCode{
 	display: flex;
 	flex-direction: column;
@@ -110,7 +114,8 @@ header{
 	margin-right: 15rem;
 	margin-top: 8rem;
 	padding: 2rem;
-	background-color: rgba(264, 264, 264, .2);
+	background-color: rgba(0, 0, 0, .2);
+	border-radius: .5rem;
 }
 
 .sectionForAllPlantsForHardinessZone{
