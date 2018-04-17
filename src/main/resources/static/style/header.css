@@ -43,7 +43,7 @@ header{
 h1{
   /*font-family: 'Rakkas', cursive;
   */
-  font-size: 72pt;
+  font-size: 6rem;
 }
 
 .header-title{
@@ -73,4 +73,5 @@ footer{
   background-color: #2b2c31;
   color: white;
   font-family: 'Open Sans', sans-serif;
+  position: sticky;
 }
