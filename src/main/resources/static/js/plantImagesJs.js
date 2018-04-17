@@ -143,9 +143,8 @@ zipCodeSubmitButton.addEventListener('click', function(event){
 
 const planRedirect = document.querySelector('#planReportLink');
 planRedirect.addEventListener('click', function(event){
-// event.preventDefault();
-const passedZipCode = zipCodeSubmitButton.parentElement.parentElement.querySelector('input').value;
-window.open("http://localhost:8080/report/plantplan/1/zipcode/" + passedZipCode, '_blank');
+	const passedZipCode = zipCodeSubmitButton.parentElement.parentElement.querySelector('input').value;
+	window.open("http://localhost:8080/report/plantplan/1/zipcode/" + passedZipCode, '_blank');
 });
 
 const redoPlanLink = document.querySelector('#redoPlanLink');
