@@ -6,6 +6,15 @@ body{
   font-family: 'Lalezar', cursive;
 
 }
+
+a:link {
+  text-decoration: none;
+}
+
+a:hover{
+  color: yellow;
+}
+
 article{
   background-image: url(../images/styleImages/radishesInHand.jpg);
   background-size: cover;
