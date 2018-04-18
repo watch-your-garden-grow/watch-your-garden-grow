@@ -14,7 +14,7 @@ import javax.persistence.OneToMany;
 public class PlantPlan {
 
 	@Id
-	@GeneratedValue
+//	@GeneratedValue
 	private Long id;
 
 	@OneToMany(mappedBy = "plantPlan", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
@@ -38,6 +38,7 @@ public class PlantPlan {
 	}
 
 	public Long getId() {
+		id = 1L;
 		return id;
 	}
 

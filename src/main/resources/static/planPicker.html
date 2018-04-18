@@ -1,78 +1,77 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang ="en">
+<html lang ="en">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <head>
-<link rel="stylesheet" type="text/css" href = "planPickerStyleSheet.css"></link>
-<meta charset="ISO-8859-1">
-<title>Garden Planner</title>
+	<link rel="stylesheet" type="text/css" href = "planPickerStyleSheet.css"></link>
+	<link rel="stylesheet" type="text/css" href = "style/header.css"></link>
+	<meta charset="ISO-8859-1">
+	<title>Garden Planner</title>
+	<link rel="icon" href="images/styleImages/sunAndLeaf.png">
+	<link href="https://fonts.googleapis.com/css?family=Lalezar|Rakkas" rel="stylesheet"></link>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet"></link>
 </head>
 <div class = "layer">
-<body>
-	<div class = "container">
-		<header>
-			<h1> Watch Your Garden Grow</h1>
-		</header>
-		<div class = "zipAndPlanLink">
-		<div class = "enterZipCode">
-
-			<form class = "zipCodeEntryAndSubmit" method = "GET">
-			<label>Enter Zip Code</label>
-			<div class = "inputAndSubmitZipCode">
-				<div class = "typeZipCodeBox">
-				
-					<input type="text" class = "zipCodeEntry" value = "99501" name="zipcode"></input>
+	<body class = "body">
+		<div class = "container">
+			<header>
+				<div class='header-title'>
+					<h1>
+						Watch Your Garden Grow
+					</h1>
+					<img src="../images/gardenLogo.jpg"/>
 				</div>
-				<div class = "submitZipCodeButton">
-					<button type="submit" id = "zipCodeSubmitButton">Submit ZipCode</button>
-				</div> 
-			</div>	
-			</form>
+				<nav>
+					<ul class='nav-links'>
+						<li class = 'navigationLinks'><a href= "http://localhost:8080/about-us.html">About</a></li>
+						<li class = 'navigationLinks' id = 'planReportLink'>Current Plan</li>
+						<li class = 'navigationLinks' id = 'redoPlanLink'>Redo Plan</li>
+						<li class = 'navigationLinks'><a href = "http://localhost:8080/planPicker.html">Home</a></li>
+					</ul>
+					<div class = "enterZipCode">
+						<form class = "zipCodeEntryAndSubmit" method = "GET">
+							<label>Zip Code</label>
+							<input type="text" class = "zipCodeEntry" placeholder="Enter Zip Code" value = "" name="zipcode"></input>
+							<button type="submit" id = "zipCodeSubmitButton">Submit Zip Code</button>
+						</form>
+					</div>
+				</nav>
+			</header>
+			
+			<section>
+				<div class = "hardinessZone">
+					<h3>The Garden Planner is here to assist you in the development of your very own personal garden. With this site you will be able to enter in your zip code that will list the various plants that is plantable within your zone and will be added to a plant report based off what you choose to add. The Garden Planner understands that having a garden can be difficult to plan. Especially, if you do not have the time for research and planning. No worries, with my help you will be able to easily pick what you would like to plant and be able to craft a schedule. Easy Peasy.</h3>
+					<h4>Site Tutorial:
+						Enter your zip code
+						Click the &quotSubmit ZipCode&quot button to view your plant hardiness zone, as well as the different types of plants that you are able to plant for your zone. 
+						Your zone loads and you will be provided with a list of plants to choose from that shows:
+						Plant name 
+						Clicking the name will ...
+						Image of the plant
+						Clicking the image will all you to see
+						The plant name
+						A description of the plant
+						A picture of the plant
+						A button called &quotAdd to Plan&quot
+						This allows you to add plant to the Plant Planner</h4>
+				</div>
+				<div class = "sectionForAllPlantsForHardinessZone">
+					<div class = "plantResultListTitle">
+					</div>
+					<div class="listOfEachPlantForHardinessZone" id = "plantListSection">
+						<ul id ="plantImageContainer">
+							<li id = "welcomeToPageImage"></li>
+						</ul>
+					</div>
+				</div>
+			</section>
+				<footer>
+					<h3>&copy 2018</h3>
+				</footer>
 		</div>
-		<div class = "currentPlanLink">
-			<h2><a href= "PlanLink">*This will be: Link To Current Plan</a></h2>
-		</div>
-
-		</div>
-
-		<section>
-			<div class = "hardinessZone">
-				<h3>The Garden Planner is here to assist you in the development of your very own personal garden. With this site you will be able to enter in your zip code that will list the various plants that is plantable within your zone and will be added to a plant report based off what you choose to add. The Garden Planner understands that having a garden can be difficult to plan. Especially, if you do not have the time for research and planning. No worries, with my help you will be able to easily pick what you would like to plant and be able to craft a schedule. Easy Peasy.</h3>
-			<h4>Site Tutorial:
-			Enter your zip code
-			Click the “Submit ZipCode” button to view your plant hardiness zone, as well as the different types of plants that you are able to plant for your zone. 
-			Your zone loads and you will be provided with a list of plants to choose from that shows:
-			Plant name 
-			Clicking the name will ...
-			Image of the plant
-			Clicking the image will all you to see
-			The plant name
-			A description of the plant
-			A picture of the plant
-			A button called “Add to Plan”
-			This allows you to add plant to the Plant Planner</h4>
-			</div>
-			<div class = "sectionForAllPlantsForHardinessZone">
-			<div class = "plantResultListTitle">
-				<!-- <h2>List Of Plants Per Hardiness Zone: *Populate zone </h2> -->
-			</div>
-			<div class="listOfEachPlantForHardinessZone" id = "plantListSection">
-				<ul id ="plantImageContainer">
-					<li id = "welcomeToPageImage"><img src="images/welcomeGardenImage.jpeg" alt="tomato"></li>
-				</ul>
-			</div>
-			</div>
-		</section>
-		<footer>
-			<h3>Copyright 2018</h3>
-			<h3>04/02/2018</h3>
-		</footer>
-		
-		</div>
-	<script src="js/plantImagesJs.js"></script>
-	<script src="js/openingViewStyle.js"></script>
-	<script src="js/plantPlanApiFunctions.js"></script>
-
-</body>
+		<script src="js/plantImagesJs.js"></script>
+		<script src="js/openingViewStyle.js"></script>
+		<script src="js/plantPlanApiFunctions.js"></script>
+	</body>
 		<div id="modalBox" class="modal">
 			<div class="modal-content" id = "modalBoxContent">
 				<span class="close">&times</span>
@@ -81,8 +80,7 @@
 					<h2 class = "plantName"></h2>
 				</div>
 				<h3 class="plantDescription"></h3>
-				<button class = "addToPlanButton">Add To Plan</button>
-				
+				<button id="modalBoxAddToPlantButton" class = "addToPlanButton">Add To Plan</button>
 			</div>
 		</div>			
 </div>

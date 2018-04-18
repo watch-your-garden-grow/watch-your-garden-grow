@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+<link rel="stylesheet" type="text/css" href = "planPickerStyleSheet.css"></link>
 <title>Insert title here</title>
 </head>
 <body>
@@ -17,7 +18,7 @@
 			</header>
 
 			<p th:text="${reportItem.plant.description}">Plant Description</p>
-			<p th:text="${reportItem.requestedSowDate}">Plant Description</p>
+			<p th:text="|Plant on: ${reportItem.requestedSowDate}|">Plant Description</p>
 		</div>
 	</section>
 
