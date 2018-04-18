@@ -112,7 +112,7 @@ public class PlantPlanController {
 		
 		model.addAttribute("report" , report);
 		model.addAttribute("reportItemSowDateComp", Comparator.comparing(ReportItem::getRequestedSowDate));
-		return "reporttest";
+		return "planReport";
 	}
 	
 	
