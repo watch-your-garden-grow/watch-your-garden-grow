@@ -2,10 +2,13 @@
 	padding: 0px;
 
 }
-a:link{
+.navigationLinks:hover{
+  cursor: pointer;
+  color: yellow;
+}
+a:hover{
 	color: yellow;
 }
-
 button{
 	height: 2rem;
 	width: 5.5rem;
@@ -26,7 +29,7 @@ button:hover{
 .container{
 	display: grid;
 	grid-template-columns: 3rem, 6rem, 5rem, auto, 2rem;
-	grid-gap: 1rem;
+	/*grid-gap: 1rem;*/
 	position: relative;
 }
 
@@ -107,14 +110,23 @@ header{
 	align-self: center;
 	margin-left: 15rem;
 	margin-right: 15rem;
-	margin-top: 8rem;
+	margin-top: 2.75rem;
+	margin-bottom: 2.75rem;
 	padding: 2rem;
 	background-color: rgba(0, 0, 0, .2);
 	border-radius: .5rem;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.hardinessZone h3{
+	font-size: 1.75rem;
+}
+.hardinessZone h4{
+	font-size: 1.25rem;
 }
 
 .sectionForAllPlantsForHardinessZone{
-	display: grid;
+	display: none;
 	grid-template-rows: 4rem auto;
 	align-self: center;
 	align-items: center;

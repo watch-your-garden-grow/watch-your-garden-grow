@@ -7,11 +7,33 @@ body{
 
 }
 
+.nav-links{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  min-width:800px;
+  display:flex;
+  justify-content:space-around;
+  color: white;
+  white-space: nowrap;
+}
+
 a:link {
   text-decoration: none;
+  color: white;
 }
 
 a:hover{
+  color: yellow;
+  cursor: pointer;
+}
+
+a:visited{
+  color: white;
+}
+
+.navigationLinks:hover{
+  cursor: pointer;
   color: yellow;
 }
 
@@ -57,16 +79,7 @@ nav{
   font-size: 24pt;
   background-color: #325304;
 }
-.nav-links{
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  min-width:800px;
-  display:flex;
-  justify-content:space-around;
-  color: white;
-  white-space: nowrap;
-}
+
 footer{
   display: flex;
   justify-content: center;
