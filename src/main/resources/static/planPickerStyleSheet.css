@@ -34,7 +34,8 @@ button:hover{
 	position: relative;
 	grid-template-rows: 12rem auto 2rem;
 	display: grid;
-	height: 100vh;
+	min-height: 100vh;
+	height: cover;
 }
 
 body {
