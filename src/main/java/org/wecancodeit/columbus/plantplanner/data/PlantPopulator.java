@@ -73,7 +73,8 @@ public class PlantPopulator implements CommandLineRunner {
 		plantRepo.save(new Plant("Cabbage", "Plant in full sun.  12 to 24 inches apart from each other.",
 				"/images/cabbage.jpg", 1, zone1, zone2, zone3, zone4, zone5, zone6, zone7, zone8, zone9, zone10, zone11,
 				zone12, zone13, zone14, zone15, zone16, zone17, zone18, zone19, zone20, zone21, zone22));
-		plantRepo.save(new Plant("Candlenut tree", "Tropical tree, and offical state tree of Hawaii",
+		plantRepo.save(new Plant("Candlenut tree",
+				"Tropical tree, and the offical state tree of Hawaii, grows quite well in zone 11B",
 				"/images/candlenut.jpg", 1, zone22));
 		plantRepo.save(new Plant("Celery",
 				"Start indoors for 8 weeks, transplant outside 1/4 inch deep, 10-12 inches apart.  Need partial sunlight view",
@@ -96,7 +97,7 @@ public class PlantPopulator implements CommandLineRunner {
 				"/images/collard-greens.jpg", 1, zone5, zone6, zone7, zone8, zone9, zone10, zone11, zone12, zone13,
 				zone14, zone15, zone16, zone17, zone18, zone19, zone20, zone21, zone22));
 		plantRepo.save(new Plant("Douglas Fir",
-				"One of the most popular choice for Christmas trees, and grows extremely well in zone 2B",
+				"One of the most popular choices for Christmas trees, and grows extremely well in zone 2B",
 				"/images/douglas-fir.jpg", 1, zone9));
 		plantRepo.save(new Plant("Eastern Redbud", "Tree has a vibrant color, and can commonly be found in zone 10B",
 				"/images/redbud.jpg", 1, zone21));
@@ -104,7 +105,7 @@ public class PlantPopulator implements CommandLineRunner {
 				"State tree of Virginia, definitely an iconic tree in full bloom, does well in zone 7A.",
 				"/images/dogwood.jpg", 1, zone15));
 		plantRepo.save(new Plant("Giant Sequoia",
-				"Maybe the most iconic tree of California, and also there state tree.  Can be found in zone 10A.",
+				"Maybe the most iconic tree of California, and also the state tree.  Can be found in zone 10A.",
 				"/images/sequoia.jpg", 1, zone20));
 		plantRepo.save(new Plant("Kale", "Plant 1/2 inch deep, seperate by 8-12 inches.  Needs full sun view.",
 				"/images/kale.jpg", 1, zone1, zone2, zone3, zone4, zone5, zone6, zone7, zone8, zone9, zone10, zone11,
@@ -162,7 +163,7 @@ public class PlantPopulator implements CommandLineRunner {
 				"Start in pots, transplant with stakes to ground tilled to one foot in depth.  Needs at least 6 hours of sunlight.",
 				"/images/tomatoes.jpg", 14, zone1, zone2, zone3, zone4, zone5, zone6, zone7, zone8, zone9, zone10,
 				zone11, zone12, zone13, zone14, zone15, zone16, zone17, zone18, zone19, zone20, zone21, zone22));
-		plantRepo.save(new Plant("Tulip Tree", "One of the trademark trees of Kentucky, which is most zone 6B.",
+		plantRepo.save(new Plant("Tulip Tree", "One of the trademark trees of Kentucky, which is mostly zone 6B.",
 				"/images/tulip.jpg", 1, zone2));
 		plantRepo.save(new Plant("Asparagus",
 				"Dig trench 6-12 inches deep, and six inches wide.  Plant crowns 15-18 inches apart.  Needs full sunlight.",
@@ -188,7 +189,7 @@ public class PlantPopulator implements CommandLineRunner {
 				"Grow well on hills facing the sun.  Plant at least 2-6 feet apart from each other.",
 				"/images/watermelon.jpg", 30, zone1, zone2, zone3));
 		plantRepo.save(new Plant("White Spruce",
-				"The White Spruce is exactly the tree you think of when you think of cold of Zone 1A",
+				"The White Spruce is the tree you think of when you think of cold, grows well in Zone 1A",
 				"/images/white-spruce.jpg", 1, zone6));
 		plantRepo.save(new Plant("Radishes", "Plant 1/2 inch deep, 12 inches apart.  Need full sunlight.",
 				"/images/radishes.jpg", 1, zone1, zone2, zone3, zone4, zone6, zone7, zone8, zone9, zone10, zone11,
