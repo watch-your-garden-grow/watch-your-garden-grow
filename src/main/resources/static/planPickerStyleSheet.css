@@ -6,9 +6,11 @@
   cursor: pointer;
   color: yellow;
 }
+
 a:hover{
 	color: yellow;
 }
+
 button{
 	height: 2rem;
 	width: 5.5rem;
@@ -18,9 +20,8 @@ button{
 	font-size: .75rem;
 	color: #0D0B09;
 	border: .09rem solid #2b2c31;
-
-
 }
+
 button:hover{
 	color: #69A10F;
 }
