@@ -186,7 +186,7 @@ public class PlantPopulator implements CommandLineRunner {
 		plantRepo.save(new Plant("Quaking Aspen", "State tree of Utah, and a tree that excels in Zone 3B",
 				"/images/quaking-aspen.jpg", 1, zone11));
 		plantRepo.save(new Plant("Watermelon",
-				"Grow well on hills facing the sun.  Plant at least 2-6 feet apart from each other.",
+				"Grows well on hills facing the sun.  Plant at least 2-6 feet apart from each other.",
 				"/images/watermelon.jpg", 30, zone1, zone2, zone3));
 		plantRepo.save(new Plant("White Spruce",
 				"The White Spruce is the tree you think of when you think of cold, grows well in Zone 1A",
