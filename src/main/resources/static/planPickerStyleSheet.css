@@ -295,3 +295,15 @@ footer {
 	height: 13rem;
 	width: 12rem;
 }
+
+.about-us {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#group-picture {
+	height: 342.72px;
+	width: 600px;
+	margin-top: 50px;
+}
