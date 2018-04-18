@@ -48,7 +48,7 @@ header{
   display:grid;
   grid-template-rows: 7rem auto;
   color:#a10b16;
-
+  
 }
 .header-title{
   display:flex;

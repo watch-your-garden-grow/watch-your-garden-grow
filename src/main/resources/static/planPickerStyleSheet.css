@@ -163,8 +163,8 @@ li{
 	margin-top: 1rem;
 	margin-bottom: 1rem;
 	align-items: center;
-	max-width: 145px;
-	min-width: 140px;
+	/*max-width: 145px;*/
+	min-width: auto;
 }
 
 .addToPlanButton, .removeFromPlanButton {
