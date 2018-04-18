@@ -150,10 +150,10 @@ planRedirect.addEventListener('click', function(event){
 	window.open("http://localhost:8080/report/plantplan/1/zipcode/" + passedZipCode, '_blank');
 });
 
-const redoPlanLink = document.querySelector('#redoPlanLink');
-redoPlanLink.addEventListener('click', function(event){
-	// event.preventDefault();
+// const redoPlanLink = document.querySelector('#redoPlanLink');
+// redoPlanLink.addEventListener('click', function(event){
+// 	// event.preventDefault();
 	
-	xhr.open('DELETE', 'http://localhost:8080/plantplan/1', true);
-	xhr.send();
-});
+// 	xhr.open('DELETE', 'http://localhost:8080/plantplan/1', true);
+// 	xhr.send();
+// });
