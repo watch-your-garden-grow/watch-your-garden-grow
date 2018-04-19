@@ -68,9 +68,6 @@ xhr.onreadystatechange = function() {
 				toggleClass(addToPlanButton, "toggleButtonClass")
 			})
 
-			
-
-
 			return plantLi
 		}
 
@@ -114,10 +111,10 @@ xhr.onreadystatechange = function() {
 			}
 		});
 
-		function createElementNoText(elem){
-			const newElem = document.createElement(elem)
-			return newElem
-		}
+		// function createElementNoText(elem){
+		// 	const newElem = document.createElement(elem)
+		// 	return newElem
+		// }
 	
 		function createElement(elem, textValue){
 			const newElem = document.createElement(elem)
@@ -129,9 +126,9 @@ xhr.onreadystatechange = function() {
 			parent.removeChild(child);
 		}			
 		
-		function appendElement(parent, child){
-			parent.appendChild(child)
-		}
+		// function appendElement(parent, child){
+		// 	parent.appendChild(child)
+		// }
 
 		function toggleClass(element, className) {
 			element.classList.toggle(className)
@@ -167,6 +164,9 @@ planRedirect.addEventListener('click', handlePlanRedirect);
 
 redoPlanLink.addEventListener('click', (event) => {
 	event.preventDefault();
+
+	
+
 	planIdent = -1;
 	while (plantImageContainer.firstChild) {
 		plantImageContainer.removeChild(plantImageContainer.firstChild);
