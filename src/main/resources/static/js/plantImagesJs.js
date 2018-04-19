@@ -41,9 +41,6 @@ xhr.onreadystatechange = function() {
 				modalImageContainer.src = plantObject.image
 				plantName.innerText = plantObject.name
 
-				const modalBoxAddToPlantButton = document.getElementById('modalBoxAddToPlantButton')
-				modalBoxAddToPlantButton.onclick = () => addPlantToPlan(plantObject.id)
-
 			});
 
 			appendElement(plantLi, plantLink)
@@ -177,23 +174,3 @@ redoPlanLink.addEventListener('click', (event) => {
 	console.log("redo called")
 	handleZipCodeinput();
 });
-
-// const modalAddButton = document.getElementById('modalBoxAddToPlantButton')
-// const removeFromPlanButtonModal = createElementNoText("BUTTON")
-// 			removeFromPlanButtonModal.className = "toggleButtonClass removeFromPlanButton"
-// 			removeFromPlanButtonModal.innerText = "Remove From Plan";
-// 			appendElement(modalAddButton, removeFromPlanButtonModal)
-
-
-// 			modalAddButton.addEventListener('click', event => {
-// 				addPlantToPlan(plantObject.id)
-// 				toggleClass(addToPlanButton, "toggleButtonClass")
-// 				toggleClass(removeFromPlanButton, "toggleButtonClass")
-// 			})
-
-// 			removeFromPlanButtonModal.addEventListener('click', event => {
-// 				removePlantFromPlan(plantObject.id)
-// 				toggleClass(removeFromPlanButton, "toggleButtonClass")
-// 				toggleClass(addToPlanButton, "toggleButtonClass")
-// 			})
-
