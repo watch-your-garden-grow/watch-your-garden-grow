@@ -1,3 +1,5 @@
+const plantImageContainer = document.getElementById('plantImageContainer');
+
 const xhr = new XMLHttpRequest();
 xhr.onreadystatechange = function() {
 
@@ -10,7 +12,6 @@ xhr.onreadystatechange = function() {
 	if (xhr.readyState === 4 && xhr.status === 200) {
 		const res = JSON.parse(xhr.responseText);
 
-		const plantImageContainer = document.getElementById('plantImageContainer');
 
 		let modal = document.querySelector('.modal');
 
@@ -74,6 +75,26 @@ xhr.onreadystatechange = function() {
 
 			return plantLi
 		}
+		
+		const appendReportCardToPlantContainer = () => {
+			const plantLi = createElementNoText('li')
+			plantLi.className = "plantListItem";
+			appendElement(plantImageContainer, plantLi)
+			const plantImage = createElement('img')
+			plantImage.src = "/images/styleImages/reportthumb.png";
+			plantImage.alt = "";
+			const plantLink = createElement('a')
+			plantLink.innerText = "Planting Report";
+			plantLink.className = 'plantLinks'
+				
+				appendElement(plantLi, plantLink)
+				appendElement(plantLink, plantImage)
+				const addToPlanButton = createElement("BUTTON")
+				addToPlanButton.className = "addToPlanButton"
+				addToPlanButton.innerText = "Create Report";
+				appendElement(plantLi, addToPlanButton)
+				addToPlanButton.addEventListener('click', handlePlanRedirect);
+		}
 
 		const modalClose = document.querySelector('.close')
 		modalClose.addEventListener('click', function() {
@@ -123,30 +144,36 @@ xhr.onreadystatechange = function() {
 		const plantListItems = Array.from(document.querySelectorAll('.plantListItem'))
 		.forEach(Li=>removeLi(plantImageContainer, Li));
 
+		
 		for (let plant of res){
 			appendPlantLiToPlantContainer(plant);
 		}
+		appendReportCardToPlantContainer();
+
 	}
 }
 
 // const zipCodeSubmitButton = document.querySelector('#zipCodeSubmitButton');
 // zipCodeSubmitButton.addEventListener('click', function(event){
-// 	event.preventDefault();
-// 	const passedZipCode = zipCodeSubmitButton.parentElement.parentElement.querySelector('input').value;
-// 	passedZipCode
-// 	const instructions = document.querySelector('.hardinessZone')
-// 	instructions.style.display = 'none'
-// 	const sectionForAllPlantsForHardinessZone = document.querySelector('.sectionForAllPlantsForHardinessZone')
-// 	sectionForAllPlantsForHardinessZone.style.display = 'grid'
-// 	const openingImage = document.querySelector('#welcomeToPageImage')
-// 	openingImage.style.display = 'none'
-// 	xhr.open('GET', '/plants/zipcode/'+ passedZipCode, true);
-// 	xhr.send();
+// event.preventDefault();
+// const passedZipCode =
+// zipCodeSubmitButton.parentElement.parentElement.querySelector('input').value;
+// passedZipCode
+// const instructions = document.querySelector('.hardinessZone')
+// instructions.style.display = 'none'
+// const sectionForAllPlantsForHardinessZone =
+// document.querySelector('.sectionForAllPlantsForHardinessZone')
+// sectionForAllPlantsForHardinessZone.style.display = 'grid'
+// const openingImage = document.querySelector('#welcomeToPageImage')
+// openingImage.style.display = 'none'
+// xhr.open('GET', '/plants/zipcode/'+ passedZipCode, true);
+// xhr.send();
 // });
 
-const planRedirect = document.querySelector('#planReportLink');
-planRedirect.addEventListener('click', function(event){
+function handlePlanRedirect() {
 	const passedZipCode = zipCodeSubmitButton.parentElement.parentElement.querySelector('input').value;
 	window.open("http://localhost:8080/report/plantplan/1/zipcode/" + passedZipCode, '_blank');
-});
+}
+const planRedirect = document.querySelector('#planReportLink');
+planRedirect.addEventListener('click', handlePlanRedirect);
 
