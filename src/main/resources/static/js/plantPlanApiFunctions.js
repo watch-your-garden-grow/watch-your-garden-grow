@@ -1,8 +1,8 @@
 
-let planIdent;
+let planIdent = -1;
 
 const addPlantToPlan = async (plantId) => {
-    if (!planIdent) await getNewPlan()
+    if (planIdent < 1) await getNewPlan()
     console.log("Adding Plant " + plantId + " to Plan Id: " + planIdent)
     await putFetch("/api/plantplan/" + planIdent + "/plant/" + plantId)
 }

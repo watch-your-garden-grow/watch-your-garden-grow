@@ -4,6 +4,9 @@
 }
 body{
   font-family: 'Lalezar', cursive;
+  background-image: url(../images/styleImages/radishesInHand.jpg);
+  background-size: cover;
+  min-height:80vh; 
 
 }
 
@@ -41,20 +44,11 @@ header img {
   margin-top: 1rem;
 }
 
-article{
-  background-image: url(../images/styleImages/radishesInHand.jpg);
-  background-size: cover;
-  min-height:80vh; 
-}
-/*.layer{
-  background-color: rgba(256,256,256,.8);
-  min-height:100vh; 
-}*/
 header{
   display:grid;
   grid-template-rows: 7rem auto;
   color:#a10b16;
-
+  
 }
 .header-title{
   display:flex;

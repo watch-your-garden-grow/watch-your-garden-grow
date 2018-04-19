@@ -6,34 +6,33 @@
 	<link rel="stylesheet" type="text/css" href = "style/header.css"></link>
 	<meta charset="ISO-8859-1">
 	<title>Garden Planner</title>
-	<link rel="icon" href="images/styleImages/sunAndLeaf.png">
+	<link rel="icon" href="images/styleImages/sunAndLeaf.png"></link>
 	<link href="https://fonts.googleapis.com/css?family=Lalezar|Rakkas" rel="stylesheet"></link>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet"></link>
 </head>
-<div class = "layer">
 	<body class = "body">
-		<div class = "container">
-			<header>
-				<div class='header-title'>
-					<h1>Watch Your Garden Grow</h1>
-					<img src="../images/gardenLogo.jpg"/>
-				</div>
-				<nav>
-					<ul class='nav-links'>
-						<li class = 'navigationLinks'><a href= "http://localhost:8080/about-us.html">About</a></li>
-						<li class = 'navigationLinks' id = 'planReportLink'>Current Plan</li>
-						<li class = 'navigationLinks' id = 'redoPlanLink'>Redo Plan</li>
-						<li class = 'navigationLinks'><a href = "http://localhost:8080/planPicker.html">Home</a></li>
-					</ul>
-					<div class = "enterZipCode">
-						<form class = "zipCodeEntryAndSubmit" method = "GET">
-							<label>Zip Code</label>
-							<input type="text" class = "zipCodeEntry" placeholder="Enter Zip Code" value = "" name="zipcode"></input>
-							<button type="submit" id = "zipCodeSubmitButton">Submit Zip Code</button>
-						</form>
-					</div>
-				</nav>
-			</header>
+		<div class = "layer">
+			<div class = "container">
+				<header>
+					<div class='header-title'>
+						<h1>Watch Your Garden Grow</h1>
+						<img src="../images/gardenLogo.jpg"/>
+						</div>
+					<nav>
+						<ul class='nav-links'>
+							<li><a class = 'navigationLinks' href= "http://localhost:8080/about-us.html">About</a></li>
+							<li><a class = 'navigationLinks' id = 'planReportLink'>Current Plan</a></li>
+							<li class = 'navigationLinks' id = 'redoPlanLink'>Redo Plan</li>
+							<li><a class = 'navigationLinks' href = "http://localhost:8080/planPicker.html">Home</a></li>
+						</ul>
+						<div class = "enterZipCode">
+							<form class = "zipCodeEntryAndSubmit" method = "GET">
+								<input type="text" class = "zipCodeEntry" placeholder="Enter Zip Code" value = "" name="zipcode"></input>
+								<button type="submit" id = "zipCodeSubmitButton">Submit Zip Code</button>
+							</form>
+						</div>
+					</nav>
+				</header>
 			
 			<section>
 				<div class = "hardinessZone">
@@ -66,20 +65,22 @@
 					<h3>&copy 2018</h3>
 				</footer>
 		</div>	
-		<script src="js/plantImagesJs.js"></script>
-		<script src="js/openingViewStyle.js"></script>
-		<script src="js/plantPlanApiFunctions.js"></script>
-	</body>
-	<div id="modalBox" class="modal">
-		<div class="modal-content" id = "modalBoxContent">
-			<span class="close">&times</span>
-			<div class = "modalImageAndName">
-				<img class="modalImage"/>
-				<h2 class = "plantName"></h2>
+		<div id="modalBox" class="modal">
+			<div class="modal-content" id = "modalBoxContent">
+				<span class="close">&times</span>
+				<div class = "modalImageAndName">
+					<img class="modalImage"/>
+					<h2 class = "plantName"></h2>
+				</div>
+				<h3 class="plantDescription"></h3>
+				<button id="modalBoxAddToPlantButton" class = "addToPlanButton">Add To Plan</button>
 			</div>
-			<h3 class="plantDescription"></h3>
-			<button id="modalBoxAddToPlantButton" class = "addToPlanButton">Add To Plan</button>
 		</div>
-	</div>			
-</div>
+
+	</div>
+	<script src="js/plantImagesJs.js"></script>
+	<script src="js/plantPlanApiFunctions.js"></script>
+	<script src="js/zipCodeEventHandler.js"></script>
+</body>
+				
 </html>
