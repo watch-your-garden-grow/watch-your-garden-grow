@@ -129,20 +129,20 @@ xhr.onreadystatechange = function() {
 	}
 }
 
-const zipCodeSubmitButton = document.querySelector('#zipCodeSubmitButton');
-zipCodeSubmitButton.addEventListener('click', function(event){
-	event.preventDefault();
-	const passedZipCode = zipCodeSubmitButton.parentElement.parentElement.querySelector('input').value;
-	passedZipCode
-	const instructions = document.querySelector('.hardinessZone')
-	instructions.style.display = 'none'
-	const sectionForAllPlantsForHardinessZone = document.querySelector('.sectionForAllPlantsForHardinessZone')
-	sectionForAllPlantsForHardinessZone.style.display = 'grid'
-	const openingImage = document.querySelector('#welcomeToPageImage')
-	openingImage.style.display = 'none'
-	xhr.open('GET', '/plants/zipcode/'+ passedZipCode, true);
-	xhr.send();
-});
+// const zipCodeSubmitButton = document.querySelector('#zipCodeSubmitButton');
+// zipCodeSubmitButton.addEventListener('click', function(event){
+// 	event.preventDefault();
+// 	const passedZipCode = zipCodeSubmitButton.parentElement.parentElement.querySelector('input').value;
+// 	passedZipCode
+// 	const instructions = document.querySelector('.hardinessZone')
+// 	instructions.style.display = 'none'
+// 	const sectionForAllPlantsForHardinessZone = document.querySelector('.sectionForAllPlantsForHardinessZone')
+// 	sectionForAllPlantsForHardinessZone.style.display = 'grid'
+// 	const openingImage = document.querySelector('#welcomeToPageImage')
+// 	openingImage.style.display = 'none'
+// 	xhr.open('GET', '/plants/zipcode/'+ passedZipCode, true);
+// 	xhr.send();
+// });
 
 const planRedirect = document.querySelector('#planReportLink');
 planRedirect.addEventListener('click', function(event){
@@ -150,10 +150,3 @@ planRedirect.addEventListener('click', function(event){
 	window.open("http://localhost:8080/report/plantplan/1/zipcode/" + passedZipCode, '_blank');
 });
 
-// const redoPlanLink = document.querySelector('#redoPlanLink');
-// redoPlanLink.addEventListener('click', function(event){
-// 	// event.preventDefault();
-	
-// 	xhr.open('DELETE', 'http://localhost:8080/plantplan/1', true);
-// 	xhr.send();
-// });
