@@ -28,7 +28,7 @@ xhr.onreadystatechange = function() {
 			plantLink.innerText = plantObject.name;
 			plantLink.className = 'plantLinks'
 
-			plantImage.addEventListener('click', function(event){
+			plantLink.addEventListener('click', function(event){
 				
 				event.preventDefault();
 				modal.style.display = "block";
