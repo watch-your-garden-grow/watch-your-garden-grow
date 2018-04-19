@@ -1,0 +1,309 @@
+*{
+	padding: 0px;
+
+}
+.navigationLinks:hover{
+  cursor: pointer;
+  color: yellow;
+}
+
+a:hover{
+	color: yellow;
+}
+
+button{
+	height: 2rem;
+	width: 5.5rem;
+	border-radius: .3rem;
+	padding-top: .1rem;
+	padding-bottom: .1rem;
+	font-size: .75rem;
+	color: #0D0B09;
+	border: .09rem solid #2b2c31;
+}
+
+button:hover{
+	color: #69A10F;
+}
+#welcomeToPageImage img{
+	width: 15rem;
+	height: 10rem;
+	grid-template-columns: 1fr;
+}
+
+.container{
+	position: relative;
+	grid-template-rows: 12rem auto 2rem;
+	display: grid;
+	min-height: 100vh;
+	height: cover;
+}
+
+body {
+	margin: 0rem;
+	background-image: url(../../images/styleImages/radishesInHand.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: top left;
+	background-attachment: fixed;
+	color: lightgray;
+}
+
+.layer{
+	background-color: rgba(0, 0, 0, .25);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: top left;
+	background-attachment: fixed;
+	min-height: 100vh;
+}
+
+header{
+	background-color: white;
+}
+
+.enterZipCode{
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.inputAndSubmitZipCode{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: .25rem;
+	margin-bottom: .25rem;
+	margin-left: .25rem;
+	margin-right: .50rem;
+}
+
+.enterZipCode input{
+	height: 2rem;
+	width: 6rem;
+	font-size: 1.5rem;
+	margin: 0px 10px;
+	border-radius: .2rem;
+	padding-left: .25rem;
+}
+input::placeholder {
+  font-size: .8rem;
+}
+.submitZipCodeButton{
+	display: flex;
+	justify-content: flex-end;
+	margin-top: .2rem;
+}
+
+.zipCodeEntryAndSubmit{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: white;
+}
+
+.zipAndPlanLink{
+	display: flex;
+	justify-content: center;
+}
+
+.hardinessZone{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	align-self: center;
+	margin-left: 15rem;
+	margin-right: 15rem;
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
+	padding: 1.9rem;
+	padding-left: 4rem;
+	padding-right: 4rem;
+	background-color: rgba(0, 0, 0, .45);
+	border-radius: .5rem;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.hardinessZone h3{
+	font-size: 1.75rem;
+}
+.hardinessZone h4{
+	font-size: 1.25rem;
+}
+
+.sectionForAllPlantsForHardinessZone{
+	display: none;
+	grid-template-rows: 4rem auto;
+	align-self: center;
+	align-items: center;
+
+}
+/*.plantResultListTitle{
+	display: flex;
+	justify-content: center;
+}
+*/
+ul {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+	grid-gap: 5rem;
+}
+
+#plantImageContainer {
+	grid-gap: 16px;
+}
+
+li{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	align-items: center;
+	/*max-width: 145px;*/
+	min-width: auto;
+}
+
+.addToPlanButton, .removeFromPlanButton {
+	background-color: darkgreen;
+	margin-top: .35rem;
+    margin-bottom: .35rem;
+	height: 2rem;
+	width: 6rem;
+	cursor: pointer;
+	/*border: black;*/
+	/*font-size: 1.1rem;*/
+}
+
+.removeFromPlanButton {
+	background-color: #940D29;
+	color: lightgrey;
+}
+
+.toggleButtonClass {
+	display: none;
+}
+
+.listOfEachPlantForHardinessZone li img {
+	width: 8rem;
+	height: 8rem;
+	display: flex;
+}
+
+.listOfEachPlantForHardinessZone li a {
+	margin-top: .25rem;	
+	grid-gap: 200px;
+}
+
+.listOfEachPlantForHardinessZone {
+	margin-right: 10rem;
+	margin-left: 10rem;
+}
+
+footer {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	/*position: relative;*/
+	bottom: 0px;
+    width: 100%;
+    position: static;	
+}
+
+.plantListItem {
+	background-color: rgba(43,44,49, .85);
+	border-radius: 5px;
+}
+
+.plantListItem img{
+	display: flex;
+	justify-content: center;
+}
+
+.plantListItem:hover{
+	transform: scale(1.05);
+	transition-duration: .4s;
+	box-shadow: .25rem .25rem .75rem black;
+	color: white;
+}
+
+.plantLinks{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	cursor: pointer;
+}
+.plantLinks:hover{
+	color: white;
+}
+
+.modal {
+	max-width: 100vw;
+	display: none;
+	position: fixed;
+	left:0;
+	top:0;
+	width:100%;
+	height:100vh;
+	background-color: rgba(0,0,0,0.4);
+
+}
+
+.close {
+	float:right;
+	cursor: pointer;
+	font-size: 2.5rem;
+	font-weight: bold;
+}
+
+.close:hover{
+	transform: scale(1.1);
+}
+
+.modal-content {
+	flex-direction: column;
+    flex-wrap: wrap;
+	background-color: rgba(264, 264, 264, .90);
+	width: 35rem;
+	margin: 15% auto;
+	padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+	border: 5px solid olivedrab;
+	border-radius: .2rem;
+	font-size: 1.3rem;
+	color: black;
+}
+.modalImageAndName{
+   display: grid;
+    grid-template-columns: .4fr .6fr;
+}
+.plantDescription{
+	align-self: center;
+}
+
+.plantName{
+	align-self: flex-start;
+	font-size: 3rem;
+}
+
+.modal img {
+	height: 13rem;
+	width: 12rem;
+}
+
+.about-us {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#group-picture {
+	height: 342.72px;
+	width: 600px;
+	margin-top: 50px;
+}
