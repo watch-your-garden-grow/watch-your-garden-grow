@@ -1,4 +1,6 @@
 const plantImageContainer = document.getElementById('plantImageContainer');
+const redoPlanLink = document.querySelector('#redoPlanLink');
+const planRedirect = document.querySelector('#planReportLink');
 
 const xhr = new XMLHttpRequest();
 xhr.onreadystatechange = function() {
@@ -172,8 +174,19 @@ xhr.onreadystatechange = function() {
 
 function handlePlanRedirect() {
 	const passedZipCode = zipCodeSubmitButton.parentElement.parentElement.querySelector('input').value;
-	window.open("http://localhost:8080/report/plantplan/1/zipcode/" + passedZipCode, '_blank');
+	window.open("http://localhost:8080/report/plantplan/" + planIdent + "/zipcode/" + passedZipCode, '_blank');
 }
-const planRedirect = document.querySelector('#planReportLink');
+
 planRedirect.addEventListener('click', handlePlanRedirect);
+
+
+redoPlanLink.addEventListener('click', (event) => {
+	event.preventDefault();
+	planIdent = -1;
+	while (plantImageContainer.firstChild) {
+		plantImageContainer.removeChild(plantImageContainer.firstChild);
+	}
+	console.log("redo called")
+	handleZipCodeinput();
+});
 
