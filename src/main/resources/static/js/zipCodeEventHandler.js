@@ -1,8 +1,6 @@
 const zipCodeSubmitButton = document.querySelector('#zipCodeSubmitButton');
 zipCodeSubmitButton.addEventListener('click', function (event) {
 	event.preventDefault();
-	const openingImage = document.querySelector('#welcomeToPageImage')
-	openingImage.style.display = 'none'
 	handleZipCodeinput();
 });
 
