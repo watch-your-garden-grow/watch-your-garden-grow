@@ -71,12 +71,12 @@ xhr.onreadystatechange = function() {
 				toggleClass(addToPlanButton, "toggleButtonClass")
 			})
 
-			// console.log("after appending" + plantObject.name)
-
 			
+
 
 			return plantLi
 		}
+
 		
 		const appendReportCardToPlantContainer = () => {
 			const plantLi = createElementNoText('li')
@@ -121,10 +121,7 @@ xhr.onreadystatechange = function() {
 			const newElem = document.createElement(elem)
 			return newElem
 		}
-		function createElementNoText(elem){
-			const newElem = document.createElement(elem)
-			return newElem
-		}
+	
 		function createElement(elem, textValue){
 			const newElem = document.createElement(elem)
 			newElem.innerText = textValue
@@ -154,23 +151,14 @@ xhr.onreadystatechange = function() {
 
 	}
 }
+function createElementNoText(elem){
+			const newElem = document.createElement(elem)
+			return newElem
+		}
 
-// const zipCodeSubmitButton = document.querySelector('#zipCodeSubmitButton');
-// zipCodeSubmitButton.addEventListener('click', function(event){
-// event.preventDefault();
-// const passedZipCode =
-// zipCodeSubmitButton.parentElement.parentElement.querySelector('input').value;
-// passedZipCode
-// const instructions = document.querySelector('.hardinessZone')
-// instructions.style.display = 'none'
-// const sectionForAllPlantsForHardinessZone =
-// document.querySelector('.sectionForAllPlantsForHardinessZone')
-// sectionForAllPlantsForHardinessZone.style.display = 'grid'
-// const openingImage = document.querySelector('#welcomeToPageImage')
-// openingImage.style.display = 'none'
-// xhr.open('GET', '/plants/zipcode/'+ passedZipCode, true);
-// xhr.send();
-// });
+function appendElement(parent, child){
+			parent.appendChild(child)
+		}
 
 function handlePlanRedirect() {
 	const passedZipCode = zipCodeSubmitButton.parentElement.parentElement.querySelector('input').value;
@@ -189,4 +177,23 @@ redoPlanLink.addEventListener('click', (event) => {
 	console.log("redo called")
 	handleZipCodeinput();
 });
+
+// const modalAddButton = document.getElementById('modalBoxAddToPlantButton')
+// const removeFromPlanButtonModal = createElementNoText("BUTTON")
+// 			removeFromPlanButtonModal.className = "toggleButtonClass removeFromPlanButton"
+// 			removeFromPlanButtonModal.innerText = "Remove From Plan";
+// 			appendElement(modalAddButton, removeFromPlanButtonModal)
+
+
+// 			modalAddButton.addEventListener('click', event => {
+// 				addPlantToPlan(plantObject.id)
+// 				toggleClass(addToPlanButton, "toggleButtonClass")
+// 				toggleClass(removeFromPlanButton, "toggleButtonClass")
+// 			})
+
+// 			removeFromPlanButtonModal.addEventListener('click', event => {
+// 				removePlantFromPlan(plantObject.id)
+// 				toggleClass(removeFromPlanButton, "toggleButtonClass")
+// 				toggleClass(addToPlanButton, "toggleButtonClass")
+// 			})
 
