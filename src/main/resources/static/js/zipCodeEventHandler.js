@@ -16,7 +16,6 @@ const handleZipCodeinput = () => {
 	const sectionForAllPlantsForHardinessZone = document.querySelector('.sectionForAllPlantsForHardinessZone')
 	sectionForAllPlantsForHardinessZone.style.display = 'grid'
 	
-
 	xhr.open('GET', '/plants/zipcode/' + passedZipCode, true);
 	xhr.send();
 	}

@@ -164,9 +164,6 @@ planRedirect.addEventListener('click', handlePlanRedirect);
 
 redoPlanLink.addEventListener('click', (event) => {
 	event.preventDefault();
-
-	
-
 	planIdent = -1;
 	while (plantImageContainer.firstChild) {
 		plantImageContainer.removeChild(plantImageContainer.firstChild);
