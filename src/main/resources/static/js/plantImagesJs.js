@@ -9,8 +9,8 @@ xhr.onreadystatechange = function() {
 		const notFoundRes = JSON.parse(xhr.responseText);
 		console.log(notFoundRes);
 		window.location ="http://localhost:8080"+notFoundRes.path;
-
 	}
+
 	if (xhr.readyState === 4 && xhr.status === 200) {
 		const res = JSON.parse(xhr.responseText);
 
@@ -48,7 +48,7 @@ xhr.onreadystatechange = function() {
 			const addToPlanButton = createElement("BUTTON")
 			addToPlanButton.className = "addToPlanButton"
 			addToPlanButton.innerText = "Add To Plan";
-			appendElement(plantLi, addToPlanButton)
+			appendElement(plantLi, addToPlanButton);
 
 			const removeFromPlanButton = createElement("BUTTON")
 			removeFromPlanButton.className = "toggleButtonClass removeFromPlanButton"
@@ -67,9 +67,6 @@ xhr.onreadystatechange = function() {
 				toggleClass(removeFromPlanButton, "toggleButtonClass")
 				toggleClass(addToPlanButton, "toggleButtonClass")
 			})
-
-			
-
 
 			return plantLi
 		}
@@ -113,11 +110,6 @@ xhr.onreadystatechange = function() {
 				modal.style.display = 'none';
 			}
 		});
-
-		function createElementNoText(elem){
-			const newElem = document.createElement(elem)
-			return newElem
-		}
 	
 		function createElement(elem, textValue){
 			const newElem = document.createElement(elem)
@@ -129,10 +121,6 @@ xhr.onreadystatechange = function() {
 			parent.removeChild(child);
 		}			
 		
-		function appendElement(parent, child){
-			parent.appendChild(child)
-		}
-
 		function toggleClass(element, className) {
 			element.classList.toggle(className)
 		}
