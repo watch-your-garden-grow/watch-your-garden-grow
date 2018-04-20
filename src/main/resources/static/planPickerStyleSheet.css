@@ -279,9 +279,15 @@ footer {
 	color: black;
 }
 .modalImageAndName{
-   display: grid;
+  	display: grid;
     grid-template-columns: .4fr .6fr;
+    /*margin-bottom: 1rem;*/
 }
+.modalImage, .plantName{
+	margin-top: 1rem;
+	 margin-bottom: 1rem;
+}
+
 .plantDescription{
 	align-self: center;
 }
