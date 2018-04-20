@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" type="text/css" href="/css/planPickerStyleSheet.css"></link>
 	<link rel="stylesheet" type="text/css" href="/style/header.css"></link>
 	<link rel="stylesheet" type="text/css" href="/css/reportStyleSheet.css"></link>
-	<link rel="stylesheet" type="text/css" href = "/css/limitedNavBar.css"></link>
+	<link rel="stylesheet" type="text/css" href="/css/limitedNavBar.css"></link>
 
-
-	<meta charset="ISO-8859-1">
-	<title>Garden Planner</title>
 	<link rel="icon" href="/images/styleImages/sunAndLeaf.png"></link>
-	<link href="https://fonts.googleapis.com/css?family=Lalezar|Rakkas" rel="stylesheet"></link>
+	<!--
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet"></link>
-</meta>
-</head>
-<div class="layer">
+	<link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet"></link>
+	-->
+	<link href="https://fonts.googleapis.com/css?family=Lalezar|Rakkas" rel="stylesheet"></link>
 
-	<body class="body">
+	<title>Garden Planner</title>
+
+</head>
+
+<body class="body">
+	<div class="layer">
 		<div class="container">
 			<header>
 				<div class='header-title'>
@@ -29,7 +31,8 @@
 				</div>
 				<nav>
 					<ul class='nav-links'>
-						<li class='navigationLinks'><a class = 'navigationLinks' href= "/about-us.html">About</a>
+						<li class='navigationLinks'>
+							<a class='navigationLinks' href="/about-us.html">About</a>
 						</li>
 						<li class='navigationLinks' id='planReportLink'>Current Plan</li>
 						<li class='navigationLinks' id='redoPlanLink'>Redo Plan</li>
@@ -37,31 +40,40 @@
 							<a class='navigationLinks' href="/planPicker.html">Home</a>
 						</li>
 					</ul>
-					<div class="enterZipCode">
-						<form class="zipCodeEntryAndSubmit" method="GET">
-							<input type="text" class="zipCodeEntry" placeholder="Enter Zip Code" value="" name="zipcode"></input>
-							<button type="submit" id="zipCodeSubmitButton">Submit Zip Code</button>
-						</form>
-					</div>
 				</nav>
 			</header>
 
 			<section>
 				<div class="reportlist">
-					<dl th:each="reportItem: ${#lists.sort(report.reportItems, reportItemSowDateComp)}">
-						<dt class="left" th:text="|${reportItem.plant.name} should be planted on|">PlantName</dt>
-						<dd class="right" th:text="|${#temporals.format(reportItem.requestedSowDate, 'EEEE MMM dd, yyyy')}|">Planting Date</dd>
-					</dl>
+					<h2 th:text="|Report  for zipcode ${report.zipcode}|"></h2>
+					<p>
+						<dl>
+							<dt>Plant Hardiness Zone</dt>
+							<dd th:text="${report.zone}"></dd>
+						</dl>
+						<dl>
+							<dt>Probable last frost date</dt>
+							<dd th:text="${#temporals.format(report.lastFrost, 'EEEE MMM dd, yyyy')}"></dd>
+						</dl>
+					</p>
+					<h2>Planting Schedule:</h2>
+					<p>
+						<dl th:each="reportItem: ${#lists.sort(report.reportItems, reportItemSowDateComp)}">
+							<dt th:text="|${reportItem.plant.name} should be planted on|">PlantName</dt>
+							<dd th:text="|${#temporals.format(reportItem.requestedSowDate, 'EEEE MMM dd, yyyy')}|">Planting Date</dd>
+						</dl>
+					</p>
 				</div>
 			</section>
 			<footer>
 				<h3>&copy; 2018</h3>
 			</footer>
 		</div>
-		<script src="/js/plantImagesJs.js"></script>
-		<!-- <script src="/js/openingViewStyle.js"></script> -->
-		<script src="/js/plantPlanApiFunctions.js"></script>
-	</body>
-</div>
+	</div>
+
+	<script src="/js/plantImagesJs.js"></script>
+	<!-- <script src="/js/openingViewStyle.js"></script> -->
+	<script src="/js/plantPlanApiFunctions.js"></script>
+</body>
 
 </html>

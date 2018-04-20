@@ -18,6 +18,14 @@ section {
     font-style: normal;
 }
 
+h2 {
+    text-align: center;
+}
+p {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
 dl {
     margin-bottom: 1rem;
 }
@@ -60,6 +68,7 @@ dt {
     padding-left: 4rem;
     padding-right: 4rem;
 }
+
 
 /*
 @font-face {
