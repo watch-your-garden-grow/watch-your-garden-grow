@@ -3,11 +3,22 @@
   margin: 0px;
 }
 
-body{
-  font-family: 'Lalezar', cursive;
-  background-image: url(../images/styleImages/radishesInHand.jpg);
-  background-size: 100% 100%;
-  min-height:100vh;
+body {
+ 	font-family: 'Lalezar', cursive;
+ 	background-image: url(../images/styleImages/radishesInHand.jpg);
+ 	background-size: 100% 100%;
+ 	background-repeat: no-repeat;
+ 	min-height:100vh;
+	background-attachment: fixed;
+
+}
+
+.layer{
+	background-color: rgba(0, 0, 0, .25);
+	background-size: cover;
+	background-repeat: no-repeat;
+	/*background-attachment: fixed;*/
+	min-height: 100vh;
 }
 
 @media screen and (max-width: 600px) {
@@ -15,6 +26,7 @@ body{
     background-size: 100% 100%;
   }
 }
+
 /*
 .navigationLinks:hover{
   cursor: pointer;
@@ -51,25 +63,6 @@ button:hover{
 	display: grid;
 	min-height: 100vh;
 	height: cover;
-}
-
-body {
-	margin: 0rem;
-	background-image: url(../../images/styleImages/radishesInHand.jpg);
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: top left;
-	background-attachment: fixed;
-	color: lightgray;
-}
-
-.layer{
-	background-color: rgba(0, 0, 0, .25);
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: top left;
-	background-attachment: fixed;
-	min-height: 100vh;
 }
 
 header{
