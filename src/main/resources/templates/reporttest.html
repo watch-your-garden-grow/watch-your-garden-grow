@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" type="text/css" href = "planPickerStyleSheet.css"></link>
+<title>Insert title here</title>
+</head>
+<body>
+
+	<section>
+	 	<div style="overflow:auto;" th:each="reportItem: ${#lists.sort(report.reportItems, reportItemSowDateComp)}"> 
+
+			<figure	style="width:150px; height: 150px; float: left; margin: 1rem;">
+				<img style="max-height:100%; max-width:100%" th:src="${reportItem.plant.image}"/>
+			</figure>
+
+			<header>
+				<h2 th:text="${reportItem.plant.name}">Plant Name</h2>
+			</header>
+
+			<p th:text="${reportItem.plant.description}">Plant Description</p>
+			<p th:text="|Plant on: ${reportItem.requestedSowDate}|">Plant Description</p>
+		</div>
+	</section>
+
+</body>
+</html>

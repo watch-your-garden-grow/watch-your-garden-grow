@@ -9,6 +9,8 @@ import java.util.List;
 
 import org.hamcrest.collection.IsEmptyCollection;
 import org.junit.Test;
+import org.wecancodeit.columbus.plantplanner.models.Plant;
+import org.wecancodeit.columbus.plantplanner.models.Zone;
 
 public class ListManagerTest {
 

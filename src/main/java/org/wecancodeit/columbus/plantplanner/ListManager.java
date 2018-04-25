@@ -3,6 +3,9 @@ package org.wecancodeit.columbus.plantplanner;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.wecancodeit.columbus.plantplanner.models.Plant;
+import org.wecancodeit.columbus.plantplanner.models.Zone;
+
 public class ListManager {
 
 	public boolean checkPlantViability(Zone checkedZone, Plant checkedPlant) {

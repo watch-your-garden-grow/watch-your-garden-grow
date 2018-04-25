@@ -1,0 +1,92 @@
+body {
+    background-image: url(../../backgrounds/rock-structure-board-texture-floor-wall-1119069-pxhere.com.jpg);
+    background-repeat: no- repeat;
+}
+/*
+section {
+    background-image: url(../../backgrounds/strawberry3.png);
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: 100%;
+}
+*/
+@font-face {
+    font-family: 'eraserregular';
+    src: url('EraserRegular-webfont.eot');
+    src: url('EraserRegular-webfont.eot?#iefix') format('embedded-opentype'), url('EraserRegular-webfont.woff2') format('woff2'), url('EraserRegular-webfont.woff') format('woff'), url('../../fonts/EraserRegular-webfont.woff') format('woff'), url('EraserRegular-webfont.ttf') format('truetype'), url('EraserRegular-webfont.svg#eraserregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h2 {
+    text-align: center;
+}
+p {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+dl {
+    margin-bottom: 1rem;
+}
+
+dl::after {
+    border-bottom: 1px dashed;
+    content: "";
+    display: block;
+    height: 1em;
+    overflow: hidden;
+}
+
+dd {
+    float: right;
+    /*
+  ** Adjust this to change
+  ** space between leader
+  ** dots and content
+  */
+    padding: 0 0 0 0.4em;
+}
+
+dt {
+    float: left;
+    /* 
+  ** Adjust this to change
+  ** space between leader
+  ** dots and content
+  */
+    padding: 0 0.4em 0 0;
+}
+
+.reportlist {
+    margin: 1.5rem auto;
+    font-family: 'eraserregular';
+    font-weight: bold;
+    color: #f0f0f0;
+    font-size: x-large;
+    padding: 1.9rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+
+/*
+@font-face {
+    font-family: 'whateverittakes';
+    src: url('../../fonts/whateverittakes-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FilmCryptic';
+    src: url('../../fonts/FilmCryptic.woff') format('woff');
+}
+*/
+footer {
+	display: flex;
+	justify-content: space-around;
+	position: absolute;
+	bottom: 0;
+    width: 100%;	
+}
