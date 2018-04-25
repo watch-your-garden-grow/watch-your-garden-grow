@@ -30,6 +30,16 @@ body {
 	height: cover;
 }
 
+header{
+	background-color: white;
+	grid-column: 1/-1;
+  	color:#a10b16; 
+}
+
+.header-content {
+  display: flex;
+ }
+
 @media screen and (max-width: 600px) {
 	.body {
     background-size: 100% 100%;
@@ -64,10 +74,6 @@ button:hover{
 	width: 15rem;
 	height: 10rem;
 	grid-template-columns: 1fr;
-}
-
-header{
-	background-color: white;
 }
 
 .enterZipCode{
