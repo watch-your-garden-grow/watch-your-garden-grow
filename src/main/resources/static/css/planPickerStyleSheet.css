@@ -24,10 +24,9 @@ body {
 .container{
 	position: relative;
 	display: grid;
-	grid-template-rows: repeat(10, 1fr);
+	grid-template-rows: auto repeat(7, 1fr) 1fr;
 	grid-template-columns: repeat(10, 1fr);
 	min-height: 100vh;
-	height: cover;
 }
 
 header{
@@ -58,15 +57,16 @@ header{
 
 footer {
 	grid-column: 1/-1;
-	background-color: white;
-/*	display: flex;
+	grid-row: 10/-1;
+	background-color: lightgray;
+	display: flex;
 	justify-content: space-around;
 	align-items: center;
 	position: relative;
 	bottom: 0px;
     width: 100%;
     position: static;	
-}*/
+}
 
 @media screen and (max-width: 600px) {
 	.body {
