@@ -21,6 +21,15 @@ body {
 	min-height: 100vh;
 }
 
+.container{
+	position: relative;
+	display: grid;
+	grid-template-rows: repeat(10, 1fr);
+	grid-template-columns: repeat(10, 1fr);
+	min-height: 100vh;
+	height: cover;
+}
+
 @media screen and (max-width: 600px) {
 	.body {
     background-size: 100% 100%;
@@ -55,14 +64,6 @@ button:hover{
 	width: 15rem;
 	height: 10rem;
 	grid-template-columns: 1fr;
-}
-
-.container{
-	position: relative;
-	grid-template-rows: auto auto auto auto;
-	display: grid;
-	min-height: 100vh;
-	height: cover;
 }
 
 header{
