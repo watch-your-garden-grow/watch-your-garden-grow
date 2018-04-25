@@ -37,13 +37,19 @@ header{
 }
 
 .header-content {
-  display: flex;
-  margin-left: 1rem;
+	display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    margin-left: 1rem;
 }
 
 #project-name{
     font-size: 5.7vw;
+    grid-column: 1/9;
     align-self: center;
+}
+
+#logo {
+    height: 15vh;
 }
 
 @media screen and (max-width: 600px) {
