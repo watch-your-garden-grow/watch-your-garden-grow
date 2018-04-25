@@ -1,14 +1,24 @@
 *{
-	padding: 0px;
-
+  padding: 0px;
+  margin: 0px;
 }
+
+body{
+  font-family: 'Lalezar', cursive;
+  background-image: url(../images/styleImages/radishesInHand.jpg);
+  background-size: 100% 100%;
+  min-height:100vh;
+}
+
+@media screen and (max-width: 600px) {
+	.body {
+    background-size: 100% 100%;
+  }
+}
+/*
 .navigationLinks:hover{
   cursor: pointer;
   color: yellow;
-}
-
-#project-name {
-	width: 80vw;
 }
 
 a:hover{
@@ -37,7 +47,7 @@ button:hover{
 
 .container{
 	position: relative;
-	/*grid-template-rows: auto auto auto auto;*/
+	grid-template-rows: auto auto auto auto;
 	display: grid;
 	min-height: 100vh;
 	height: cover;
@@ -139,16 +149,16 @@ input::placeholder {
 
 .sectionForAllPlantsForHardinessZone{
 	display: none;
-	/*grid-template-rows: 4rem auto;*/
+	grid-template-rows: 4rem auto;
 	align-self: center;
 	align-items: center;
 
 }
-/*.plantResultListTitle{
+.plantResultListTitle{
 	display: flex;
 	justify-content: center;
 }
-*/
+
 ul {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -167,7 +177,7 @@ li{
 	margin-top: 1rem;
 	margin-bottom: 1rem;
 	align-items: center;
-	/*max-width: 145px;*/
+	max-width: 145px;
 	min-width: auto;
 }
 
@@ -178,8 +188,8 @@ li{
 	height: 2rem;
 	width: 6rem;
 	cursor: pointer;
-	/*border: black;*/
-	/*font-size: 1.1rem;*/
+	border: black;
+	font-size: 1.1rem;
 }
 
 .removeFromPlanButton {
@@ -211,7 +221,7 @@ footer {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	/*position: relative;*/
+	position: relative;
 	bottom: 0px;
     width: 100%;
     position: static;	
@@ -283,12 +293,13 @@ footer {
 	color: black;
 }
 .modalImageAndName{
-   	display: grid;
+  	display: grid;
     grid-template-columns: .4fr .6fr;
     margin-bottom: 1rem;
 }
 .modalImage, .plantName{
 	margin-top: 1rem;
+	 margin-bottom: 1rem;
 }
 
 .plantDescription{
@@ -316,3 +327,7 @@ footer {
 	width: 600px;
 	margin-top: 50px;
 }
+
+#main {
+	max-width: 100vw;
+}*/
