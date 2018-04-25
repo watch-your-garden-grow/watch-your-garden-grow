@@ -52,6 +52,22 @@ header{
     height: 15vh;
 }
 
+
+
+
+
+footer {
+	grid-column: 1/-1;
+	background-color: white;
+/*	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	position: relative;
+	bottom: 0px;
+    width: 100%;
+    position: static;	
+}*/
+
 @media screen and (max-width: 600px) {
 	.body {
     background-size: 100% 100%;
@@ -227,16 +243,6 @@ li{
 .listOfEachPlantForHardinessZone {
 	margin-right: 10rem;
 	margin-left: 10rem;
-}
-
-footer {
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	position: relative;
-	bottom: 0px;
-    width: 100%;
-    position: static;	
 }
 
 .plantListItem {
