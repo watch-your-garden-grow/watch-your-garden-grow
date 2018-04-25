@@ -41,32 +41,48 @@ a:visited{
 }
 
 header img {
-  margin-top: 1rem;
+    width: 40vh;
+    height: 17vh;
+    align-self: center;
 }
 
 header{
   display:grid;
-  grid-template-rows: 7rem auto;
-  color:#a10b16;
-  
+  color:#a10b16; 
 }
 .header-title{
-  display:flex;
+  display: flex;
   min-height: 100px;
-  justify-content:center;
-  align-content:center;
+  margin: 1rem;
+  justify-content: space-between;
 }
-h1{
-  /*font-family: 'Rakkas', cursive;
-  */
-  font-size: 6rem;
+#project-name{
+    font-size: 6vw;
+    align-self: center;
 }
 
-.header-title{
+@media screen and (max-width: 600px) {
+  #project-name {
+    font-size: 30px;
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .nav-links {
+    font-size: 10px;
+/*    display: flex;*/
+  }
+}
+
+#group {
+  display: flex;
+}
+/*.header-title{
   display:flex;
   justify-content:center;
   align-content:center;
-}
+}*/
 nav{
   display:flex;
   justify-content:center;

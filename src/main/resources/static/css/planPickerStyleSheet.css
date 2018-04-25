@@ -7,6 +7,10 @@
   color: yellow;
 }
 
+#project-name {
+	width: 80vw;
+}
+
 a:hover{
 	color: yellow;
 }
@@ -33,7 +37,7 @@ button:hover{
 
 .container{
 	position: relative;
-	grid-template-rows: 12rem auto 2rem;
+	/*grid-template-rows: auto auto auto auto;*/
 	display: grid;
 	min-height: 100vh;
 	height: cover;
@@ -135,7 +139,7 @@ input::placeholder {
 
 .sectionForAllPlantsForHardinessZone{
 	display: none;
-	grid-template-rows: 4rem auto;
+	/*grid-template-rows: 4rem auto;*/
 	align-self: center;
 	align-items: center;
 
