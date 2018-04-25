@@ -1,14 +1,4 @@
-*{
-  padding: 0px;
-  margin: 0px;
-}
-body{
-  font-family: 'Lalezar', cursive;
-  background-image: url(../images/styleImages/radishesInHand.jpg);
-  background-size: cover;
-  min-height:80vh; 
-
-}
+/*
 
 .nav-links{
   list-style-type: none;
@@ -41,32 +31,47 @@ a:visited{
 }
 
 header img {
-  margin-top: 1rem;
+    width: 40vh;
+    height: 17vh;
+    align-self: center;
 }
 
 header{
   display:grid;
-  grid-template-rows: 7rem auto;
-  color:#a10b16;
-  
+  width: 100vw;
+  color:#a10b16; 
 }
 .header-title{
-  display:flex;
+  display: flex;
   min-height: 100px;
-  justify-content:center;
-  align-content:center;
+  margin: 1rem;
+  justify-content: space-between;
 }
-h1{
-  /*font-family: 'Rakkas', cursive;
-  */
-  font-size: 6rem;
+#project-name{
+    font-size: 6vw;
+    align-self: center;
 }
 
-.header-title{
-  display:flex;
-  justify-content:center;
-  align-content:center;
+@media screen and (max-width: 600px) {
+  #project-name {
+    font-size: 30px;
+    display: flex;
+  }
 }
+
+@media screen and (max-width: 320px) {
+  #project-name {
+    font-size: 10px;
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .nav-links {
+    font-size: 10px;
+  }
+}
+
 nav{
   display:flex;
   justify-content:center;
@@ -81,3 +86,4 @@ footer{
   color: white;
   font-family: 'Open Sans', sans-serif;
 }
+*/
