@@ -39,7 +39,12 @@ header{
 .header-content {
   display: flex;
   margin-left: 1rem;
- }
+}
+
+#project-name{
+    font-size: 5.7vw;
+    align-self: center;
+}
 
 @media screen and (max-width: 600px) {
 	.body {
