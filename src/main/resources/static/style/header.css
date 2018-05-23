@@ -1,0 +1,83 @@
+*{
+  padding: 0px;
+  margin: 0px;
+}
+body{
+  font-family: 'Lalezar', cursive;
+  background-image: url(../images/styleImages/radishesInHand.jpg);
+  background-size: cover;
+  min-height:80vh; 
+
+}
+
+.nav-links{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  min-width:800px;
+  display:flex;
+  justify-content:space-around;
+  color: white;
+  white-space: nowrap;
+}
+
+a:link {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover{
+  color: yellow;
+  cursor: pointer;
+}
+
+a:visited{
+  color: white;
+}
+
+.navigationLinks:hover{
+  cursor: pointer;
+  color: yellow;
+}
+
+header img {
+  margin-top: 1rem;
+}
+
+header{
+  display:grid;
+  grid-template-rows: 7rem auto;
+  color:#a10b16;
+  
+}
+.header-title{
+  display:flex;
+  min-height: 100px;
+  justify-content:center;
+  align-content:center;
+}
+h1{
+  /*font-family: 'Rakkas', cursive;
+  */
+  font-size: 6rem;
+}
+
+.header-title{
+  display:flex;
+  justify-content:center;
+  align-content:center;
+}
+nav{
+  display:flex;
+  justify-content:center;
+  font-size: 24pt;
+  background-color: #325304;
+}
+
+footer{
+  display: flex;
+  justify-content: center;
+  background-color: #2b2c31;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+}

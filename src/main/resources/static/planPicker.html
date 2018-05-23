@@ -1,83 +1,86 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang ="en">
+<html lang ="en">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <head>
-<link rel="stylesheet" type="text/css" href = "planPickerStyleSheet.css"></link>
-<meta charset="ISO-8859-1">
-<title>Garden Planner</title>
+	<link rel="stylesheet" type="text/css" href = "planPickerStyleSheet.css"></link>
+	<link rel="stylesheet" type="text/css" href = "style/header.css"></link>
+	<meta charset="ISO-8859-1">
+	<title>Garden Planner</title>
+	<link rel="icon" href="images/styleImages/sunAndLeaf.png"></link>
+	<link href="https://fonts.googleapis.com/css?family=Lalezar|Rakkas" rel="stylesheet"></link>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet"></link>
 </head>
-
-<body>
-<div class = "container">
-<header>
-<h1> Watch Your Garden Grow</h1>
-</header>
-	<div class = "zipAndPlanLink">
-		<div class = "enterZipCode">
-
-			<form class = "zipCodeEntryAndSubmit" method = "GET">
-			<label>Enter Zip Code</label>
-			<div class = "inputAndSubmitZipCode">
-				<div class = "typeZipCodeBox">
-				
-					<input type="text" class = "zipCodeEntry" value = "99501" name="zipcode"></input>
+	<body class = "body">
+		<div class = "layer">
+			<div class = "container">
+				<header>
+					<div class='header-title'>
+						<h1>Watch Your Garden Grow</h1>
+						<img src="../images/gardenLogo.jpg"/>
+						</div>
+					<nav>
+						<ul class='nav-links'>
+							<li><a class = 'navigationLinks' href= "http://localhost:8080/about-us.html">About</a></li>
+							<li><a class = 'navigationLinks' id = 'planReportLink'>Current Plan</a></li>
+							<li class = 'navigationLinks' id = 'redoPlanLink'>Redo Plan</li>
+							<li><a class = 'navigationLinks' href = "http://localhost:8080/planPicker.html">Home</a></li>
+						</ul>
+						<div class = "enterZipCode">
+							<form class = "zipCodeEntryAndSubmit" method = "GET">
+								<!-- <input type="hidden" name="zipcode" value="00000"></input>	 -->
+								<input type="text" class = "zipCodeEntry" name="zipcode" placeholder="Enter Zip Code" value = ""></input>
+								
+								<!-- <input type="submit" value="Submit"></input> -->
+								
+								<button type="submit" id = "zipCodeSubmitButton">Submit Zip Code</button>
+							</form>
+						</div>
+					</nav>
+				</header>
+			
+			<section>
+				<div class = "hardinessZone">
+				<h3>Watch Your Garden Grow understands that having a garden can be difficult to plan. Especially, if you do not have the time for research and planning. No worries, with the help of this app. You will be able to easily pick what type of plant within your zip code to add or remove a plant to your Plant Plan Report. This report will list out the plants that you have chosen with the days that is recommended to start planting. <br>
+				For example: If you choose zip code 43209 and then add Beans to your plan. The Plan will advise you to plant on Saturday, May 05, 2018.</h3>
+				<p><strong>Site Tutorial:</strong></p>
+				<ol type="1">
+						<li>Enter your zip code</li>
+						<li>Submit Zip Code </li>
+						<li>Choose a Plant to Add by click <strong>&quotAdd to Plan&quot</strong>.</li>
+						<li>If you would like to Remove a Plant that you do not wish to Add then click <strong>&quotRemove From Plan&quot</strong>.</li>
+						<li>After choosing a Plant. Click on <strong>&quotCurrent Plan&quot</strong> to see the Plant Report in a new tab.</li>
+						<li>If you wish to add more or remove a plant then leave the Plan tab up and click back over to the other tab. Now you can choose to either add more plants or remove a plant.</li>
+				</ol>
 				</div>
-				<div class = "submitZipCodeButton">
-					<button type="submit" id = "zipCodeSubmitButton">Submit ZipCode</button>
-				</div> 
-			</div>	
-			</form>
+				<div class = "sectionForAllPlantsForHardinessZone">
+					<div class = "plantResultListTitle">
+					</div>
+					<div class="listOfEachPlantForHardinessZone" id = "plantListSection">
+						<ul id ="plantImageContainer">
+						</ul>
+					</div>
+				</div>
+			</section>
+				<footer>
+					<h3>&copy 2018</h3>
+				</footer>
+		</div>	
+		<div id="modalBox" class="modal">
+			<div class="modal-content" id = "modalBoxContent">
+				<span class="close">&times</span>
+				<div class = "modalImageAndName">
+					<img class="modalImage"/>
+					<h2 class = "plantName"></h2>
+				</div>
+				<h3 class="plantDescription"></h3>
+				<!-- <button id="modalBoxAddToPlantButton" class = "addToPlanButton">Add To Plan</button> -->
+			</div>
 		</div>
-		<div class = "currentPlanLink">
-			<h2><a href= "PlanLink">*This will be: Link To Current Plan</a></h2>
-		</div>
+
 	</div>
-
-	<form>
-		<div class = "hardinessZone">
-			<h3>Your Hardiness Zone is:  </h3>
-
-				<!-- <div th:each="course: ${courses}">
-				<h2 th:text="${course.name}"></h2>
-				<h2 th:text="${course.description}"></h2> -->
-
-				
-			<h2>*This will be result of hardiness zone: B4</h2>
-		</div>
-		<div class = "sectionForAllPlantsForHardinessZone">
-		<div class = "plantResultListTitle">
-			<h2>List Of Plants Per Hardiness Zone: *Populate zone </h2>
-		</div>
-		<div class="listOfEachPlantForHardinessZone" id = "plantListSection">
-			<ul id ="plantImageContainer">
-			<!-- 	With ThymeLeaf Call To Display Each Product -->
-			<!-- 	<div class = "listOfEachPlantForHardinessZoneTL" th:each="zone: ${plants}">
-					<ul>
-						<li>
-							<a th:href="@{/plants(id=${plant.id})}" th:text="${plant.name}"></a>
-						</li>
-					</ul>
-				</div>  -->
-
-				<li id = "welcomeToPageImage" class = "plantListItem"><img src="images/welcomeGardenImage.jpeg" alt="tomato"></a><a href= "TomatoLink">*Return from form input</a><button class = "addToPlanButton">Add to Plan</button></li>
-			<!-- 	<li class = "plantListLi"><a href= "BeanFactoryPink"><img src="images/tomato.jpg" alt="beanfactory"></a><a href= "BeanFactoryPink">BeanFactory</a><button class = "addToPlanButton">Add to Plan</button></li> -->
-				<!-- <li><img src="images/tomato.jpg" alt="Carrots"><a href= "CarrotsLink">Carrots</a></a><button class = "addToPlanButton">Add to Plan</button></li>
-				<li><img src="images/strawberries.jpg" alt="Strawberries"><a href= "StrawberriesLink">Strawberries</a></a><button class = "addToPlanButton">Add to Plan</button></li>
-				<li><img src="images/tomato.jpg" alt="Kale"></a><a href= "KaleLink">Kale</a><button class = "addToPlanButton">Add to Plan</button></li>
-				<li><img src="images/tomato.jpg" alt="Thyme"></a><a href= "ThymeLink">Thyme</a><button class = "addToPlanButton">Add to Plan</button></li>
-				<li><img src="images/tomato.jpg" alt="Oregano"></a><a href= "OreganoLink">Oregano</a><button class = "addToPlanButton">Add to Plan</button></li>
-				<li><img src="images/tomato.jpg"alt="Basil"></a><a href= "BasilLink">Basil</a><button class = "addToPlanButton">Add to Plan</button></li>
-				<li><img src="images/tomato.jpg" alt="Bacon"></a><a href= "BaconLink">Bacon</a><button class = "addToPlanButton">Add to Plan</button></li>
-				<li><img src="images/tomato.jpg" alt="FutureVodka"><a href= "FutureVodkaLink">FutureVodka</a></a><button class = "addToPlanButton">Add to Plan</button></li>	 -->			
-			</ul>
-		</div>
-		</div>
-	</form>
-<footer>
-<h3>Copyright 2018</h3>
-<h3>04/02/2018</h3>
-</footer>
-</div>
-<script src="js/plantImagesJs.js"></script>
+	<script src="js/plantImagesJs.js"></script>
+	<script src="js/plantPlanApiFunctions.js"></script>
+	<script src="js/zipCodeEventHandler.js"></script>
 </body>
+				
 </html>
